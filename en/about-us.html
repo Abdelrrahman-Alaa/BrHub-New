@@ -1,0 +1,3324 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BRHUB</title>
+
+    <meta name="csrf-token" content="4RgEdTXwu01Ce760bkk3665TKyYwL3m19IrXxGB0">
+
+    <link rel="Site Icon" href="https://beta.thebrazilianhub.com/assets/front/images/logo.png" />
+
+    <link rel="stylesheet" href="../assets/front/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/front/css/aos.css" />
+    <link rel="stylesheet" href="../assets/front/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/swiper.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/v1/style.css" />
+
+
+
+
+
+        <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --primary-green: #058C4C;
+            --secondary-navy: #00235C;
+            --light-bg: #F8FAFB;
+            --text-dark: #1A1A1A;
+            --text-gray: #606060;
+            --border-light: #E8E8E8;
+            --white: #ffffff;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+
+        .header_logo__ svg {
+            height: 100%;
+            width: auto;
+        }
+
+        .nav-compact {
+            display: flex;
+            gap: var(--spacing-lg);
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-compact a {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-compact a:hover {
+            color: var(--primary-green);
+            background: rgba(5, 140, 76, 0.05);
+        }
+
+        .nav-compact a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 12px;
+            right: 12px;
+            height: 2px;
+            background: var(--primary-green);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .nav-compact a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .lang-selector {
+            position: relative;
+        }
+
+        .lang-selector select {
+            border: 1px solid var(--border-light);
+            background: var(--white);
+            padding: 6px 28px 6px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 1.3rem;
+            font-weight: 500;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%231A1A1A' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+        }
+
+        .btn-compact {
+            padding: 8px 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-outline {
+            border: 1.5px solid var(--text-dark);
+            color: var(--text-dark);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--text-dark);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #05B64C 0%, #058C4C 100%);
+            color: var(--white);
+            border: none;
+            box-shadow: 0 2px 8px rgba(5, 140, 76, 0.2);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 4px 12px rgba(5, 140, 76, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Premium Hero Banner with Image */
+        .hero-banner {
+            position: relative;
+            height: 65vh;
+            min-height: 500px;
+            max-height: 700px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(5, 140, 76, 0.95) 0%, rgba(0, 35, 92, 0.92) 100%),
+            url('data:image/svg+xml,%3Csvg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cpattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"%3E%3Cpath d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="1920" height="1080" fill="%23001529"/%3E%3Crect width="1920" height="1080" fill="url("https://beta.thebrazilianhub.com/en/%23grid")"/%3E%3C/svg%3E');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(5, 182, 76, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 70% 50%, rgba(0, 35, 92, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding-top: 80px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: 0.5px;
+        }
+
+        .hero-badge::before {
+            content: '★';
+            font-size: 1.4rem;
+        }
+
+        .hero-title {
+            font-size: 5.2rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -1px;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-lg);
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        .btn-hero {
+            padding: 14px 32px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-hero-primary {
+            background: var(--white);
+            color: var(--primary-green);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-hero-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-hero-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Trust Indicators */
+        .trust-bar {
+            background: var(--white);
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .trust-items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(5, 182, 76, 0.1) 0%, rgba(5, 140, 76, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .trust-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .trust-subtext {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+
+        /* Compact Section */
+        .section-compact {
+            padding: 48px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            font-size: 1.6rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* Value Propositions Grid */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .value-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-green) 0%, var(--secondary-navy) 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary-green);
+        }
+
+        .value-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, rgba(5, 182, 76, 0.1) 0%, rgba(5, 140, 76, 0.05) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .value-title {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .value-desc {
+            font-size: 1.4rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Premium Sectors */
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-lg);
+        }
+
+        .sector-card {
+            background: var(--light-bg);
+            border: 1px solid transparent;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .sector-card:hover {
+            background: var(--white);
+            border-color: var(--primary-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(5, 140, 76, 0.1);
+        }
+
+        .sector-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-navy) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-sm);
+            font-size: 2.6rem;
+        }
+
+        .sector-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Services Horizontal */
+        .services-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-bg) 100%);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            display: flex;
+            gap: var(--spacing-md);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-green) 0%, var(--secondary-navy) 100%);
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transform: translateX(4px);
+        }
+
+        .service-number {
+            font-size: 3.6rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .service-content {
+            flex: 1;
+        }
+
+        .service-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .service-desc {
+            font-size: 1.4rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Compact Stats */
+        .stats-compact {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-navy) 100%);
+            padding: 40px 0;
+            margin: 48px 0;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: var(--spacing-sm);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, rgba(5, 140, 76, 0.05) 0%, rgba(0, 35, 92, 0.05) 100%);
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            text-align: center;
+            margin: 48px 0;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .cta-text {
+            font-size: 1.6rem;
+            color: var(--text-gray);
+            margin-bottom: var(--spacing-md);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Compact Footer */
+        .footer-compact {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 40px 0 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-brand .footer-logo {
+            height: 32px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-desc {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            max-width: 350px;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-links a {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--primary-green);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-title { font-size: 4.2rem; }
+            .value-grid { grid-template-columns: repeat(2, 1fr); }
+            .sectors-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 991px) {
+            .nav-compact { display: none; }
+            .hero-title { font-size: 3.6rem; }
+            .value-grid { grid-template-columns: 1fr; }
+            .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-row { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; gap: var(--spacing-md); }
+        }
+
+        @media (max-width: 767px) {
+            .hero-title { font-size: 3rem; }
+            .section-title { font-size: 2.4rem; }
+            .hero-banner { height: 70vh; }
+            .stats-row { grid-template-columns: 1fr; }
+            .stat-item { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding-bottom: var(--spacing-sm); }
+            .stat-item:last-child { border-bottom: none; }
+            .trust-items { flex-wrap: wrap; justify-content: center; }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Hidden class for language switching */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+
+
+
+
+    <style>
+        /**
+ * Premium Global Search Modal - Light Theme
+ * Compact, Professional, International Design
+ */
+
+        /* ===========================
+           Search Button in Header
+           =========================== */
+
+        .search_button__ {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(5, 140, 76, 0.08) 0%, rgba(5, 140, 76, 0.12) 100%);
+            border-radius: 10px;
+            border: none;
+            color: #058C4C;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-inline-start: 10px;
+            box-shadow: 0 2px 4px rgba(5, 140, 76, 0.08);
+        }
+
+        .search_button__:hover {
+            background: linear-gradient(135deg, #058C4C 0%, #066f3f 100%);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(5, 140, 76, 0.25);
+        }
+
+        .search_button__:active {
+            transform: translateY(0);
+        }
+
+        /* ===========================
+           Modal Base - Premium Container
+           =========================== */
+
+        .global-search-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .global-search-modal.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .search-modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .search-modal-container {
+            position: relative;
+            max-width: 1400px;
+            width: 94%;
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+            max-height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            animation: slideDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .search-modal-container {
+                max-width: 96%;
+                width: 96%;
+                margin: 30px auto;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-container {
+                width: 98%;
+                margin: 15px auto;
+                max-height: calc(100vh - 30px);
+                border-radius: 16px;
+            }
+        }
+
+        /* ===========================
+           Modal Header - Compact Premium
+           =========================== */
+
+        .search-modal-header {
+            padding: 20px 28px 18px;
+            border-bottom: 1px solid #E5E7EB;
+            background: linear-gradient(to bottom, #FAFBFC 0%, #FFFFFF 100%);
+            flex-shrink: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-header {
+                padding: 16px 16px 14px;
+            }
+        }
+
+        .search-modal-close {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(17, 24, 39, 0.05);
+            color: #6B7280;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        html[dir="rtl"] .search-modal-close {
+            right: auto;
+            left: 18px;
+        }
+
+        .search-modal-close:hover {
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+            transform: rotate(90deg);
+        }
+
+        /* ===========================
+           Search Input - Premium Compact
+           =========================== */
+
+        .search-input-wrapper {
+            position: relative;
+            margin-bottom: 14px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9CA3AF;
+            pointer-events: none;
+            width: 20px;
+            height: 20px;
+        }
+
+        html[dir="rtl"] .search-icon {
+            left: auto;
+            right: 16px;
+        }
+
+        .search-modal-input {
+            width: 100%;
+            height: 52px;
+            padding: 0 52px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            background: #F9FAFB;
+            font-weight: 400;
+            color: #111827;
+        }
+
+        .search-modal-input::placeholder {
+            color: #9CA3AF;
+        }
+
+        .search-modal-input:focus {
+            outline: none;
+            border-color: #058C4C;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(5, 140, 76, 0.08);
+        }
+
+        .search-clear-btn {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            color: #9CA3AF;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        html[dir="rtl"] .search-clear-btn {
+            right: auto;
+            left: 14px;
+        }
+
+        .search-clear-btn:hover {
+            color: #EF4444;
+            background: rgba(239, 68, 68, 0.08);
+        }
+
+        /* ===========================
+           Controls - Compact Layout
+           =========================== */
+
+        .search-controls-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-controls-wrapper {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .search-filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex: 1;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-filter-tabs {
+                width: 100%;
+            }
+        }
+
+        .search-tab {
+            padding: 8px 18px;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 10px;
+            background: #FFFFFF;
+            color: #6B7280;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex: 1;
+            text-align: center;
+        }
+
+        .search-tab:hover {
+            border-color: #058C4C;
+            color: #058C4C;
+            background: rgba(5, 140, 76, 0.04);
+        }
+
+        .search-tab.active {
+            background: linear-gradient(135deg, #058C4C 0%, #066f3f 100%);
+            color: #FFFFFF;
+            border-color: #058C4C;
+            box-shadow: 0 2px 8px rgba(5, 140, 76, 0.2);
+        }
+
+        .advanced-search-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 10px;
+            color: #6B7280;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .advanced-search-toggle {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .advanced-search-toggle:hover {
+            border-color: #058C4C;
+            color: #058C4C;
+            background: rgba(5, 140, 76, 0.04);
+        }
+
+        .advanced-search-toggle.active {
+            background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+            color: #FFFFFF;
+            border-color: #111827;
+        }
+
+        .advanced-search-toggle.active .toggle-arrow {
+            transform: rotate(180deg);
+        }
+
+        .toggle-arrow {
+            transition: transform 0.2s ease;
+        }
+
+        /* ===========================
+           Advanced Panel - Compact Premium
+           =========================== */
+
+        .advanced-search-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #F9FAFB;
+            border-bottom: 1px solid transparent;
+            flex-shrink: 0;
+        }
+
+        .advanced-search-panel.active {
+            max-height: 600px;
+            border-bottom-color: #E5E7EB;
+            overflow-y: auto;
+        }
+
+        /* Custom scrollbar for advanced panel */
+        .advanced-search-panel.active::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .advanced-search-panel.active::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .advanced-search-panel.active::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 3px;
+        }
+
+        .advanced-search-content {
+            padding: 18px 28px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .advanced-search-content {
+                padding: 14px 16px;
+            }
+        }
+
+        /* ===========================
+           Filter Sections - Compact
+           =========================== */
+
+        .filter-section {
+            margin-bottom: 16px;
+            padding: 16px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .filter-section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .filter-section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #F3F4F6;
+        }
+
+        .filter-section-title i {
+            color: #058C4C;
+            font-size: 16px;
+        }
+
+        .filter-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .filter-row:last-child {
+            margin-bottom: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .filter-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        /* ===========================
+           Filter Inputs - Premium Compact
+           =========================== */
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #6B7280;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .filter-select,
+        .filter-input {
+            height: 40px;
+            padding: 0 12px;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #FFFFFF;
+            transition: all 0.2s ease;
+            color: #111827;
+        }
+
+        .filter-select:focus,
+        .filter-input:focus {
+            outline: none;
+            border-color: #058C4C;
+            box-shadow: 0 0 0 3px rgba(5, 140, 76, 0.08);
+        }
+
+        .filter-select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 12px;
+            padding-right: 32px;
+            appearance: none;
+        }
+
+        html[dir="rtl"] .filter-select {
+            background-position: left 10px center;
+            padding-right: 12px;
+            padding-left: 32px;
+        }
+
+        .price-range-inputs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-range-inputs .filter-input {
+            flex: 1;
+        }
+
+        .range-separator {
+            color: #9CA3AF;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* Checkbox */
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        .filter-checkbox {
+            display: none;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #374151;
+            user-select: none;
+            font-weight: 500;
+        }
+
+        .checkbox-label svg {
+            width: 20px;
+            height: 20px;
+            padding: 2px;
+            border: 2px solid #D1D5DB;
+            border-radius: 6px;
+            background: #FFFFFF;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-label svg path {
+            stroke: transparent;
+            transition: stroke 0.2s ease;
+        }
+
+        .filter-checkbox:checked + .checkbox-label svg {
+            background: #058C4C;
+            border-color: #058C4C;
+        }
+
+        .filter-checkbox:checked + .checkbox-label svg path {
+            stroke: #FFFFFF;
+        }
+
+        .checkbox-label:hover svg {
+            border-color: #058C4C;
+        }
+
+        /* ===========================
+           Filter Actions - Compact
+           =========================== */
+
+        .filter-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .filter-actions {
+                flex-direction: column-reverse;
+            }
+        }
+
+        .filter-action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            white-space: nowrap;
+        }
+
+        .filter-action-btn.clear-filters {
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            color: #6B7280;
+        }
+
+        .filter-action-btn.clear-filters:hover {
+            background: #F9FAFB;
+            border-color: #9CA3AF;
+            color: #374151;
+        }
+
+        .filter-action-btn.apply-filters {
+            background: linear-gradient(135deg, #058C4C 0%, #066f3f 100%);
+            color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(5, 140, 76, 0.25);
+        }
+
+        .filter-action-btn.apply-filters:hover {
+            box-shadow: 0 4px 12px rgba(5, 140, 76, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .filter-count {
+            background: rgba(255, 255, 255, 0.25);
+            color: #FFFFFF;
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* ===========================
+           Active Filters Bar - Compact
+           =========================== */
+
+        .active-filters-bar {
+            padding: 12px 28px;
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            display: none;
+            flex-shrink: 0;
+        }
+
+        .active-filters-bar.active {
+            display: block;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .active-filters-bar {
+                padding: 10px 16px;
+            }
+        }
+
+        .active-filters-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .active-filters-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #6B7280;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .active-filters-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .active-filter-tag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            background: rgba(5, 140, 76, 0.08);
+            border: 1px solid rgba(5, 140, 76, 0.2);
+            border-radius: 8px;
+            font-size: 12px;
+            color: #058C4C;
+            font-weight: 500;
+        }
+
+        .active-filter-tag button {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #058C4C;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s ease;
+            line-height: 1;
+        }
+
+        .active-filter-tag button:hover {
+            color: #EF4444;
+        }
+
+        .clear-all-filters-btn {
+            padding: 5px 12px;
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #6B7280;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .clear-all-filters-btn:hover {
+            background: rgba(239, 68, 68, 0.08);
+            border-color: #EF4444;
+            color: #EF4444;
+        }
+
+        /* ===========================
+           Modal Body - Optimized Scroll
+           =========================== */
+
+        .search-modal-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 28px;
+            min-height: 300px;
+            background: #FAFBFC;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-body {
+                padding: 16px 16px;
+            }
+        }
+
+        /* Premium Scrollbar */
+        .search-modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .search-modal-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .search-modal-body::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 4px;
+        }
+
+        .search-modal-body::-webkit-scrollbar-thumb:hover {
+            background: #9CA3AF;
+        }
+
+        /* ===========================
+           Loading States
+           =========================== */
+
+        .search-preloader {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .search-preloader.active {
+            display: flex;
+        }
+
+        .search-loader {
+            text-align: center;
+        }
+
+        /*.loader-spinner {*/
+        /*    width: 48px;*/
+        /*    height: 48px;*/
+        /*    border: 4px solid #E5E7EB;*/
+        /*    border-top-color: #058C4C;*/
+        /*    border-radius: 50%;*/
+        /*    animation: spin 0.8s linear infinite;*/
+        /*    margin: 0 auto 16px;*/
+        /*}*/
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .search-loader p {
+            color: #6B7280;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* ===========================
+           Empty & No Results - Premium
+           =========================== */
+
+        .search-empty-state,
+        .search-no-results {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            min-height: 300px;
+        }
+
+        .search-empty-state.active,
+        .search-no-results.active {
+            display: flex;
+        }
+
+        .search-empty-state svg,
+        .search-no-results svg {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .search-empty-state h4,
+        .search-no-results h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .search-empty-state p,
+        .search-no-results p {
+            font-size: 14px;
+            color: #6B7280;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+
+        /* ===========================
+           Results Container
+           =========================== */
+
+        .search-results-container {
+            display: none;
+        }
+
+        .search-results-container.active {
+            display: block;
+        }
+
+        .results-header {
+            margin-bottom: 16px;
+            padding: 12px 16px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .results-info {
+            font-size: 13px;
+            color: #6B7280;
+            margin: 0;
+        }
+
+        .results-info span {
+            font-weight: 700;
+            color: #058C4C;
+        }
+
+        .search-section {
+            margin-bottom: 20px;
+        }
+
+        .search-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .search-section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 14px;
+            padding: 10px 16px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .search-section-title i {
+            color: #058C4C;
+            font-size: 18px;
+        }
+
+        .results-count {
+            margin-left: auto;
+            background: rgba(5, 140, 76, 0.1);
+            color: #058C4C;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ===========================
+           HORIZONTAL CARDS - Premium Compact
+           =========================== */
+
+        .search-items-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .search-result-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            padding: 12px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            animation: fadeInUp 0.3s ease forwards;
+            opacity: 0;
+            min-height: 88px;
+        }
+
+        .search-result-card:hover {
+            transform: translateX(4px);
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.06),
+                0 0 0 1px #058C4C;
+            border-color: #058C4C;
+            background: #FFFFFF;
+        }
+
+        .search-result-image {
+            width: 64px;
+            height: 64px;
+            min-width: 64px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #F3F4F6;
+            flex-shrink: 0;
+        }
+
+        .search-result-content {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .search-result-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .search-result-description {
+            font-size: 13px;
+            color: #6B7280;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .search-result-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            flex-shrink: 0;
+            min-width: 90px;
+        }
+
+        .search-result-badge {
+            background: linear-gradient(135deg, rgba(5, 140, 76, 0.1) 0%, rgba(5, 140, 76, 0.06) 100%);
+            color: #058C4C;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .search-result-info {
+            font-size: 12px;
+            color: #9CA3AF;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .search-result-card[href*="investment"] .search-result-badge {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.1) 0%, rgba(17, 24, 39, 0.06) 100%);
+            color: #111827;
+        }
+
+        .search-result-roi {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            color: #FFFFFF;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 11px;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Stagger animation */
+        .search-result-card:nth-child(1) { animation-delay: 0.03s; }
+        .search-result-card:nth-child(2) { animation-delay: 0.06s; }
+        .search-result-card:nth-child(3) { animation-delay: 0.09s; }
+        .search-result-card:nth-child(4) { animation-delay: 0.12s; }
+        .search-result-card:nth-child(5) { animation-delay: 0.15s; }
+        .search-result-card:nth-child(6) { animation-delay: 0.18s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===========================
+           Responsive - Mobile Optimized
+           =========================== */
+
+        @media only screen and (max-width: 768px) {
+            .search-result-card {
+                padding: 10px;
+                gap: 12px;
+                min-height: 76px;
+            }
+
+            .search-result-image {
+                width: 56px;
+                height: 56px;
+                min-width: 56px;
+            }
+
+            .search-result-title {
+                font-size: 14px;
+            }
+
+            .search-result-description {
+                font-size: 12px;
+                -webkit-line-clamp: 1;
+            }
+
+            .search-result-meta {
+                min-width: 75px;
+            }
+
+            .search-result-badge {
+                font-size: 9px;
+                padding: 3px 8px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .search-result-card {
+                flex-wrap: wrap;
+            }
+
+            .search-result-content {
+                order: 2;
+                width: calc(100% - 68px);
+            }
+
+            .search-result-meta {
+                order: 3;
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                min-width: 100%;
+            }
+        }
+
+        /* ===========================
+           Modal Footer - Compact
+           =========================== */
+
+        .search-modal-footer {
+            padding: 16px 28px;
+            border-top: 1px solid #E5E7EB;
+            background: #FAFBFC;
+            flex-shrink: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-footer {
+                padding: 14px 16px;
+            }
+        }
+
+        .footer-label {
+            font-size: 12px;
+            color: #6B7280;
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .popular-searches {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .popular-tag {
+            padding: 6px 14px;
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #6B7280;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .popular-tag:hover {
+            background: rgba(5, 140, 76, 0.06);
+            border-color: #058C4C;
+            color: #058C4C;
+            transform: translateY(-1px);
+        }
+
+        /* ===========================
+           Animations
+           =========================== */
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ===========================
+           Accessibility
+           =========================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            .global-search-modal,
+            .search-modal-container,
+            .search-result-card,
+            .advanced-search-panel {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        .search-modal-input:focus,
+        .search-tab:focus,
+        .popular-tag:focus,
+        .search-result-card:focus,
+        .filter-select:focus,
+        .filter-input:focus {
+            outline: 2px solid #058C4C;
+            outline-offset: 2px;
+        }
+
+        /* ===========================
+           RTL Support
+           =========================== */
+
+        html[dir="rtl"] .search-result-card:hover {
+            transform: translateX(-4px);
+        }
+
+        html[dir="rtl"] .search-result-meta {
+            align-items: flex-start;
+        }
+
+        /* ===========================
+           Hide/Show Sections
+           =========================== */
+
+        .product-filters,
+        .investment-filters {
+            display: none;
+        }
+
+        .product-filters.active,
+        .investment-filters.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* ===========================
+           Print Styles
+           =========================== */
+
+        @media print {
+            .global-search-modal {
+                display: none !important;
+            }
+        }
+
+
+        .nav-om .nav-list-om{
+            align-items: center !important;
+        }
+
+        .company_card__ .title__ {
+            color: #111;
+            font-size: 16px !important;
+            font-weight: 600;
+        }
+
+
+    </style>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="preloader">
+    <img src="../assets/front/images/logo.jpg" alt="">
+    <div class="loader"></div>
+</div>
+
+<!-- Start Header Section -->
+
+<header class="main_header__">
+    <div class="fixed_header__ active_menu__">
+        <div class="container">
+            <div class="header_content__">
+                <a class="header_logo__" href="../home.html">
+                    <figure class="figure__">
+                        <img src="../assets/front/images/logo.jpg" alt="BrHub"/>
+                    </figure>
+                </a>
+
+                <nav class="nav-om" id="navbar-menu-om">
+                    <button class="close-button__"></button>
+
+                    <figure class="figure__ nav_logo__">
+                        <img src="../assets/front/images/logo.jpg" alt="BrHub"/>
+                    </figure>
+
+                    <ul class="nav-list-om list-unstyled">
+                        <li class="header_list_item__ ">
+                            <a href="../home.html">Home</a>
+                        </li>
+                        <li class="header_list_item__ ">
+                            <a href="about-us.html">About Us</a>
+                        </li>
+
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        <li class="header_list_item__ ">
+                            <a href="../home.html#plans-section">Plans &amp; Services</a>
+                        </li>
+                        
+
+                        
+                        
+                        
+                        
+
+
+
+
+                        <button class="search_button__" id="searchTrigger">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"/>
+                                <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+
+                        <li class="header_list_item__ " style="font-style: italic; font-weight: 400;">
+                            <a href="auth/login.html" class="link__ hero_link__"
+                               style="display: flex !important; color: white; width: 110px !important;">
+
+                                                                    JOIN NOW
+                                
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+
+                    <ul class="toolbar_options__ list-unstyled mb-0">
+                        <li class="block__ header_links_block__">
+                            <div class="header_links__">
+                                <a href="how-to-export.html" class="">
+                                    Exporters
+                                    <img class="icon__" src="../assets/front/images/shapes/header_arrow.svg"
+                                         alt="">
+                                </a>
+                                <a href="how-to-import.html" class="">
+                                    Importers
+                                    <img class="icon__" src="../assets/front/images/shapes/header_arrow.svg"
+                                         alt="">
+                                </a>
+                                
+                                
+                                
+                                
+                                <a href="how-to-invest.html" class="">
+                                    Investment
+                                    <img class="icon__" src="../assets/front/images/shapes/header_arrow.svg"
+                                         alt="">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <li class="header_list_item__ me-3" style="margin: 0px 0.5em;">
+
+
+                    <div class="custom_dropdown__" data-dir="bottom">
+                        <button class="button__ dropdown_button__ lang_link__">
+                                                            English
+                            
+                            <img src="../assets/front/images/shapes/arrow_down.svg" alt="">
+                        </button>
+
+                        <div class="dropdown_menu__">
+                            <ul>
+                                                                    <li>
+                                        <a class="link__ modify__">
+                                            <div class="lang d-flex" data-value="en"
+                                                 onclick="window.location.href='https://beta.thebrazilianhub.com/en/about-us'">
+
+                                                <i class="flag-icon flag-icon-us"></i>
+
+                                                <span class="lang-txt">
+                                                English
+                                            </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a class="link__ modify__">
+                                            <div class="lang d-flex" data-value="pt"
+                                                 onclick="window.location.href='https://beta.thebrazilianhub.com/pt/about-us'">
+
+                                                <i class="flag-icon flag-icon-pt"></i>
+
+                                                <span class="lang-txt">
+                                                português
+                                            </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a class="link__ modify__">
+                                            <div class="lang d-flex" data-value="ar"
+                                                 onclick="window.location.href='https://beta.thebrazilianhub.com/ar/about-us'">
+
+                                                <i class="flag-icon flag-icon-sa"></i>
+
+                                                <span class="lang-txt">
+                                                العربية
+                                            </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+
+
+                
+                <button class="menu_button__ button__" id="menu-butt-activ-om">
+                    <svg aria-hidden="true"
+                         focusable="false"
+                         data-prefix="fas"
+                         data-icon="bars"
+                         class="svg-inline--fa fa-bars fa-w-14"
+                         role="img"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
+</header>
+
+
+    <!-- Categories cached at: 2026-01-01 12:37:21 -->
+
+<!-- End Header Section -->
+
+<main class="home_page__">
+
+        <main>
+        <!-- Premium Hero Banner -->
+        <section id="home" class="hero-banner">
+            <div class="container">
+                <div class="hero-content fade-in-up">
+                    <div class="hero-badge" data-en="★ Premier Business Gateway" data-pt="★ Portal de Negócios Premier" data-ar="★ بوابة الأعمال الرائدة">
+                        ★ Premier Business Gateway
+                    </div>
+
+
+
+                    <h1 class="hero-title">
+                        <span data-en="Connecting Gulf Capital" data-pt="Conectando Capital do Golfo" data-ar="ربط رأس المال الخليجي">About The Brazilian Hub</span><br>
+                        <span class="highlight" data-en="with Brazilian Excellence" data-pt="com Excelência Brasileira" data-ar="بالتميز البرازيلي">with Brazilian Excellence</span>
+                    </h1>
+
+                    <p class="hero-subtitle" data-en="Your trusted gateway to Brazil's most promising investment opportunities. Backed by official partnerships and a proven track record in international trade." data-pt="Sua porta de entrada confiável para as oportunidades de investimento mais promissoras do Brasil. Apoiado por parcerias oficiais e histórico comprovado no comércio internacional." data-ar="بوابتك الموثوقة لأكثر فرص الاستثمار الواعدة في البرازيل. مدعومة بشراكات رسمية وسجل حافل في التجارة الدولية.">
+                        We are the strategic bridge between Brazil and the GCC. Our mission is to facilitate seamless trade, foster high-value investments, and strengthen the economic ties between these two powerful regions.
+                        To be the catalyst for sustainable economic partnership between Brazil and Saudi Arabia.
+                        A future where trade and innovation flow freely across borders.
+                    </p>
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <section class="trust-bar">
+            <div class="container">
+                <div class="trust-items">
+                    <div class="trust-item">
+                        <div class="trust-icon">🏢</div>
+                        <div>
+                            <div class="trust-text" data-en="Saudi Registered" data-pt="Registrado Saudita" data-ar="مسجل سعودي">Saudi Registered</div>
+                            <div class="trust-subtext" data-en="Official Commercial Registry" data-pt="Registro Comercial Oficial" data-ar="سجل تجاري رسمي">Official Commercial Registry</div>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🤝</div>
+                        <div>
+                            <div class="trust-text" data-en="Official Partnerships" data-pt="Parcerias Oficiais" data-ar="شراكات رسمية">Official Partnerships</div>
+                            <div class="trust-subtext" data-en="Brazilian Government & Private Sector" data-pt="Governo e Setor Privado" data-ar="حكومية وخاصة">Brazilian Government & Private Sector</div>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🌎</div>
+                        <div>
+                            <div class="trust-text" data-en="Two Continents" data-pt="Dois Continentes" data-ar="قارتان">Two Continents</div>
+                            <div class="trust-subtext" data-en="Riyadh & São Paulo Offices" data-pt="Escritórios Riyadh e São Paulo" data-ar="مكاتب الرياض وساو باولو">Riyadh & São Paulo Offices</div>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <div>
+                            <div class="trust-text" data-en="100% Secure" data-pt="100% Seguro" data-ar="100% آمن">100% Secure</div>
+                            <div class="trust-subtext" data-en="Transparent & Compliant" data-pt="Transparente e Conforme" data-ar="شفاف ومتوافق">Transparent & Compliant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-compact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label" data-en="WHO WE ARE" data-pt="QUEM SOMOS" data-ar="من نحن">OUR SERVICES</span>
+                    <h2 class="section-title" data-en="Building Bridges Between Markets" data-pt="Construindo Pontes Entre Mercados" data-ar="بناء جسور بين الأسواق">Our Services</h2>
+                    <p class="section-subtitle" data-en="A Saudi-Brazilian partnership founded in 2025, dedicated to creating secure commercial pathways between the Gulf and Brazil through expertise, transparency, and proven results." data-pt="Uma parceria saudita-brasileira fundada em 2025, dedicada a criar caminhos comerciais seguros entre o Golfo e o Brasil através de expertise, transparência e resultados comprovados." data-ar="شراكة سعودية برازيلية تأسست عام 2025، مكرسة لإنشاء مسارات تجارية آمنة بين الخليج والبرازيل من خلال الخبرة والشفافية والنتائج المثبتة.">
+                        A Saudi-Brazilian partnership founded in 2025, dedicated to creating secure commercial pathways between the Gulf and Brazil through expertise, transparency, and proven results.
+                    </p>
+                </div>
+
+                <div class="value-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <h3 class="value-title" data-en="Strategic Vision" data-pt="Visão Estratégica" data-ar="رؤية استراتيجية">Trade Facilitation</h3>
+                        <p class="value-desc" data-en="One unified platform connecting opportunities, partners, and practical solutions for Gulf investors seeking Brazilian markets." data-pt="Uma plataforma unificada conectando oportunidades, parceiros e soluções práticas para investidores do Golfo em busca de mercados brasileiros." data-ar="منصة موحدة تربط الفرص والشركاء والحلول العملية للمستثمرين الخليجيين الباحثين عن الأسواق البرازيلية.">
+                            Streamlining export/import processes, compliance, and logistics for seamless market entry.
+
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">💼</div>
+                        <h3 class="value-title" data-en="Expert Team" data-pt="Equipe Especialista" data-ar="فريق خبراء">Investment Matchmaking</h3>
+                        <p class="value-desc" data-en="Bilingual Saudi-Brazilian professionals with deep market knowledge and years of experience in cross-border trade." data-pt="Profissionais sauditas-brasileiros bilíngues com profundo conhecimento de mercado e anos de experiência em comércio transfronteiriço." data-ar="محترفون سعوديون برازيليون ثنائيو اللغة بمعرفة عميقة بالسوق وسنوات من الخبرة في التجارة عبر الحدود.">
+                            Connecting investors with high-potential opportunities in infrastructure, agriculture, and technology. And other sectors
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🌟</div>
+                        <h3 class="value-title" data-en="Market Leadership" data-pt="Liderança de Mercado" data-ar="ريادة السوق">Market Access</h3>
+                        <p class="value-desc" data-en="Among the first platforms in the Gulf region specializing in Brazilian investment opportunities and trade facilitation." data-pt="Entre as primeiras plataformas na região do Golfo especializadas em oportunidades de investimento brasileiras e facilitação comercial." data-ar="من بين أولى المنصات في منطقة الخليج المتخصصة في فرص الاستثمار البرازيلي وتسهيل التجارة.">
+                            Strategic consulting, regulatory guidance, and local partnership development.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Sectors -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Services -->
+        <section id="services" class="section-compact">
+            <div class="container">
+                <div class="section-header">
+
+                    <h2 class="section-title" data-en="Comprehensive Business Solutions" data-pt="Soluções Empresariais Abrangentes" data-ar="حلول أعمال شاملة">Why Saudi Arabia & GCC?</h2>
+                    <p class="section-subtitle" data-en="End-to-end support for your Brazilian business ventures, from initial consultation to deal execution." data-pt="Suporte completo para seus empreendimentos comerciais brasileiros, desde a consulta inicial até a execução do negócio." data-ar="دعم شامل لمشاريعك التجارية البرازيلية، من الاستشارة الأولية إلى تنفيذ الصفقة.">
+                        Saudi Vision 2030 is transforming the region into a global investment powerhouse. Discover the opportunities in a rapidly diversifying economy.
+
+                    </p>
+                </div>
+
+                <div class="services-row">
+                    <div class="service-card">
+                        <div class="service-number">01</div>
+                        <div class="service-content">
+                            <h3 class="service-title" data-en="Business Development & Events" data-pt="Desenvolvimento de Negócios e Eventos" data-ar="تطوير الأعمال والفعاليات">G20 Economy</h3>
+                            <p class="service-desc" data-en="Organize and host high-level conferences, exhibitions, and business delegations. Coordinate strategic visits for Gulf investors to Brazil, facilitating direct connections with key stakeholders." data-pt="Organize e hospede conferências de alto nível, exposições e delegações empresariais. Coordene visitas estratégicas de investidores do Golfo ao Brasil, facilitando conexões diretas com stakeholders-chave." data-ar="تنظيم واستضافة المؤتمرات والمعارض والوفود التجارية رفيعة المستوى. تنسيق الزيارات الاستراتيجية للمستثمرين الخليجيين إلى البرازيل، وتسهيل الاتصالات المباشرة مع أصحاب المصلحة الرئيسيين.">
+                                G20 stands for Group of Twenty—a forum of the world’s major economies that works on global economic stability, development, and cooperation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-number">02</div>
+                        <div class="service-content">
+                            <h3 class="service-title" data-en="Advisory & Consulting Services" data-pt="Serviços de Consultoria" data-ar="الخدمات الاستشارية">Strategic Location</h3>
+                            <p class="service-desc" data-en="Expert commercial, financial, and legal guidance through our Saudi-Brazilian team and network of official partners. Comprehensive market intelligence and due diligence support." data-pt="Orientação comercial, financeira e jurídica especializada através de nossa equipe saudita-brasileira e rede de parceiros oficiais. Inteligência de mercado abrangente e suporte de due diligence." data-ar="إرشادات تجارية ومالية وقانونية متخصصة من خلال فريقنا السعودي البرازيلي وشبكة الشركاء الرسميين. ذكاء السوق الشامل ودعم العناية الواجبة.">
+                                A strategic location refers to a geographic position that provides economic, political, and logistical advantages, making a country, city, or region more influential in trade, security, and global connectivity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-number">03</div>
+                        <div class="service-content">
+                            <h3 class="service-title" data-en="Advisory & Consulting Services" data-pt="Serviços de Consultoria" data-ar="الخدمات الاستشارية">Vision 2030 Growth</h3>
+                            <p class="service-desc" data-en="Expert commercial, financial, and legal guidance through our Saudi-Brazilian team and network of official partners. Comprehensive market intelligence and due diligence support." data-pt="Orientação comercial, financeira e jurídica especializada através de nossa equipe saudita-brasileira e rede de parceiros oficiais. Inteligência de mercado abrangente e suporte de due diligence." data-ar="إرشادات تجارية ومالية وقانونية متخصصة من خلال فريقنا السعودي البرازيلي وشبكة الشركاء الرسميين. ذكاء السوق الشامل ودعم العناية الواجبة.">
+                                Vision 2030 is Saudi Arabia’s long-term national strategy aimed at driving sustainable economic growth, diversifying income sources, and positioning the Kingdom as a global investment and logistics hub
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Compact Stats -->
+        <section class="stats-compact">
+            <div class="container">
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-number">2025</div>
+                        <div class="stat-label" data-en="Year Founded" data-pt="Ano de Fundação" data-ar="سنة التأسيس">Year Founded</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label" data-en="Operating Markets" data-pt="Mercados Operacionais" data-ar="أسواق عاملة">Operating Markets</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label" data-en="Investment Sectors" data-pt="Setores de Investimento" data-ar="قطاعات الاستثمار">Investment Sectors</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label" data-en="Transparency" data-pt="Transparência" data-ar="الشفافية">Transparency</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="section-compact">
+            <div class="container">
+                <div class="cta-banner">
+                    <h2 class="cta-title" data-en="Ready to Explore Brazilian Markets?" data-pt="Pronto para Explorar os Mercados Brasileiros?" data-ar="هل أنت مستعد لاستكشاف الأسواق البرازيلية؟">Ready to Explore Brazilian Markets?</h2>
+                    <p class="cta-text" data-en="Join The Brazilian Hub today and gain direct access to vetted investment opportunities, expert guidance, and a proven network across two continents." data-pt="Junte-se ao The Brazilian Hub hoje e ganhe acesso direto a oportunidades de investimento verificadas, orientação especializada e uma rede comprovada em dois continentes." data-ar="انضم إلى The Brazilian Hub اليوم واحصل على وصول مباشر إلى فرص الاستثمار المدققة والتوجيه المتخصص وشبكة مثبتة عبر قارتين.">
+                        Join The Brazilian Hub today and gain direct access to vetted investment opportunities, expert guidance, and a proven network across two continents.
+                    </p>
+                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                        <a href="auth/login.html" class="btn-hero btn-hero-primary" style="color: var(--primary-green);">
+                            <span data-en="Get Started" data-pt="Começar" data-ar="ابدأ">Get Started</span>
+                            <span>→</span>
+                        </a>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</main>
+
+
+<!-- Start Footer Section -->
+
+<footer class="footer_sec__">
+    <div class="container">
+        <div class="footer_content__">
+            <div class="footer_logo_wrapper__">
+                <a href="../home.html" class="footer_logo__">
+                    <img src="../assets/front/images/footer_logo.png" alt="BrHub"/>
+                </a>
+
+                <p class="footer_text__">Stay informed with product updates and expert insights.</p>
+            </div>
+
+            <div class="footer_links_sec__">
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">About Us</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="about-us.html#">Company overview</a></li>
+                        <li><a href="about-us.html#">How it works</a></li>
+                        <li><a href="about-us.html#">Press</a></li>
+                        <li><a href="about-us.html#">Partners</a></li>
+                        <li><a href="about-us.html#">Advertise with us</a></li>
+                        <li><a href="about-us.html#">Site map</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Services &amp; Tools</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="about-us.html#">Become Premium Member</a></li>
+                        <li><a href="about-us.html#">Become Premium Plus Member</a></li>
+                        <li><a href="about-us.html#">All our plans</a></li>
+                        <li><a href="about-us.html#">Premium PLUS + Google Ads</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Safety and Support</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="about-us.html#">Privacy policy</a></li>
+                        <li><a href="about-us.html#">Terms of use</a></li>
+                        <li><a href="about-us.html#">Help / FAQs</a></li>
+                        <li><a href="about-us.html#">Safe practices</a></li>
+                        <li><a href="about-us.html#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Importers</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="about-us.html#">How to Import on BRHub</a></li>
+                        <li><a href="about-us.html#">Create your buyer profile</a></li>
+                        <li><a href="about-us.html#">Post your buying request</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Leads Central</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="about-us.html#">Sales offers</a></li>
+                        <li><a href="about-us.html#">Requests for quotation</a></li>
+                        <li><a href="about-us.html#">Post your sales offer</a></li>
+                        <li><a href="about-us.html#">Post your request for quotation</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Exporters</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="about-us.html#">How to Export on BRHub</a></li>
+                        <li><a href="about-us.html#">Create your seller profile</a></li>
+                        <li><a href="about-us.html#">Post your buying request</a></li>
+                        <li><a href="about-us.html#">B2B verified seller</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="copyrights_sec__">
+        <div class="container">
+            <div class="copyrights_content___">
+                
+                <ul class="footer_socials__ list-unstyled">
+                    <li class="li__">
+                        <a href="about-us.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/telegram.svg"
+                                 alt="Telegram" width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="about-us.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/new-twitter.svg"
+                                 alt="Twitter"
+                                 width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="about-us.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/linkedin-02.svg"
+                                 alt="LinkedIn"
+                                 width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="about-us.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/dribbble.svg"
+                                 alt="Dribbble" width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="about-us.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/whatsapp.svg"
+                                 alt="WhatsApp" width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="about-us.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/youtube.svg"
+                                 alt="YouTube" width="19" height="19"/>
+                        </a>
+                    </li>
+                </ul>
+
+                
+                <p class="copyright_text__">BRHUB © 2025</p>
+
+                
+                <div class="custom_dropdown__" data-dir="top">
+                    <button class="button__ dropdown_button__ lang_link__">
+                                                    English
+                        
+                        <img src="../assets/front/images/shapes/arrow_down.svg" alt="">
+                    </button>
+
+                    <div class="dropdown_menu__">
+                        <ul>
+                                                            <li>
+                                    <a class="link__ modify__">
+                                        <div class="lang d-flex" data-value="en"
+                                             onclick="window.location.href='https://beta.thebrazilianhub.com/en/about-us'">
+
+                                            <i class="flag-icon flag-icon-us"></i>
+
+                                            <span class="lang-txt">
+                                                English
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a class="link__ modify__">
+                                        <div class="lang d-flex" data-value="pt"
+                                             onclick="window.location.href='https://beta.thebrazilianhub.com/pt/about-us'">
+
+                                            <i class="flag-icon flag-icon-pt"></i>
+
+                                            <span class="lang-txt">
+                                                português
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a class="link__ modify__">
+                                        <div class="lang d-flex" data-value="ar"
+                                             onclick="window.location.href='https://beta.thebrazilianhub.com/ar/about-us'">
+
+                                            <i class="flag-icon flag-icon-sa"></i>
+
+                                            <span class="lang-txt">
+                                                العربية
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- End Footer Section -->
+
+
+<!-- Global Search Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.tidio.co/ljw94hnyauat9xphyrymd9bklspxpn5k.js" async></script>
+
+<!-- Global Search Modal with Advanced Search -->
+<div class="global-search-modal" id="globalSearchModal">
+    <div class="search-modal-overlay" id="searchModalOverlay"></div>
+
+    <div class="search-modal-container">
+        <!-- Close Button -->
+        <button class="search-modal-close" id="searchModalClose" aria-label="front_home.clear_search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <!-- Search Header -->
+        <div class="search-modal-header">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input
+                    type="text"
+                    class="search-modal-input"
+                    id="globalSearchInput"
+                    placeholder="Search Products &amp; Investments"
+                    autocomplete="off"
+                    aria-label="front_home.search_placeholder"
+                />
+                <button class="search-clear-btn d-none" id="searchClearBtn" aria-label="front_home.clear_search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.2"/>
+                        <path d="M13 7L7 13M7 7L13 13" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Filter Tabs & Advanced Search Toggle -->
+            <div class="search-controls-wrapper">
+                <div class="search-filter-tabs">
+                    <button class="search-tab active" data-type="all">
+                        All
+                    </button>
+                    <button class="search-tab" data-type="products">
+                        Products
+                    </button>
+                    <button class="search-tab" data-type="investments">
+                        Investments
+                    </button>
+                </div>
+
+                <button class="advanced-search-toggle" id="advancedSearchToggle">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M2 4H16M5 9H13M8 14H10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Advanced Filters
+                    <svg class="toggle-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Advanced Search Filters Panel -->
+        <div class="advanced-search-panel" id="advancedSearchPanel">
+            <div class="advanced-search-content">
+                <!-- Common Filters -->
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label class="filter-label">Category</label>
+                        <select class="filter-select" id="filterCategory">
+                            <option value="">All Categories</option>
+                                                    </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">Country</label>
+                        <select class="filter-select" id="filterCountry">
+                            <option value="">All Countries</option>
+                            <option value="SA">Saudi Arabia</option>
+                            <option value="AE">United Arab Emirates</option>
+                            <option value="EG">Egypt</option>
+                            <option value="US">United States</option>
+                            <option value="GB">United Kingdom</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">Sort By</label>
+                        <select class="filter-select" id="filterSort">
+                            <option value="relevance">Relevance</option>
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="name_asc">Name (A-Z)</option>
+                            <option value="name_desc">Name (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Product-Specific Filters -->
+                <div class="product-filters filter-section" id="productFilters">
+                    <h4 class="filter-section-title">
+                        <i class="fas fa-box"></i>
+                        Product Filters
+                    </h4>
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label class="filter-label">Price Range</label>
+                            <div class="price-range-inputs">
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterPriceMin"
+                                    placeholder="Min Price"
+                                    min="0"
+                                />
+                                <span class="range-separator">-</span>
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterPriceMax"
+                                    placeholder="Max Price"
+                                    min="0"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Availability</label>
+                            <select class="filter-select" id="filterAvailability">
+                                <option value="">All</option>
+                                <option value="in_stock">In Stock</option>
+                                <option value="out_of_stock">Out of Stock</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Verified Only</label>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="filterVerified" class="filter-checkbox">
+                                <label for="filterVerified" class="checkbox-label">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M13.3333 4L6 11.3333L2.66666 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                    Verified Products Only
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment-Specific Filters -->
+                <div class="investment-filters filter-section" id="investmentFilters">
+                    <h4 class="filter-section-title">
+                        <i class="fas fa-chart-line"></i>
+                        Investment Filters
+                    </h4>
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label class="filter-label">Investment Range</label>
+                            <div class="price-range-inputs">
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterInvestmentMin"
+                                    placeholder="Min Investment"
+                                    min="0"
+                                />
+                                <span class="range-separator">-</span>
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterInvestmentMax"
+                                    placeholder="Max Investment"
+                                    min="0"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">ROI</label>
+                            <select class="filter-select" id="filterROI">
+                                <option value="">Any ROI</option>
+                                <option value="0-10">0% - 10%</option>
+                                <option value="10-20">10% - 20%</option>
+                                <option value="20-30">20% - 30%</option>
+                                <option value="30+">30%+</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Risk Level</label>
+                            <select class="filter-select" id="filterRisk">
+                                <option value="">All Levels</option>
+                                <option value="low">Low Risk</option>
+                                <option value="medium">Medium Risk</option>
+                                <option value="high">High Risk</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label class="filter-label">Timeline</label>
+                            <select class="filter-select" id="filterTimeline">
+                                <option value="">Any Timeline</option>
+                                <option value="0-12">Short Term (0-12 Mo.)</option>
+                                <option value="12-36">Medium Term (1-3 Years)</option>
+                                <option value="36+">Long Term (3+ Years)</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Opportunity Type</label>
+                            <select class="filter-select" id="filterOpportunityType">
+                                <option value="">All Types</option>
+                                <option value="equity">Equity</option>
+                                <option value="debt">Debt</option>
+                                <option value="hybrid">Hybrid</option>
+                                <option value="crowdfunding">Crowdfunding</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Status</label>
+                            <select class="filter-select" id="filterStatus">
+                                <option value="">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="fully_funded">Fully Funded</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Actions -->
+                <div class="filter-actions">
+                    <button class="filter-action-btn clear-filters" id="clearFiltersBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Clear Filters
+                    </button>
+                    <button class="filter-action-btn apply-filters" id="applyFiltersBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.3333 4L6 11.3333L2.66666 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Apply Filters
+                        <span class="filter-count d-none" id="filterCount"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Filters Display -->
+        <div class="active-filters-bar d-none" id="activeFiltersBar">
+            <div class="active-filters-wrapper">
+                <span class="active-filters-label">Active Filters:</span>
+                <div class="active-filters-list" id="activeFiltersList"></div>
+                <button class="clear-all-filters-btn" id="clearAllFiltersBtn">
+                    Clear All
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Results -->
+        <div class="search-modal-body" id="searchResults">
+            <!-- Pre-loader -->
+            <div class="search-preloader" id="searchPreloader">
+                <div class="search-loader">
+                    <div class="loader-spinner"></div>
+                    <p>front_home.searching...</p>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="search-empty-state active" id="searchEmptyState">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <circle cx="40" cy="40" r="40" fill="#F5F5F5"/>
+                    <path d="M35 50C42.1797 50 48 44.1797 48 37C48 29.8203 42.1797 24 35 24C27.8203 24 22 29.8203 22 37C22 44.1797 27.8203 50 35 50Z" stroke="#058C4C" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M58 58L45.65 45.65" stroke="#058C4C" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <h4>Start Searching</h4>
+                <p>Search for products and investment opportunities</p>
+            </div>
+
+            <!-- No Results -->
+            <div class="search-no-results d-none" id="searchNoResults">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <circle cx="40" cy="40" r="40" fill="#FFF3CD"/>
+                    <path d="M40 25V45M40 55H40.02" stroke="#F39C12" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <h4>front_home.no_results_found</h4>
+                <p>front_home.try_different_keywords</p>
+                <small class="text-muted mt-2">front_home.search_tips</small>
+            </div>
+
+            <!-- Results Container -->
+            <div class="search-results-container d-none" id="searchResultsContainer">
+                <!-- Results Header -->
+                <div class="results-header" id="resultsHeader">
+                    <p class="results-info">
+                        <span id="resultsCount">0</span> results found
+                    </p>
+                </div>
+
+                <!-- Products Section -->
+                <div class="search-section" id="productsSection">
+                    <h3 class="search-section-title">
+                        <i class="fas fa-box"></i>
+                        Products
+                        <span class="results-count" id="productsCount"></span>
+                    </h3>
+                    <div class="search-items-grid" id="productsResults"></div>
+                </div>
+
+                <!-- Investments Section -->
+                <div class="search-section" id="investmentsSection">
+                    <h3 class="search-section-title">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        Investments
+                        <span class="results-count" id="investmentsCount"></span>
+                    </h3>
+                    <div class="search-items-grid" id="investmentsResults"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Searches -->
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+<!-- start js include  -->
+<script src="../assets/front/js/jquery-3.3.1.min.js"></script>
+<script src="../assets/front/js/popper.min.js"></script>
+<script src="https://beta.thebrazilianhub.com/https:/cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="../assets/front/js/bootstrap.min.js"></script>
+<script src="../assets/front/js/bootstrap-select.min.js"></script>
+<script src="../assets/front/js/jquery.fancybox.min.js"></script>
+<script src="../assets/front/js/mixitup.min.js"></script>
+<script src="../assets/front/js/swiper.min.js"></script>
+<script src="../assets/front/js/v1/plugin.js"></script>
+
+<script src="../assets/front/js/global-search.js"></script>
+
+
+    <script>
+        function switchLanguage(lang) {
+            const body = document.body;
+            const html = document.documentElement;
+            const elements = document.querySelectorAll('[data-en]');
+
+            // Update direction for Arabic
+            if (lang === 'ar') {
+                body.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                body.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', lang);
+            }
+
+            // Update all text content
+            elements.forEach(element => {
+                const text = element.getAttribute('data-' + lang);
+                if (text) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = 80;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.querySelector('.header_content__');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.style.padding = '12px 24px';
+                header.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.08)';
+            } else {
+                header.style.padding = '16px 24px';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+
+</html>

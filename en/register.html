@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="4RgEdTXwu01Ce760bkk3665TKyYwL3m19IrXxGB0">
+    <title>Create Account - BrazilinHub Registration</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-color: #00235c;
+            --primary-hover: #001a45;
+            --primary-light: #0a3d7a;
+            --accent-color: #058c4b;
+            --accent-hover: #047a40;
+            --secondary-color: #64748b;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --bg-gradient-start: #f5f7fa;
+            --bg-gradient-end: #e8ecf1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(165deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-size: 13px;
+            padding: 0;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .registration-container {
+            max-width: 920px;
+            margin: 1rem auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06), 0 8px 32px rgba(0, 35, 92, 0.08);
+            overflow: hidden;
+            border: 1px solid rgba(0, 35, 92, 0.06);
+        }
+
+        .registration-header {
+            background: linear-gradient(135deg, #00235c 0%, #003875 50%, #004d8f 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .registration-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(5, 140, 75, 0.2) 0%, transparent 50%),
+            radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .registration-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #058c4b 0%, #00d4ff 100%);
+        }
+
+        .registration-header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .registration-header p {
+            margin: 0.25rem 0 0;
+            opacity: 0.92;
+            font-size: 0.875rem;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        .progress-container {
+            margin-top: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .progress {
+            height: 6px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            border-radius: 10px;
+            background: linear-gradient(90deg, #058c4b 0%, #00d4ff 100%);
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 8px rgba(5, 140, 75, 0.4);
+        }
+
+        .step-indicators {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding: 0 1rem;
+        }
+
+        .step-indicator {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(4px);
+        }
+
+        .step-indicator.active {
+            background: white;
+            color: var(--primary-color);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-indicator.completed {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+            color: white;
+            box-shadow: 0 2px 8px rgba(5, 140, 75, 0.3);
+        }
+
+        .step-indicator i {
+            font-size: 0.875rem;
+        }
+
+        .registration-body {
+            /* Padding handled by individual content sections */
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(165deg, rgba(245, 247, 250, 0.98) 0%, rgba(232, 236, 241, 0.98) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            backdrop-filter: blur(8px);
+        }
+
+        .preloader-spinner {
+            width: 44px;
+            height: 44px;
+            border: 3px solid rgba(0, 35, 92, 0.1);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            padding: 0.875rem 1.25rem;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.8125rem;
+            z-index: 10000;
+            transform: translateX(400px);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 300px;
+            max-width: 400px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            backdrop-filter: blur(8px);
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, var(--success-color), #059669);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, var(--danger-color), #dc2626);
+        }
+
+        .notification.warning {
+            background: linear-gradient(135deg, var(--warning-color), #d97706);
+        }
+
+        .notification .btn-close {
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+        }
+
+        .notification .btn-close:hover {
+            opacity: 1;
+        }
+
+        /* Parsley Error Styles */
+        .parsley-errors-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.25rem 0 0;
+        }
+
+        .parsley-error {
+            color: var(--danger-color);
+            font-size: 0.6875rem;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .registration-container {
+                margin: 0.75rem;
+                border-radius: 12px;
+            }
+
+            .registration-header {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .registration-header h1 {
+                font-size: 1.25rem;
+            }
+
+            .registration-header p {
+                font-size: 0.8125rem;
+            }
+
+            .step-indicator {
+                width: 32px;
+                height: 32px;
+                font-size: 0.75rem;
+            }
+
+            .notification {
+                top: 1rem;
+                right: 1rem;
+                left: 1rem;
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .registration-container {
+                margin: 0.5rem;
+                border-radius: 10px;
+            }
+
+            .registration-header {
+                padding: 1rem;
+            }
+
+            .registration-header h1 {
+                font-size: 1.125rem;
+            }
+
+            .step-indicators {
+                padding: 0 0.5rem;
+            }
+
+            .step-indicator {
+                width: 28px;
+                height: 28px;
+            }
+
+            .step-indicator i {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Smooth Animations */
+        @media (prefers-reduced-motion: no-preference) {
+            * {
+                scroll-behavior: smooth;
+            }
+        }
+    </style>
+
+        <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+        :root {
+            --primary-color: #00235c;
+            --primary-hover: #001a45;
+            --primary-light: #0a3d7a;
+            --accent-color: #058c4b;
+            --accent-hover: #047a40;
+            --secondary-color: #64748b;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --border-color: #e5e8ec;
+            --border-light: #f1f3f5;
+            --bg-light: #f8f9fb;
+            --text-primary: #0f1419;
+            --text-secondary: #536471;
+            --text-muted: #8899a6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Decorative Background */
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        body::before {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #058C4C, #00235C);
+            top: -300px;
+            left: -200px;
+        }
+
+        body::after {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #00235C, #058C4C);
+            bottom: -200px;
+            right: -150px;
+        }
+
+        .registration-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 1200px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 650px;
+        }
+
+        /* Brand Side */
+        .brand-side {
+            background: linear-gradient(135deg, #058C4C 0%, #00235C 100%);
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-side::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            top: -150px;
+            right: -100px;
+        }
+
+        .brand-side::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            bottom: -80px;
+            left: -50px;
+        }
+
+        .brand-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            width: 140px;
+            margin-bottom: 40px;
+        }
+
+        .brand-title {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .brand-subtitle {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-text {
+            color: #fff;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Form Side */
+        .form-side {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .form-side::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .form-side::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .form-side::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        .form-header {
+            margin-bottom: 30px;
+        }
+
+        .form-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 8px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .form-subtitle a {
+            color: #058C4C;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Account Type Tabs */
+        .account-type-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            background: var(--primary-color);
+            padding: 4px;
+            border-radius: 10px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 10px;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .tab-btn.active {
+            background: #fff;
+            color: var(--accent-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Form Groups */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .required::after {
+            content: " *";
+            color: var(--danger-color);
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #E8E8E8;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: #fff;
+            color: #333;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(5, 140, 76, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: #999;
+        }
+
+        .form-control.parsley-error {
+            border-color: var(--danger-color);
+            background-color: rgba(240, 5, 60, 0.02);
+        }
+
+        .form-control.parsley-success {
+            border-color: var(--success-color);
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Radio Cards */
+        .radio-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .radio-card {
+            position: relative;
+            display: block;
+            padding: 16px;
+            border: 2px solid #E8E8E8;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .radio-card:hover {
+            border-color: var(--accent-color);
+            background: rgba(5, 140, 76, 0.02);
+        }
+
+        .radio-input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .radio-input:checked + .radio-content {
+            color: var(--accent-color);
+        }
+
+        .radio-card:has(.radio-input:checked) {
+            border-color: var(--accent-color);
+            background: rgba(5, 140, 76, 0.05);
+        }
+
+        .radio-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .radio-header i {
+            font-size: 18px;
+            color: var(--accent-color);
+        }
+
+        .radio-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .radio-desc {
+            font-size: 12px;
+            color: #666;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .radio-check {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #E8E8E8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .radio-input:checked ~ .radio-check {
+            opacity: 1;
+            background: var(--accent-color);
+        }
+
+        .radio-check i {
+            color: #fff;
+            font-size: 12px;
+        }
+
+        /* Sub Type Buttons */
+        .sub-type-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .sub-type-btn {
+            display: block;
+            cursor: pointer;
+        }
+
+        .sub-type-input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .sub-type-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 12px;
+            border: 2px solid #E8E8E8;
+            border-radius: 8px;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .sub-type-content i {
+            font-size: 24px;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+
+        .sub-type-content span {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .sub-type-btn:hover .sub-type-content {
+            border-color: var(--accent-color);
+            background: rgba(5, 140, 76, 0.02);
+        }
+
+        .sub-type-input:checked + .sub-type-content {
+            border-color: var(--accent-color);
+            background: rgba(5, 140, 76, 0.08);
+        }
+
+        .sub-type-input:checked + .sub-type-content i,
+        .sub-type-input:checked + .sub-type-content span {
+            color: var(--accent-color);
+        }
+
+        .investor-section {
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Checkbox */
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            margin-top: 2px;
+            accent-color: var(--accent-color);
+        }
+
+        .checkbox-label {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .checkbox-label a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #05B64C 0%, #058C4C 100%);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(5, 140, 76, 0.3);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(5, 140, 76, 0.4);
+        }
+
+        .submit-btn:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Parsley Validation */
+        .parsley-errors-list {
+            list-style: none;
+            padding: 0;
+            margin: 6px 0 0 0;
+        }
+
+        .parsley-errors-list li {
+            font-size: 12px;
+            color: var(--danger-color);
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        .parsley-errors-list li:before {
+            content: "⚠ ";
+            margin-right: 4px;
+        }
+
+        /* Loading State */
+        .loading {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #fff;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .registration-container {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .brand-side {
+                display: none;
+            }
+
+            .form-side {
+                padding: 30px 24px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 16px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .radio-group {
+                grid-template-columns: 1fr;
+            }
+
+            .sub-type-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .account-type-tabs {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Preloader -->
+<div class="preloader" id="preloader">
+    <div class="preloader-spinner"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="registration-container">
+        <!-- Brand Side -->
+        <div class="brand-side">
+            <div class="brand-content">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 42'%3E%3Ctext x='0' y='32' font-family='Inter, sans-serif' font-size='28' font-weight='700' fill='white'%3EBRHUB%3C/text%3E%3C/svg%3E" alt="BRHUB Logo" class="logo">
+
+                <h1 class="brand-title">Join 50,000+ Global Businesses</h1>
+                <p class="brand-subtitle">Connect with verified suppliers, discover premium products, and expand your business worldwide.</p>
+
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Access to 3.8M+ verified products</span>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Connect with 2K+ investment opportunities</span>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Real-time tracking and secure transactions</span>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Expert support and market insights</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">"BRHUB transformed our international sourcing. We found reliable suppliers within days and scaled our operations by 300%."</p>
+                <div class="testimonial-author">— Sarah Chen, CEO at TechGlobal Inc.</div>
+            </div>
+        </div>
+
+        <!-- Form Side -->
+        <div class="form-side">
+            <div class="form-header">
+                <h2 class="form-title">Create Your Account</h2>
+                <p class="form-subtitle">Already have an account? <a href="auth/login.html">Sign in</a></p>
+            </div>
+
+            <!-- Account Type Tabs -->
+            <div class="account-type-tabs">
+                <button class="tab-btn" data-type="seller">
+                    <i class="fas fa-store"></i> Exporter
+                </button>
+                <button class="tab-btn" data-type="buyer">
+                    <i class="fas fa-shopping-cart"></i> Importer
+                </button>
+                <button class="tab-btn active" data-type="investor">
+                    <i class="fas fa-chart-line"></i> Investment
+                </button>
+            </div>
+
+            <form id="initialRegistrationForm" action="https://beta.thebrazilianhub.com/en/register" method="POST" data-parsley-validate>
+                <input type="hidden" name="_token" value="4RgEdTXwu01Ce760bkk3665TKyYwL3m19IrXxGB0" autocomplete="off">                <input type="hidden" name="user_type" id="userTypeInput" value="investor">
+
+                <!-- Investor Section -->
+                <div class="investor-section" id="investorSection">
+                    <div class="form-group">
+                        <label class="form-label required">Investor Type</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="investor_type" value="investor_seeking_opportunity" class="radio-input" data-parsley-required="true" data-parsley-errors-container="#investorTypeError">
+                                <div class="radio-content">
+                                    <div class="radio-header">
+                                        <i class="fas fa-search-dollar"></i>
+                                        <span class="radio-title">Investor</span>
+                                    </div>
+                                    <p class="radio-desc">Looking for investment opportunities</p>
+                                </div>
+                                <div class="radio-check">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </label>
+
+                            <label class="radio-card">
+                                <input type="radio" name="investor_type" value="investment_opportunity_provider" class="radio-input" data-parsley-errors-container="#investorTypeError">
+                                <div class="radio-content">
+                                    <div class="radio-header">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span class="radio-title">Opportunity Provider</span>
+                                    </div>
+                                    <p class="radio-desc">Offering investment opportunities</p>
+                                </div>
+                                <div class="radio-check">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </label>
+                        </div>
+                        <div id="investorTypeError"></div>
+                    </div>
+
+                    <div class="form-group" id="investorSubTypeGroup" style="display: none;">
+                        <label class="form-label required">Entity Type</label>
+                        <div class="sub-type-buttons">
+                            <label class="sub-type-btn">
+                                <input type="radio" name="investor_sub_type" value="individual" class="sub-type-input" data-parsley-errors-container="#entityTypeError">
+                                <div class="sub-type-content">
+                                    <i class="fas fa-user"></i>
+                                    <span>Individual</span>
+                                </div>
+                            </label>
+
+                            <label class="sub-type-btn">
+                                <input type="radio" name="investor_sub_type" value="company" class="sub-type-input" data-parsley-errors-container="#entityTypeError">
+                                <div class="sub-type-content">
+                                    <i class="fas fa-building"></i>
+                                    <span>Company</span>
+                                </div>
+                            </label>
+
+                            <label class="sub-type-btn">
+                                <input type="radio" name="investor_sub_type" value="government" class="sub-type-input" data-parsley-errors-container="#entityTypeError">
+                                <div class="sub-type-content">
+                                    <i class="fas fa-landmark"></i>
+                                    <span>Government</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div id="entityTypeError"></div>
+                    </div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required">Full Name</label>
+                        <input type="text" class="form-control" name="full_name" placeholder="Enter your full name" required data-parsley-minlength="2" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label required">Email Address</label>
+                        <input type="email" class="form-control" name="email" placeholder="you@company.com" required value="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Country</label>
+                        <select class="form-control" name="country">
+                            <option value="">Select country</option>
+                                                            <option value="US" >United States</option>
+                                                            <option value="CA" >Canada</option>
+                                                            <option value="UK" >United Kingdom</option>
+                                                            <option value="BR" >Brazil</option>
+                                                            <option value="AE" >United Arab Emirates</option>
+                                                            <option value="SA" >Saudi Arabia</option>
+                                                            <option value="EG" >Egypt</option>
+                                                    </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label required">Mobile Number</label>
+                        <input type="tel" class="form-control" name="mobile_number" placeholder="+1 (555) 000-0000" required value="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required">Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Minimum 8 characters" required data-parsley-minlength="8">
+                            <i class="fas fa-eye input-icon" onclick="togglePassword('password')"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label required">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" class="form-control" name="password_confirmation" placeholder="Re-enter password" required data-parsley-equalto="#password">
+                            <i class="fas fa-eye input-icon" onclick="togglePassword('password_confirmation')"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" class="checkbox-input" id="terms" name="terms_accepted" value="1" required>
+                    <label class="checkbox-label" for="terms">
+                        I agree to BRHUB's <a href="register.html#">Terms of Service</a> and <a href="register.html#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-user-plus" style="margin-right: 8px;"></i>Create Account
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
+
+<script>
+    // Global configuration
+    axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    // Hide preloader when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(() => {
+            document.getElementById('preloader').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('preloader').style.display = 'none';
+            }, 300);
+        }, 400);
+    });
+
+    // Enhanced notification system
+    function showNotification(message, type = 'success') {
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.innerHTML = `
+            <div class="d-flex align-items-center justify-content-between">
+                <span>${message}</span>
+                <button type="button" class="btn-close btn-close-white ms-3" onclick="this.parentElement.parentElement.remove()"></button>
+            </div>
+        `;
+
+        document.body.appendChild(notification);
+
+        requestAnimationFrame(() => {
+            setTimeout(() => notification.classList.add('show'), 10);
+        });
+
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => notification.remove(), 300);
+        }, 5000);
+    }
+
+    // Form submission helper with enhanced error handling
+    function submitForm(form, successCallback = null) {
+        const formData = new FormData(form);
+        const url = form.action;
+
+        // Show loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+        submitBtn.disabled = true;
+
+        axios.post(url, formData)
+            .then(response => {
+                if (response.data.success) {
+                    showNotification(response.data.message, 'success');
+
+                    // Update progress bar if provided
+                    if (response.data.progress) {
+                        updateProgressBar(response.data.progress);
+                    }
+
+                    // Custom success callback or redirect
+                    if (successCallback) {
+                        successCallback(response.data);
+                    } else if (response.data.redirect) {
+                        setTimeout(() => {
+                            window.location.href = response.data.redirect;
+                        }, 1200);
+                    }
+                } else {
+                    showNotification(response.data.message || 'An error occurred', 'error');
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+
+                if (error.response && error.response.data.errors) {
+                    // Handle validation errors
+                    const errors = error.response.data.errors;
+                    const firstError = Object.values(errors)[0][0];
+                    showNotification(firstError, 'error');
+
+                    // Show all errors
+                    Object.keys(errors).forEach(field => {
+                        const messages = errors[field];
+                        messages.forEach((message, index) => {
+                            if (index > 0) { // Skip first as it's already shown
+                                setTimeout(() => showNotification(message, 'error'), index * 100);
+                            }
+                        });
+                    });
+                } else {
+                    showNotification(error.response?.data?.message || 'An error occurred. Please try again.', 'error');
+                }
+
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+    }
+
+    // Progress bar update with smooth animation
+    function updateProgressBar(percentage) {
+        const progressBar = document.getElementById('progressBar');
+        if (progressBar) {
+            progressBar.style.width = percentage + '%';
+        }
+    }
+
+    // Show existing flash messages
+    
+    
+    
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Parsley
+            const parsleyInstance = $('#initialRegistrationForm').parsley({
+                errorClass: 'parsley-error',
+                successClass: 'parsley-success',
+                errorsWrapper: '<ul class="parsley-errors-list"></ul>',
+                errorTemplate: '<li></li>',
+                trigger: 'change'
+            });
+
+            // Tab switching
+            const tabs = document.querySelectorAll('.tab-btn');
+            const investorSection = document.getElementById('investorSection');
+            const userTypeInput = document.getElementById('userTypeInput');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const accountType = tab.dataset.type;
+                    userTypeInput.value = accountType;
+
+                    if (accountType === 'investor') {
+                        investorSection.style.display = 'block';
+                        $('input[name="investor_type"]').attr('data-parsley-required', 'true');
+                    } else {
+                        investorSection.style.display = 'none';
+                        $('input[name="investor_type"]').removeAttr('data-parsley-required');
+                        $('input[name="investor_sub_type"]').removeAttr('data-parsley-required');
+                        document.querySelectorAll('input[name="investor_type"]').forEach(input => input.checked = false);
+                        document.querySelectorAll('input[name="investor_sub_type"]').forEach(input => input.checked = false);
+                        document.getElementById('investorSubTypeGroup').style.display = 'none';
+                    }
+
+                    parsleyInstance.refresh();
+                });
+            });
+
+            // Show entity type when investor type is selected
+            const investorTypeInputs = document.querySelectorAll('input[name="investor_type"]');
+            const investorSubTypeGroup = document.getElementById('investorSubTypeGroup');
+
+            investorTypeInputs.forEach(input => {
+                input.addEventListener('change', () => {
+                    if (input.checked) {
+                        investorSubTypeGroup.style.display = 'block';
+                        $('input[name="investor_sub_type"]').attr('data-parsley-required', 'true');
+                        parsleyInstance.refresh();
+                    }
+                });
+            });
+
+            // Form submission
+            $('#initialRegistrationForm').on('submit', function(e) {
+                e.preventDefault();
+
+                if (!parsleyInstance.isValid()) {
+                    const firstError = $('.parsley-error').first();
+                    if (firstError.length) {
+                        firstError[0].scrollIntoView({behavior: 'smooth', block: 'center'});
+                    }
+                    return;
+                }
+
+                const submitBtn = this.querySelector('.submit-btn');
+                const originalContent = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+                submitBtn.disabled = true;
+
+                const formData = new FormData(this);
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    method: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        if (response.success === true) {
+                            showNotification('Registration successful! Redirecting...', 'success');
+                            setTimeout(() => {
+                                window.location.href = response.redirect || 'https://beta.thebrazilianhub.com/en/register/success';
+                            }, 1500);
+                        }
+                    },
+                    error: function(xhr) {
+                        submitBtn.innerHTML = originalContent;
+                        submitBtn.disabled = false;
+
+                        if (xhr.status === 422) {
+                            const errors = xhr.responseJSON.errors;
+                            handleValidationErrors(errors);
+                            showNotification('Please fix the errors and try again.', 'error');
+                        } else {
+                            const message = xhr.responseJSON?.message || 'An error occurred. Please try again.';
+                            showNotification(message, 'error');
+                        }
+                    }
+                });
+            });
+
+            function handleValidationErrors(errors) {
+                $('.server-error').remove();
+                $('.is-invalid').removeClass('is-invalid');
+
+                Object.keys(errors).forEach(function(field) {
+                    const input = $(`[name="${field}"]`);
+                    const errorMessages = errors[field];
+
+                    if (input.length) {
+                        input.addClass('is-invalid');
+                        const errorList = $('<ul class="parsley-errors-list server-error"></ul>');
+                        errorMessages.forEach(function(message) {
+                            errorList.append(`<li>${message}</li>`);
+                        });
+
+                        if (input.parent().hasClass('input-wrapper')) {
+                            input.parent().after(errorList);
+                        } else {
+                            input.after(errorList);
+                        }
+
+                        if (Object.keys(errors)[0] === field) {
+                            $('html, body').animate({
+                                scrollTop: input.offset().top - 100
+                            }, 500);
+                        }
+                    }
+                });
+            }
+
+            function showNotification(message, type = 'success') {
+                const alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
+                const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+
+                const notification = $(`
+            <div class="alert ${alertClass} alert-dismissible fade show position-fixed top-0 end-0 m-3"
+                 style="z-index: 9999; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" role="alert">
+                <i class="fas ${icon}" style="margin-right: 8px;"></i>${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        `);
+
+                $('body').append(notification);
+                setTimeout(() => notification.alert('close'), 5000);
+            }
+
+            // Real-time validation
+            const inputs = document.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    $(this).parsley().validate();
+                    $(this).removeClass('is-invalid');
+                    $(this).next('.server-error').remove();
+                });
+
+                input.addEventListener('input', function() {
+                    if (this.classList.contains('parsley-error')) {
+                        $(this).parsley().validate();
+                    }
+                    $(this).removeClass('is-invalid');
+                    $(this).next('.server-error').remove();
+                });
+            });
+        });
+
+        // Password toggle function
+        function togglePassword(id) {
+            const input = document.querySelector(`[name="${id}"]`);
+            const icon = input.nextElementSibling;
+
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</body>
+</html>

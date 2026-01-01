@@ -1,0 +1,3335 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>How to Export</title>
+
+    <meta name="csrf-token" content="4RgEdTXwu01Ce760bkk3665TKyYwL3m19IrXxGB0">
+
+    <link rel="Site Icon" href="https://beta.thebrazilianhub.com/assets/front/images/logo.png" />
+
+    <link rel="stylesheet" href="../assets/front/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/front/css/aos.css" />
+    <link rel="stylesheet" href="../assets/front/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/swiper.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/v1/style.css" />
+
+
+
+
+
+    
+    <style>
+        /* Premium Compact Design Enhancements */
+        :root {
+            --primary-green: #058C4C;
+            --primary-green-light: #05B64C;
+            --secondary-blue: #00235C;
+            --text-dark: #1B1C1B;
+            --text-gray: #343C57;
+            --text-light: #606060;
+            --border-color: #E8E8E8;
+            --bg-light: #F8F8F8;
+            --white: #FFFFFF;
+        }
+
+        /* Compact Spacing System */
+        .compact-section {
+            padding: 60px 0;
+        }
+
+        @media (max-width: 991px) {
+            .compact-section {
+                padding: 40px 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .compact-section {
+                padding: 30px 0;
+            }
+        }
+
+        /* Hero Section - Compact & Premium */
+        .hero_export_section {
+            background: linear-gradient(135deg, rgba(0, 35, 92, 0.03) 0%, rgba(5, 140, 76, 0.02) 100%);
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero_export_section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 35, 92, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero_content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero_badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: linear-gradient(135deg, #00235C 0%, #002d75 100%);
+            border-radius: 20px;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 35, 92, 0.2);
+        }
+
+        .hero_title {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero_title span {
+            color: var(--secondary-blue);
+        }
+
+        .hero_subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .hero_description {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        /* Benefits Grid - Compact */
+        .benefits_grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 991px) {
+            .benefits_grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .benefits_grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .benefit_card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit_card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary-blue), #003d9c);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit_card:hover {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 8px 24px rgba(0, 35, 92, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .benefit_card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit_icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, rgba(0, 35, 92, 0.1) 0%, rgba(0, 45, 117, 0.1) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--secondary-blue);
+            font-size: 20px;
+        }
+
+        .benefit_card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .benefit_card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Steps Section - Compact */
+        .steps_wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto 0;
+        }
+
+        .step_card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px 32px;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .step_card:hover {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 8px 24px rgba(0, 35, 92, 0.1);
+        }
+
+        .step_number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #00235C 0%, #002d75 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            font-weight: 700;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 35, 92, 0.25);
+        }
+
+        .step_content h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .step_content p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Solutions Grid - Premium Cards */
+        .solutions_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 991px) {
+            .solutions_grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .solutions_grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .solution_card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .solution_card:hover {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 8px 24px rgba(0, 35, 92, 0.12);
+            transform: translateY(-4px);
+            text-decoration: none;
+        }
+
+        .solution_header {
+            padding: 28px 24px;
+            background: linear-gradient(135deg, rgba(0, 35, 92, 0.05) 0%, rgba(0, 45, 117, 0.03) 100%);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .solution_icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #00235C 0%, #002d75 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .solution_header h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .solution_body {
+            padding: 20px 24px;
+        }
+
+        .solution_body p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* FAQ Accordion - Compact */
+        .faq_wrapper {
+            max-width: 900px;
+            margin: 40px auto 0;
+        }
+
+        .faq_item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq_item:hover {
+            border-color: var(--secondary-blue);
+        }
+
+        .faq_question {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            background: white;
+            transition: background 0.3s ease;
+        }
+
+        .faq_question h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        .faq_icon {
+            width: 24px;
+            height: 24px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-blue);
+            font-size: 14px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .faq_item.active .faq_question {
+            background: linear-gradient(135deg, rgba(0, 35, 92, 0.05) 0%, rgba(0, 45, 117, 0.03) 100%);
+        }
+
+        .faq_item.active .faq_icon {
+            background: var(--secondary-blue);
+            color: white;
+            transform: rotate(180deg);
+        }
+
+        .faq_answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq_answer_content {
+            padding: 0 24px 20px;
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .faq_item.active .faq_answer {
+            max-height: 500px;
+        }
+
+        /* Section Headers - Compact */
+        .section_header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section_badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: linear-gradient(135deg, rgba(0, 35, 92, 0.1) 0%, rgba(0, 45, 117, 0.1) 100%);
+            border-radius: 16px;
+            color: var(--secondary-blue);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section_title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .section_title span {
+            color: var(--secondary-blue);
+        }
+
+        .section_description {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 991px) {
+            .section_title {
+                font-size: 28px;
+            }
+
+            .hero_title {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section_title {
+                font-size: 24px;
+            }
+
+            .hero_title {
+                font-size: 26px;
+            }
+
+            .hero_subtitle {
+                font-size: 18px;
+            }
+        }
+
+        /* CTA Section */
+        .cta_section {
+            background: linear-gradient(135deg, #00235C 0%, #002d75 100%);
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta_section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .cta_content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta_title {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .cta_description {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 24px;
+        }
+
+        /* Responsive Image Wrapper */
+        .hero_image_wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 35, 92, 0.15);
+            border: 1px solid var(--border-color);
+        }
+
+        .hero_image_wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Premium Stats */
+        .stats_wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 767px) {
+            .stats_wrapper {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .stat_card {
+            text-align: center;
+            padding: 24px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .stat_card:hover {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 8px 24px rgba(0, 35, 92, 0.1);
+        }
+
+        .stat_number {
+            font-size: 38px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00235C 0%, #002d75 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat_label {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background: linear-gradient(135deg, rgba(0,35,92,0.95) 0%, rgba(5,140,76,0.95) 100%),
+            url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1920') center/cover;
+            padding: 60px 0 40px;
+            position: relative;
+            overflow: hidden;
+            padding-top: 12em;
+        }
+
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,35,92,0.1) 0%, rgba(5,140,76,0.1) 100%);
+        }
+
+        .page-banner .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-title {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .page-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 15px;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        /* Export-specific button styles */
+        .hero_link__export {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 32px;
+            background: linear-gradient(135deg, #00235C 0%, #002d75 100%);
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: inset 0px 1px 0px rgba(255,255,255,0.16), 0px 1px 2px -1px rgba(9,6,63,0.4);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero_link__export:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 35, 92, 0.3);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .main_link__export {
+            border-radius: 8px;
+            background: radial-gradient(27.92% 100% at 50% 0%, rgba(255,255,255,0.24) 0%, rgba(0,35,92,0.24) 100%), #00235C;
+            box-shadow: 0 1px 2px -1px rgba(9,6,63,0.4), 0 1px 0 0 rgba(255,255,255,0.16) inset;
+            color: #FFF;
+            text-shadow: 0 0.4px 0.2px rgba(0,0,0,0.12);
+            font-size: 18px;
+            font-weight: 600;
+            width: fit-content;
+            height: 54px;
+            padding: 12px 32px;
+            min-width: 250px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .main_link__export:hover {
+            opacity: 0.9;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+
+
+
+
+    <style>
+        /**
+ * Premium Global Search Modal - Light Theme
+ * Compact, Professional, International Design
+ */
+
+        /* ===========================
+           Search Button in Header
+           =========================== */
+
+        .search_button__ {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(5, 140, 76, 0.08) 0%, rgba(5, 140, 76, 0.12) 100%);
+            border-radius: 10px;
+            border: none;
+            color: #058C4C;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-inline-start: 10px;
+            box-shadow: 0 2px 4px rgba(5, 140, 76, 0.08);
+        }
+
+        .search_button__:hover {
+            background: linear-gradient(135deg, #058C4C 0%, #066f3f 100%);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(5, 140, 76, 0.25);
+        }
+
+        .search_button__:active {
+            transform: translateY(0);
+        }
+
+        /* ===========================
+           Modal Base - Premium Container
+           =========================== */
+
+        .global-search-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .global-search-modal.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .search-modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .search-modal-container {
+            position: relative;
+            max-width: 1400px;
+            width: 94%;
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+            max-height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            animation: slideDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .search-modal-container {
+                max-width: 96%;
+                width: 96%;
+                margin: 30px auto;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-container {
+                width: 98%;
+                margin: 15px auto;
+                max-height: calc(100vh - 30px);
+                border-radius: 16px;
+            }
+        }
+
+        /* ===========================
+           Modal Header - Compact Premium
+           =========================== */
+
+        .search-modal-header {
+            padding: 20px 28px 18px;
+            border-bottom: 1px solid #E5E7EB;
+            background: linear-gradient(to bottom, #FAFBFC 0%, #FFFFFF 100%);
+            flex-shrink: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-header {
+                padding: 16px 16px 14px;
+            }
+        }
+
+        .search-modal-close {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(17, 24, 39, 0.05);
+            color: #6B7280;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        html[dir="rtl"] .search-modal-close {
+            right: auto;
+            left: 18px;
+        }
+
+        .search-modal-close:hover {
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+            transform: rotate(90deg);
+        }
+
+        /* ===========================
+           Search Input - Premium Compact
+           =========================== */
+
+        .search-input-wrapper {
+            position: relative;
+            margin-bottom: 14px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9CA3AF;
+            pointer-events: none;
+            width: 20px;
+            height: 20px;
+        }
+
+        html[dir="rtl"] .search-icon {
+            left: auto;
+            right: 16px;
+        }
+
+        .search-modal-input {
+            width: 100%;
+            height: 52px;
+            padding: 0 52px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            background: #F9FAFB;
+            font-weight: 400;
+            color: #111827;
+        }
+
+        .search-modal-input::placeholder {
+            color: #9CA3AF;
+        }
+
+        .search-modal-input:focus {
+            outline: none;
+            border-color: #058C4C;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(5, 140, 76, 0.08);
+        }
+
+        .search-clear-btn {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            color: #9CA3AF;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        html[dir="rtl"] .search-clear-btn {
+            right: auto;
+            left: 14px;
+        }
+
+        .search-clear-btn:hover {
+            color: #EF4444;
+            background: rgba(239, 68, 68, 0.08);
+        }
+
+        /* ===========================
+           Controls - Compact Layout
+           =========================== */
+
+        .search-controls-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-controls-wrapper {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .search-filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex: 1;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-filter-tabs {
+                width: 100%;
+            }
+        }
+
+        .search-tab {
+            padding: 8px 18px;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 10px;
+            background: #FFFFFF;
+            color: #6B7280;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex: 1;
+            text-align: center;
+        }
+
+        .search-tab:hover {
+            border-color: #058C4C;
+            color: #058C4C;
+            background: rgba(5, 140, 76, 0.04);
+        }
+
+        .search-tab.active {
+            background: linear-gradient(135deg, #058C4C 0%, #066f3f 100%);
+            color: #FFFFFF;
+            border-color: #058C4C;
+            box-shadow: 0 2px 8px rgba(5, 140, 76, 0.2);
+        }
+
+        .advanced-search-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 10px;
+            color: #6B7280;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .advanced-search-toggle {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .advanced-search-toggle:hover {
+            border-color: #058C4C;
+            color: #058C4C;
+            background: rgba(5, 140, 76, 0.04);
+        }
+
+        .advanced-search-toggle.active {
+            background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+            color: #FFFFFF;
+            border-color: #111827;
+        }
+
+        .advanced-search-toggle.active .toggle-arrow {
+            transform: rotate(180deg);
+        }
+
+        .toggle-arrow {
+            transition: transform 0.2s ease;
+        }
+
+        /* ===========================
+           Advanced Panel - Compact Premium
+           =========================== */
+
+        .advanced-search-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #F9FAFB;
+            border-bottom: 1px solid transparent;
+            flex-shrink: 0;
+        }
+
+        .advanced-search-panel.active {
+            max-height: 600px;
+            border-bottom-color: #E5E7EB;
+            overflow-y: auto;
+        }
+
+        /* Custom scrollbar for advanced panel */
+        .advanced-search-panel.active::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .advanced-search-panel.active::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .advanced-search-panel.active::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 3px;
+        }
+
+        .advanced-search-content {
+            padding: 18px 28px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .advanced-search-content {
+                padding: 14px 16px;
+            }
+        }
+
+        /* ===========================
+           Filter Sections - Compact
+           =========================== */
+
+        .filter-section {
+            margin-bottom: 16px;
+            padding: 16px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .filter-section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .filter-section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #F3F4F6;
+        }
+
+        .filter-section-title i {
+            color: #058C4C;
+            font-size: 16px;
+        }
+
+        .filter-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .filter-row:last-child {
+            margin-bottom: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .filter-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        /* ===========================
+           Filter Inputs - Premium Compact
+           =========================== */
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #6B7280;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .filter-select,
+        .filter-input {
+            height: 40px;
+            padding: 0 12px;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #FFFFFF;
+            transition: all 0.2s ease;
+            color: #111827;
+        }
+
+        .filter-select:focus,
+        .filter-input:focus {
+            outline: none;
+            border-color: #058C4C;
+            box-shadow: 0 0 0 3px rgba(5, 140, 76, 0.08);
+        }
+
+        .filter-select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 12px;
+            padding-right: 32px;
+            appearance: none;
+        }
+
+        html[dir="rtl"] .filter-select {
+            background-position: left 10px center;
+            padding-right: 12px;
+            padding-left: 32px;
+        }
+
+        .price-range-inputs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-range-inputs .filter-input {
+            flex: 1;
+        }
+
+        .range-separator {
+            color: #9CA3AF;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* Checkbox */
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        .filter-checkbox {
+            display: none;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #374151;
+            user-select: none;
+            font-weight: 500;
+        }
+
+        .checkbox-label svg {
+            width: 20px;
+            height: 20px;
+            padding: 2px;
+            border: 2px solid #D1D5DB;
+            border-radius: 6px;
+            background: #FFFFFF;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-label svg path {
+            stroke: transparent;
+            transition: stroke 0.2s ease;
+        }
+
+        .filter-checkbox:checked + .checkbox-label svg {
+            background: #058C4C;
+            border-color: #058C4C;
+        }
+
+        .filter-checkbox:checked + .checkbox-label svg path {
+            stroke: #FFFFFF;
+        }
+
+        .checkbox-label:hover svg {
+            border-color: #058C4C;
+        }
+
+        /* ===========================
+           Filter Actions - Compact
+           =========================== */
+
+        .filter-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .filter-actions {
+                flex-direction: column-reverse;
+            }
+        }
+
+        .filter-action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            white-space: nowrap;
+        }
+
+        .filter-action-btn.clear-filters {
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            color: #6B7280;
+        }
+
+        .filter-action-btn.clear-filters:hover {
+            background: #F9FAFB;
+            border-color: #9CA3AF;
+            color: #374151;
+        }
+
+        .filter-action-btn.apply-filters {
+            background: linear-gradient(135deg, #058C4C 0%, #066f3f 100%);
+            color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(5, 140, 76, 0.25);
+        }
+
+        .filter-action-btn.apply-filters:hover {
+            box-shadow: 0 4px 12px rgba(5, 140, 76, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .filter-count {
+            background: rgba(255, 255, 255, 0.25);
+            color: #FFFFFF;
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* ===========================
+           Active Filters Bar - Compact
+           =========================== */
+
+        .active-filters-bar {
+            padding: 12px 28px;
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            display: none;
+            flex-shrink: 0;
+        }
+
+        .active-filters-bar.active {
+            display: block;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .active-filters-bar {
+                padding: 10px 16px;
+            }
+        }
+
+        .active-filters-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .active-filters-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #6B7280;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .active-filters-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .active-filter-tag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            background: rgba(5, 140, 76, 0.08);
+            border: 1px solid rgba(5, 140, 76, 0.2);
+            border-radius: 8px;
+            font-size: 12px;
+            color: #058C4C;
+            font-weight: 500;
+        }
+
+        .active-filter-tag button {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #058C4C;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s ease;
+            line-height: 1;
+        }
+
+        .active-filter-tag button:hover {
+            color: #EF4444;
+        }
+
+        .clear-all-filters-btn {
+            padding: 5px 12px;
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #6B7280;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .clear-all-filters-btn:hover {
+            background: rgba(239, 68, 68, 0.08);
+            border-color: #EF4444;
+            color: #EF4444;
+        }
+
+        /* ===========================
+           Modal Body - Optimized Scroll
+           =========================== */
+
+        .search-modal-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 28px;
+            min-height: 300px;
+            background: #FAFBFC;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-body {
+                padding: 16px 16px;
+            }
+        }
+
+        /* Premium Scrollbar */
+        .search-modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .search-modal-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .search-modal-body::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 4px;
+        }
+
+        .search-modal-body::-webkit-scrollbar-thumb:hover {
+            background: #9CA3AF;
+        }
+
+        /* ===========================
+           Loading States
+           =========================== */
+
+        .search-preloader {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .search-preloader.active {
+            display: flex;
+        }
+
+        .search-loader {
+            text-align: center;
+        }
+
+        /*.loader-spinner {*/
+        /*    width: 48px;*/
+        /*    height: 48px;*/
+        /*    border: 4px solid #E5E7EB;*/
+        /*    border-top-color: #058C4C;*/
+        /*    border-radius: 50%;*/
+        /*    animation: spin 0.8s linear infinite;*/
+        /*    margin: 0 auto 16px;*/
+        /*}*/
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .search-loader p {
+            color: #6B7280;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* ===========================
+           Empty & No Results - Premium
+           =========================== */
+
+        .search-empty-state,
+        .search-no-results {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            min-height: 300px;
+        }
+
+        .search-empty-state.active,
+        .search-no-results.active {
+            display: flex;
+        }
+
+        .search-empty-state svg,
+        .search-no-results svg {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .search-empty-state h4,
+        .search-no-results h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .search-empty-state p,
+        .search-no-results p {
+            font-size: 14px;
+            color: #6B7280;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+
+        /* ===========================
+           Results Container
+           =========================== */
+
+        .search-results-container {
+            display: none;
+        }
+
+        .search-results-container.active {
+            display: block;
+        }
+
+        .results-header {
+            margin-bottom: 16px;
+            padding: 12px 16px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .results-info {
+            font-size: 13px;
+            color: #6B7280;
+            margin: 0;
+        }
+
+        .results-info span {
+            font-weight: 700;
+            color: #058C4C;
+        }
+
+        .search-section {
+            margin-bottom: 20px;
+        }
+
+        .search-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .search-section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 14px;
+            padding: 10px 16px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .search-section-title i {
+            color: #058C4C;
+            font-size: 18px;
+        }
+
+        .results-count {
+            margin-left: auto;
+            background: rgba(5, 140, 76, 0.1);
+            color: #058C4C;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ===========================
+           HORIZONTAL CARDS - Premium Compact
+           =========================== */
+
+        .search-items-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .search-result-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            padding: 12px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            animation: fadeInUp 0.3s ease forwards;
+            opacity: 0;
+            min-height: 88px;
+        }
+
+        .search-result-card:hover {
+            transform: translateX(4px);
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.06),
+                0 0 0 1px #058C4C;
+            border-color: #058C4C;
+            background: #FFFFFF;
+        }
+
+        .search-result-image {
+            width: 64px;
+            height: 64px;
+            min-width: 64px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #F3F4F6;
+            flex-shrink: 0;
+        }
+
+        .search-result-content {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .search-result-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .search-result-description {
+            font-size: 13px;
+            color: #6B7280;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .search-result-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            flex-shrink: 0;
+            min-width: 90px;
+        }
+
+        .search-result-badge {
+            background: linear-gradient(135deg, rgba(5, 140, 76, 0.1) 0%, rgba(5, 140, 76, 0.06) 100%);
+            color: #058C4C;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .search-result-info {
+            font-size: 12px;
+            color: #9CA3AF;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .search-result-card[href*="investment"] .search-result-badge {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.1) 0%, rgba(17, 24, 39, 0.06) 100%);
+            color: #111827;
+        }
+
+        .search-result-roi {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            color: #FFFFFF;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 11px;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Stagger animation */
+        .search-result-card:nth-child(1) { animation-delay: 0.03s; }
+        .search-result-card:nth-child(2) { animation-delay: 0.06s; }
+        .search-result-card:nth-child(3) { animation-delay: 0.09s; }
+        .search-result-card:nth-child(4) { animation-delay: 0.12s; }
+        .search-result-card:nth-child(5) { animation-delay: 0.15s; }
+        .search-result-card:nth-child(6) { animation-delay: 0.18s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===========================
+           Responsive - Mobile Optimized
+           =========================== */
+
+        @media only screen and (max-width: 768px) {
+            .search-result-card {
+                padding: 10px;
+                gap: 12px;
+                min-height: 76px;
+            }
+
+            .search-result-image {
+                width: 56px;
+                height: 56px;
+                min-width: 56px;
+            }
+
+            .search-result-title {
+                font-size: 14px;
+            }
+
+            .search-result-description {
+                font-size: 12px;
+                -webkit-line-clamp: 1;
+            }
+
+            .search-result-meta {
+                min-width: 75px;
+            }
+
+            .search-result-badge {
+                font-size: 9px;
+                padding: 3px 8px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .search-result-card {
+                flex-wrap: wrap;
+            }
+
+            .search-result-content {
+                order: 2;
+                width: calc(100% - 68px);
+            }
+
+            .search-result-meta {
+                order: 3;
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                min-width: 100%;
+            }
+        }
+
+        /* ===========================
+           Modal Footer - Compact
+           =========================== */
+
+        .search-modal-footer {
+            padding: 16px 28px;
+            border-top: 1px solid #E5E7EB;
+            background: #FAFBFC;
+            flex-shrink: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-footer {
+                padding: 14px 16px;
+            }
+        }
+
+        .footer-label {
+            font-size: 12px;
+            color: #6B7280;
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .popular-searches {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .popular-tag {
+            padding: 6px 14px;
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #6B7280;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .popular-tag:hover {
+            background: rgba(5, 140, 76, 0.06);
+            border-color: #058C4C;
+            color: #058C4C;
+            transform: translateY(-1px);
+        }
+
+        /* ===========================
+           Animations
+           =========================== */
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ===========================
+           Accessibility
+           =========================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            .global-search-modal,
+            .search-modal-container,
+            .search-result-card,
+            .advanced-search-panel {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        .search-modal-input:focus,
+        .search-tab:focus,
+        .popular-tag:focus,
+        .search-result-card:focus,
+        .filter-select:focus,
+        .filter-input:focus {
+            outline: 2px solid #058C4C;
+            outline-offset: 2px;
+        }
+
+        /* ===========================
+           RTL Support
+           =========================== */
+
+        html[dir="rtl"] .search-result-card:hover {
+            transform: translateX(-4px);
+        }
+
+        html[dir="rtl"] .search-result-meta {
+            align-items: flex-start;
+        }
+
+        /* ===========================
+           Hide/Show Sections
+           =========================== */
+
+        .product-filters,
+        .investment-filters {
+            display: none;
+        }
+
+        .product-filters.active,
+        .investment-filters.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* ===========================
+           Print Styles
+           =========================== */
+
+        @media print {
+            .global-search-modal {
+                display: none !important;
+            }
+        }
+
+
+        .nav-om .nav-list-om{
+            align-items: center !important;
+        }
+
+        .company_card__ .title__ {
+            color: #111;
+            font-size: 16px !important;
+            font-weight: 600;
+        }
+
+
+    </style>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="preloader">
+    <img src="../assets/front/images/logo.jpg" alt="">
+    <div class="loader"></div>
+</div>
+
+<!-- Start Header Section -->
+
+<header class="main_header__">
+    <div class="fixed_header__ active_menu__">
+        <div class="container">
+            <div class="header_content__">
+                <a class="header_logo__" href="../home.html">
+                    <figure class="figure__">
+                        <img src="../assets/front/images/logo.jpg" alt="BrHub"/>
+                    </figure>
+                </a>
+
+                <nav class="nav-om" id="navbar-menu-om">
+                    <button class="close-button__"></button>
+
+                    <figure class="figure__ nav_logo__">
+                        <img src="../assets/front/images/logo.jpg" alt="BrHub"/>
+                    </figure>
+
+                    <ul class="nav-list-om list-unstyled">
+                        <li class="header_list_item__ ">
+                            <a href="../home.html">Home</a>
+                        </li>
+                        <li class="header_list_item__ ">
+                            <a href="about-us.html">About Us</a>
+                        </li>
+
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        <li class="header_list_item__ ">
+                            <a href="../home.html#plans-section">Plans &amp; Services</a>
+                        </li>
+                        
+
+                        
+                        
+                        
+                        
+
+
+
+
+                        <button class="search_button__" id="searchTrigger">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"/>
+                                <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+
+                        <li class="header_list_item__ " style="font-style: italic; font-weight: 400;">
+                            <a href="auth/login.html" class="link__ hero_link__"
+                               style="display: flex !important; color: white; width: 110px !important;">
+
+                                                                    JOIN NOW
+                                
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+
+                    <ul class="toolbar_options__ list-unstyled mb-0">
+                        <li class="block__ header_links_block__">
+                            <div class="header_links__">
+                                <a href="how-to-export.html" class="">
+                                    Exporters
+                                    <img class="icon__" src="../assets/front/images/shapes/header_arrow.svg"
+                                         alt="">
+                                </a>
+                                <a href="how-to-import.html" class="">
+                                    Importers
+                                    <img class="icon__" src="../assets/front/images/shapes/header_arrow.svg"
+                                         alt="">
+                                </a>
+                                
+                                
+                                
+                                
+                                <a href="how-to-invest.html" class="">
+                                    Investment
+                                    <img class="icon__" src="../assets/front/images/shapes/header_arrow.svg"
+                                         alt="">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <li class="header_list_item__ me-3" style="margin: 0px 0.5em;">
+
+
+                    <div class="custom_dropdown__" data-dir="bottom">
+                        <button class="button__ dropdown_button__ lang_link__">
+                                                            English
+                            
+                            <img src="../assets/front/images/shapes/arrow_down.svg" alt="">
+                        </button>
+
+                        <div class="dropdown_menu__">
+                            <ul>
+                                                                    <li>
+                                        <a class="link__ modify__">
+                                            <div class="lang d-flex" data-value="en"
+                                                 onclick="window.location.href='https://beta.thebrazilianhub.com/en/how-to-export'">
+
+                                                <i class="flag-icon flag-icon-us"></i>
+
+                                                <span class="lang-txt">
+                                                English
+                                            </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a class="link__ modify__">
+                                            <div class="lang d-flex" data-value="pt"
+                                                 onclick="window.location.href='https://beta.thebrazilianhub.com/pt/how-to-export'">
+
+                                                <i class="flag-icon flag-icon-pt"></i>
+
+                                                <span class="lang-txt">
+                                                português
+                                            </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a class="link__ modify__">
+                                            <div class="lang d-flex" data-value="ar"
+                                                 onclick="window.location.href='https://beta.thebrazilianhub.com/ar/how-to-export'">
+
+                                                <i class="flag-icon flag-icon-sa"></i>
+
+                                                <span class="lang-txt">
+                                                العربية
+                                            </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+
+
+                
+                <button class="menu_button__ button__" id="menu-butt-activ-om">
+                    <svg aria-hidden="true"
+                         focusable="false"
+                         data-prefix="fas"
+                         data-icon="bars"
+                         class="svg-inline--fa fa-bars fa-w-14"
+                         role="img"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
+</header>
+
+
+    <!-- Categories cached at: 2026-01-01 12:37:21 -->
+
+<!-- End Header Section -->
+
+<main class="home_page__">
+
+    
+    <div class="preloader">
+        <img src="https://beta.thebrazilianhub.com/assets/images/logo.jpg" alt="">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1 class="page-title">HOW TO EXPORT</h1>
+            <p class="page-subtitle">Your gateway to global markets - Connect with international buyers and expand your business worldwide.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero_export_section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="hero_content">
+                            <div class="hero_badge">
+                                <i class="fas fa-rocket"></i>
+                                <span>Export Growth Platform</span>
+                            </div>
+                            <h1 class="hero_title">
+                                HOW TO <span>EXPORT PRODUCTS</span> TO INTERNATIONAL BUYERS
+                            </h1>
+                            <p class="hero_subtitle">
+                                The largest B2B marketplace connecting exporters with qualified buyers across 150+ countries.
+                            </p>
+                            <p class="hero_description">
+                                For companies ready to expand globally, we provide the tools and connections to reach international markets. Our AI-powered platform matches your products with serious buyers actively searching for suppliers like you.
+                            </p>
+                            <p class="hero_description">
+                                Join thousands of successful exporters who have expanded their reach and grown their business through our platform — completely simple to start.
+                            </p>
+                            <a href="auth/login.html" class="hero_link__export">
+                                <span>Start Exporting!</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero_image_wrapper">
+                            <img src="../assets/front/images/export-banner.jpeg"
+                                 alt="Export Business">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="stats_wrapper">
+                    <div class="stat_card">
+                        <div class="stat_number">50K+</div>
+                        <div class="stat_label">Active Buyers</div>
+                    </div>
+                    <div class="stat_card">
+                        <div class="stat_number">150+</div>
+                        <div class="stat_label">Target Markets</div>
+                    </div>
+                    <div class="stat_card">
+                        <div class="stat_number">24/7</div>
+                        <div class="stat_label">Lead Distribution</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="compact-section">
+            <div class="container">
+                <div class="section_header">
+                    <div class="section_badge">Key Advantages</div>
+                    <h2 class="section_title">
+                        Why choose us for <span>EXPORTING</span> your products
+                    </h2>
+                </div>
+
+                <div class="benefits_grid">
+                    <div class="benefit_card">
+                        <div class="benefit_icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>GLOBAL REACH</h3>
+                        <p>Access buyers from 150+ countries actively searching for suppliers. Your products are visible to qualified importers worldwide.</p>
+                    </div>
+
+                    <div class="benefit_card">
+                        <div class="benefit_icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI-POWERED MATCHING</h3>
+                        <p>Our intelligent algorithm automatically matches your products with relevant buyer requests and RFQs in real-time.</p>
+                    </div>
+
+                    <div class="benefit_card">
+                        <div class="benefit_icon">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <h3>VERIFIED BUYERS</h3>
+                        <p>Connect with serious, pre-qualified buyers. We verify company information to ensure you deal with legitimate businesses.</p>
+                    </div>
+
+                    <div class="benefit_card">
+                        <div class="benefit_icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>BUSINESS GROWTH</h3>
+                        <p>Track performance, analyze buyer interests, and optimize your export strategy with comprehensive analytics tools.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Steps Section -->
+        <section class="compact-section" style="background-color: var(--bg-light);">
+            <div class="container">
+                <div class="section_header">
+                    <div class="section_badge">Simple Process</div>
+                    <h2 class="section_title">
+                        <span>STEP BY STEP</span> TO START EXPORTING
+                    </h2>
+                    <p class="section_description">
+                        Get your products in front of international buyers in minutes with our streamlined process.
+                    </p>
+                </div>
+
+                <div class="steps_wrapper">
+                    <div class="step_card">
+                        <div class="step_number">1</div>
+                        <div class="step_content">
+                            <h3>Create your company profile</h3>
+                            <p>Register and build your exporter profile. Add your company information, certifications, and upload product catalogs to showcase what you offer to the global market.</p>
+                        </div>
+                    </div>
+
+                    <div class="step_card">
+                        <div class="step_number">2</div>
+                        <div class="step_content">
+                            <h3>Receive qualified buyer requests</h3>
+                            <p>Our AI algorithm automatically matches your products with buyer RFQs. You'll receive notifications when importers are looking for products you supply.</p>
+                        </div>
+                    </div>
+
+                    <div class="step_card">
+                        <div class="step_number">3</div>
+                        <div class="step_content">
+                            <h3>Send quotes and close deals</h3>
+                            <p>Respond to buyer inquiries, send professional quotes, and negotiate directly through our platform. All communications are translated automatically to your preferred language.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-top: 32px;">
+                    <a href="how-to-export.html#" class="hero_link__export">
+                        <span>Create Your Exporter Profile</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Section -->
+        <section class="compact-section">
+            <div class="container">
+                <div class="section_header">
+                    <div class="section_badge">Export Tools</div>
+                    <h2 class="section_title">
+                        <span>POWERFUL TOOLS</span> FOR EXPORTERS
+                    </h2>
+                    <p class="section_description">
+                        Everything you need to manage and grow your export business efficiently.
+                    </p>
+                </div>
+
+                <div class="solutions_grid">
+                    <a href="how-to-export.html#" class="solution_card">
+                        <div class="solution_header">
+                            <div class="solution_icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h3>Post Selling Offers</h3>
+                        </div>
+                        <div class="solution_body">
+                            <p>Publish your products and services to our marketplace. Your offers are distributed to thousands of active buyers searching for suppliers.</p>
+                        </div>
+                    </a>
+
+                    <a href="how-to-export.html#" class="solution_card">
+                        <div class="solution_header">
+                            <div class="solution_icon">
+                                <i class="fas fa-inbox"></i>
+                            </div>
+                            <h3>RFQ Notifications</h3>
+                        </div>
+                        <div class="solution_body">
+                            <p>Get instant alerts when buyers post requests for products you supply. Be the first to respond and win more business.</p>
+                        </div>
+                    </a>
+
+                    <a href="how-to-export.html#" class="solution_card">
+                        <div class="solution_header">
+                            <div class="solution_icon">
+                                <i class="fas fa-comments-dollar"></i>
+                            </div>
+                            <h3>Negotiation Hub</h3>
+                        </div>
+                        <div class="solution_body">
+                            <p>Manage all buyer communications in one place. Send quotes, negotiate terms, and track conversations with automatic translation.</p>
+                        </div>
+                    </a>
+
+                    <a href="how-to-export.html#" class="solution_card">
+                        <div class="solution_header">
+                            <div class="solution_icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h3>B2B Verified Seller</h3>
+                        </div>
+                        <div class="solution_body">
+                            <p>Get verified status to build trust with buyers. Verified sellers receive 3x more inquiries and close deals faster.</p>
+                        </div>
+                    </a>
+
+                    <a href="how-to-export.html#" class="solution_card">
+                        <div class="solution_header">
+                            <div class="solution_icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>Analytics Dashboard</h3>
+                        </div>
+                        <div class="solution_body">
+                            <p>Track profile views, quote requests, and buyer engagement. Use insights to optimize your product listings and pricing.</p>
+                        </div>
+                    </a>
+
+                    <a href="how-to-export.html#" class="solution_card">
+                        <div class="solution_header">
+                            <div class="solution_icon">
+                                <i class="fas fa-ad"></i>
+                            </div>
+                            <h3>Premium Promotion</h3>
+                        </div>
+                        <div class="solution_body">
+                            <p>Boost your visibility with premium placement. Get featured in search results and reach more qualified buyers faster.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="compact-section" style="background-color: var(--bg-light);">
+            <div class="container">
+                <div class="section_header">
+                    <div class="section_badge">FAQs</div>
+                    <h2 class="section_title">
+                        FREQUENTLY ASKED QUESTIONS ABOUT <span>EXPORTING</span>
+                    </h2>
+                </div>
+
+                <div class="faq_wrapper">
+                    <div class="faq_item active">
+                        <div class="faq_question">
+                            <h4>How do I start exporting through your platform?</h4>
+                            <div class="faq_icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq_answer">
+                            <div class="faq_answer_content">
+                                Starting is simple! Register your company, complete your exporter profile with product information and certifications, then start receiving buyer requests. Our AI will automatically match you with relevant RFQs from qualified importers worldwide.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq_item">
+                        <div class="faq_question">
+                            <h4>Is there a fee to use the export platform?</h4>
+                            <div class="faq_icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq_answer">
+                            <div class="faq_answer_content">
+                              You can create a profile, receive buyer requests, and respond to inquiries at no cost. We also offer premium plans with advanced features like priority placement, enhanced analytics, and dedicated support for exporters looking to maximize their reach.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq_item">
+                        <div class="faq_question">
+                            <h4>How do you verify buyers on the platform?</h4>
+                            <div class="faq_icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq_answer">
+                            <div class="faq_answer_content">
+                                We verify buyer companies through multiple checks including business registration, contact information validation, and trade history. Verified buyers display a badge on their profile. However, we recommend conducting your own due diligence and following safe trading practices.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq_item">
+                        <div class="faq_question">
+                            <h4>What types of products can I export through the platform?</h4>
+                            <div class="faq_icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq_answer">
+                            <div class="faq_answer_content">
+                                We support exporters across all legal product categories and industries - from agriculture and food products to machinery, textiles, electronics, and industrial supplies. As long as your products comply with international trade regulations, you can list them on our platform.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq_item">
+                        <div class="faq_question">
+                            <h4>How quickly can I start receiving buyer inquiries?</h4>
+                            <div class="faq_icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq_answer">
+                            <div class="faq_answer_content">
+                                Many exporters receive their first buyer inquiry within 24-48 hours of completing their profile. The key is providing detailed product information, competitive pricing, and quality certifications. Premium members with verified status typically receive inquiries 3x faster.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta_section">
+            <div class="container">
+                <div class="cta_content">
+                    <h2 class="cta_title">Ready to Expand Your Business Globally?</h2>
+                    <p class="cta_description">Join thousands of exporters connecting with international buyers every day</p>
+                    <a href="auth/login.html" class="main_link__export">
+                        <span>Create Your Exporter Profile Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+</main>
+
+
+<!-- Start Footer Section -->
+
+<footer class="footer_sec__">
+    <div class="container">
+        <div class="footer_content__">
+            <div class="footer_logo_wrapper__">
+                <a href="../home.html" class="footer_logo__">
+                    <img src="../assets/front/images/footer_logo.png" alt="BrHub"/>
+                </a>
+
+                <p class="footer_text__">Stay informed with product updates and expert insights.</p>
+            </div>
+
+            <div class="footer_links_sec__">
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">About Us</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="how-to-export.html#">Company overview</a></li>
+                        <li><a href="how-to-export.html#">How it works</a></li>
+                        <li><a href="how-to-export.html#">Press</a></li>
+                        <li><a href="how-to-export.html#">Partners</a></li>
+                        <li><a href="how-to-export.html#">Advertise with us</a></li>
+                        <li><a href="how-to-export.html#">Site map</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Services &amp; Tools</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="how-to-export.html#">Become Premium Member</a></li>
+                        <li><a href="how-to-export.html#">Become Premium Plus Member</a></li>
+                        <li><a href="how-to-export.html#">All our plans</a></li>
+                        <li><a href="how-to-export.html#">Premium PLUS + Google Ads</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Safety and Support</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="how-to-export.html#">Privacy policy</a></li>
+                        <li><a href="how-to-export.html#">Terms of use</a></li>
+                        <li><a href="how-to-export.html#">Help / FAQs</a></li>
+                        <li><a href="how-to-export.html#">Safe practices</a></li>
+                        <li><a href="how-to-export.html#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Importers</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="how-to-export.html#">How to Import on BRHub</a></li>
+                        <li><a href="how-to-export.html#">Create your buyer profile</a></li>
+                        <li><a href="how-to-export.html#">Post your buying request</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Leads Central</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="how-to-export.html#">Sales offers</a></li>
+                        <li><a href="how-to-export.html#">Requests for quotation</a></li>
+                        <li><a href="how-to-export.html#">Post your sales offer</a></li>
+                        <li><a href="how-to-export.html#">Post your request for quotation</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Exporters</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="how-to-export.html#">How to Export on BRHub</a></li>
+                        <li><a href="how-to-export.html#">Create your seller profile</a></li>
+                        <li><a href="how-to-export.html#">Post your buying request</a></li>
+                        <li><a href="how-to-export.html#">B2B verified seller</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="copyrights_sec__">
+        <div class="container">
+            <div class="copyrights_content___">
+                
+                <ul class="footer_socials__ list-unstyled">
+                    <li class="li__">
+                        <a href="how-to-export.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/telegram.svg"
+                                 alt="Telegram" width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="how-to-export.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/new-twitter.svg"
+                                 alt="Twitter"
+                                 width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="how-to-export.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/linkedin-02.svg"
+                                 alt="LinkedIn"
+                                 width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="how-to-export.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/dribbble.svg"
+                                 alt="Dribbble" width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="how-to-export.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/whatsapp.svg"
+                                 alt="WhatsApp" width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="how-to-export.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/youtube.svg"
+                                 alt="YouTube" width="19" height="19"/>
+                        </a>
+                    </li>
+                </ul>
+
+                
+                <p class="copyright_text__">BRHUB © 2025</p>
+
+                
+                <div class="custom_dropdown__" data-dir="top">
+                    <button class="button__ dropdown_button__ lang_link__">
+                                                    English
+                        
+                        <img src="../assets/front/images/shapes/arrow_down.svg" alt="">
+                    </button>
+
+                    <div class="dropdown_menu__">
+                        <ul>
+                                                            <li>
+                                    <a class="link__ modify__">
+                                        <div class="lang d-flex" data-value="en"
+                                             onclick="window.location.href='https://beta.thebrazilianhub.com/en/how-to-export'">
+
+                                            <i class="flag-icon flag-icon-us"></i>
+
+                                            <span class="lang-txt">
+                                                English
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a class="link__ modify__">
+                                        <div class="lang d-flex" data-value="pt"
+                                             onclick="window.location.href='https://beta.thebrazilianhub.com/pt/how-to-export'">
+
+                                            <i class="flag-icon flag-icon-pt"></i>
+
+                                            <span class="lang-txt">
+                                                português
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a class="link__ modify__">
+                                        <div class="lang d-flex" data-value="ar"
+                                             onclick="window.location.href='https://beta.thebrazilianhub.com/ar/how-to-export'">
+
+                                            <i class="flag-icon flag-icon-sa"></i>
+
+                                            <span class="lang-txt">
+                                                العربية
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- End Footer Section -->
+
+
+<!-- Global Search Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.tidio.co/ljw94hnyauat9xphyrymd9bklspxpn5k.js" async></script>
+
+<!-- Global Search Modal with Advanced Search -->
+<div class="global-search-modal" id="globalSearchModal">
+    <div class="search-modal-overlay" id="searchModalOverlay"></div>
+
+    <div class="search-modal-container">
+        <!-- Close Button -->
+        <button class="search-modal-close" id="searchModalClose" aria-label="front_home.clear_search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <!-- Search Header -->
+        <div class="search-modal-header">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input
+                    type="text"
+                    class="search-modal-input"
+                    id="globalSearchInput"
+                    placeholder="Search Products &amp; Investments"
+                    autocomplete="off"
+                    aria-label="front_home.search_placeholder"
+                />
+                <button class="search-clear-btn d-none" id="searchClearBtn" aria-label="front_home.clear_search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.2"/>
+                        <path d="M13 7L7 13M7 7L13 13" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Filter Tabs & Advanced Search Toggle -->
+            <div class="search-controls-wrapper">
+                <div class="search-filter-tabs">
+                    <button class="search-tab active" data-type="all">
+                        All
+                    </button>
+                    <button class="search-tab" data-type="products">
+                        Products
+                    </button>
+                    <button class="search-tab" data-type="investments">
+                        Investments
+                    </button>
+                </div>
+
+                <button class="advanced-search-toggle" id="advancedSearchToggle">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M2 4H16M5 9H13M8 14H10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Advanced Filters
+                    <svg class="toggle-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Advanced Search Filters Panel -->
+        <div class="advanced-search-panel" id="advancedSearchPanel">
+            <div class="advanced-search-content">
+                <!-- Common Filters -->
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label class="filter-label">Category</label>
+                        <select class="filter-select" id="filterCategory">
+                            <option value="">All Categories</option>
+                                                    </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">Country</label>
+                        <select class="filter-select" id="filterCountry">
+                            <option value="">All Countries</option>
+                            <option value="SA">Saudi Arabia</option>
+                            <option value="AE">United Arab Emirates</option>
+                            <option value="EG">Egypt</option>
+                            <option value="US">United States</option>
+                            <option value="GB">United Kingdom</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">Sort By</label>
+                        <select class="filter-select" id="filterSort">
+                            <option value="relevance">Relevance</option>
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="name_asc">Name (A-Z)</option>
+                            <option value="name_desc">Name (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Product-Specific Filters -->
+                <div class="product-filters filter-section" id="productFilters">
+                    <h4 class="filter-section-title">
+                        <i class="fas fa-box"></i>
+                        Product Filters
+                    </h4>
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label class="filter-label">Price Range</label>
+                            <div class="price-range-inputs">
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterPriceMin"
+                                    placeholder="Min Price"
+                                    min="0"
+                                />
+                                <span class="range-separator">-</span>
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterPriceMax"
+                                    placeholder="Max Price"
+                                    min="0"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Availability</label>
+                            <select class="filter-select" id="filterAvailability">
+                                <option value="">All</option>
+                                <option value="in_stock">In Stock</option>
+                                <option value="out_of_stock">Out of Stock</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Verified Only</label>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="filterVerified" class="filter-checkbox">
+                                <label for="filterVerified" class="checkbox-label">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M13.3333 4L6 11.3333L2.66666 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                    Verified Products Only
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment-Specific Filters -->
+                <div class="investment-filters filter-section" id="investmentFilters">
+                    <h4 class="filter-section-title">
+                        <i class="fas fa-chart-line"></i>
+                        Investment Filters
+                    </h4>
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label class="filter-label">Investment Range</label>
+                            <div class="price-range-inputs">
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterInvestmentMin"
+                                    placeholder="Min Investment"
+                                    min="0"
+                                />
+                                <span class="range-separator">-</span>
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterInvestmentMax"
+                                    placeholder="Max Investment"
+                                    min="0"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">ROI</label>
+                            <select class="filter-select" id="filterROI">
+                                <option value="">Any ROI</option>
+                                <option value="0-10">0% - 10%</option>
+                                <option value="10-20">10% - 20%</option>
+                                <option value="20-30">20% - 30%</option>
+                                <option value="30+">30%+</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Risk Level</label>
+                            <select class="filter-select" id="filterRisk">
+                                <option value="">All Levels</option>
+                                <option value="low">Low Risk</option>
+                                <option value="medium">Medium Risk</option>
+                                <option value="high">High Risk</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label class="filter-label">Timeline</label>
+                            <select class="filter-select" id="filterTimeline">
+                                <option value="">Any Timeline</option>
+                                <option value="0-12">Short Term (0-12 Mo.)</option>
+                                <option value="12-36">Medium Term (1-3 Years)</option>
+                                <option value="36+">Long Term (3+ Years)</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Opportunity Type</label>
+                            <select class="filter-select" id="filterOpportunityType">
+                                <option value="">All Types</option>
+                                <option value="equity">Equity</option>
+                                <option value="debt">Debt</option>
+                                <option value="hybrid">Hybrid</option>
+                                <option value="crowdfunding">Crowdfunding</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Status</label>
+                            <select class="filter-select" id="filterStatus">
+                                <option value="">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="fully_funded">Fully Funded</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Actions -->
+                <div class="filter-actions">
+                    <button class="filter-action-btn clear-filters" id="clearFiltersBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Clear Filters
+                    </button>
+                    <button class="filter-action-btn apply-filters" id="applyFiltersBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.3333 4L6 11.3333L2.66666 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Apply Filters
+                        <span class="filter-count d-none" id="filterCount"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Filters Display -->
+        <div class="active-filters-bar d-none" id="activeFiltersBar">
+            <div class="active-filters-wrapper">
+                <span class="active-filters-label">Active Filters:</span>
+                <div class="active-filters-list" id="activeFiltersList"></div>
+                <button class="clear-all-filters-btn" id="clearAllFiltersBtn">
+                    Clear All
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Results -->
+        <div class="search-modal-body" id="searchResults">
+            <!-- Pre-loader -->
+            <div class="search-preloader" id="searchPreloader">
+                <div class="search-loader">
+                    <div class="loader-spinner"></div>
+                    <p>front_home.searching...</p>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="search-empty-state active" id="searchEmptyState">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <circle cx="40" cy="40" r="40" fill="#F5F5F5"/>
+                    <path d="M35 50C42.1797 50 48 44.1797 48 37C48 29.8203 42.1797 24 35 24C27.8203 24 22 29.8203 22 37C22 44.1797 27.8203 50 35 50Z" stroke="#058C4C" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M58 58L45.65 45.65" stroke="#058C4C" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <h4>Start Searching</h4>
+                <p>Search for products and investment opportunities</p>
+            </div>
+
+            <!-- No Results -->
+            <div class="search-no-results d-none" id="searchNoResults">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <circle cx="40" cy="40" r="40" fill="#FFF3CD"/>
+                    <path d="M40 25V45M40 55H40.02" stroke="#F39C12" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <h4>front_home.no_results_found</h4>
+                <p>front_home.try_different_keywords</p>
+                <small class="text-muted mt-2">front_home.search_tips</small>
+            </div>
+
+            <!-- Results Container -->
+            <div class="search-results-container d-none" id="searchResultsContainer">
+                <!-- Results Header -->
+                <div class="results-header" id="resultsHeader">
+                    <p class="results-info">
+                        <span id="resultsCount">0</span> results found
+                    </p>
+                </div>
+
+                <!-- Products Section -->
+                <div class="search-section" id="productsSection">
+                    <h3 class="search-section-title">
+                        <i class="fas fa-box"></i>
+                        Products
+                        <span class="results-count" id="productsCount"></span>
+                    </h3>
+                    <div class="search-items-grid" id="productsResults"></div>
+                </div>
+
+                <!-- Investments Section -->
+                <div class="search-section" id="investmentsSection">
+                    <h3 class="search-section-title">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        Investments
+                        <span class="results-count" id="investmentsCount"></span>
+                    </h3>
+                    <div class="search-items-grid" id="investmentsResults"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Searches -->
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+<!-- start js include  -->
+<script src="../assets/front/js/jquery-3.3.1.min.js"></script>
+<script src="../assets/front/js/popper.min.js"></script>
+<script src="https://beta.thebrazilianhub.com/https:/cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="../assets/front/js/bootstrap.min.js"></script>
+<script src="../assets/front/js/bootstrap-select.min.js"></script>
+<script src="../assets/front/js/jquery.fancybox.min.js"></script>
+<script src="../assets/front/js/mixitup.min.js"></script>
+<script src="../assets/front/js/swiper.min.js"></script>
+<script src="../assets/front/js/v1/plugin.js"></script>
+
+<script src="../assets/front/js/global-search.js"></script>
+
+
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq_question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.closest('.faq_item');
+                const isActive = item.classList.contains('active');
+
+                // Close all items
+                document.querySelectorAll('.faq_item').forEach(i => i.classList.remove('active'));
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#!') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

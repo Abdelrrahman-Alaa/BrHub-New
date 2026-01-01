@@ -1,0 +1,4996 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BRHub | Investment Opportunities</title>
+
+    <meta name="csrf-token" content="4RgEdTXwu01Ce760bkk3665TKyYwL3m19IrXxGB0">
+
+    <link rel="Site Icon" href="https://beta.thebrazilianhub.com/assets/front/images/logo.png" />
+
+    <link rel="stylesheet" href="../assets/front/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/front/css/aos.css" />
+    <link rel="stylesheet" href="../assets/front/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/swiper.min.css" />
+    <link rel="stylesheet" href="../assets/front/css/v1/style.css" />
+
+
+
+
+
+        <link rel="stylesheet" href="../assets/front/css/products-ajax.css">
+
+    <style>
+        /**
+         * Premium BRHub Investment Opportunities Page
+         * Compact, high-end design with logo colors
+         * International appeal with minimal spacing
+         */
+
+        :root {
+            --brhub-navy: #002855;
+            --brhub-blue: #003B7A;
+            --brhub-green: #009B4D;
+            --brhub-light: #F8FAFB;
+            --brhub-border: #E5E7EB;
+            --brhub-text: #1F2937;
+            --brhub-text-light: #6B7280;
+        }
+
+        /* ===========================
+           Page Banner - Ultra Compact Premium
+           =========================== */
+
+        .opportunities_banner__ {
+            position: relative;
+            height: 260px;
+            background: linear-gradient(135deg, var(--brhub-navy) 0%, var(--brhub-blue) 100%);
+            overflow: hidden;
+            margin-bottom: 24px;
+            padding-top: 150px;
+        }
+
+        .opportunities_banner__::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 155, 77, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .opportunities_banner__::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -40px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .banner_content__ {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .banner_title__ {
+            font-size: 32px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .banner_subtitle__ {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        /* ===========================
+           Filter Section - Ultra Compact
+           =========================== */
+
+        .opportunities_filters__ {
+            background: #FFFFFF;
+            border: 1px solid var(--brhub-border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .filter_header__ {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--brhub-border);
+        }
+
+        .filter_title__ {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--brhub-navy);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .filter_title__ i {
+            color: var(--brhub-green);
+            font-size: 14px;
+        }
+
+        .filter_reset__ {
+            background: transparent;
+            border: 1px solid var(--brhub-border);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--brhub-text-light);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter_reset__:hover {
+            background: var(--brhub-light);
+            border-color: var(--brhub-green);
+            color: var(--brhub-green);
+        }
+
+        .filters_grid__ {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .filter_group__ {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .filter_label__ {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--brhub-text);
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .filter_input__ {
+            height: 36px;
+            border: 1px solid var(--brhub-border);
+            border-radius: 6px;
+            padding: 0 10px;
+            font-size: 13px;
+            color: var(--brhub-text);
+            background: var(--brhub-light);
+            transition: all 0.2s ease;
+        }
+
+        .filter_input__:focus {
+            outline: none;
+            border-color: var(--brhub-green);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 2px rgba(0, 155, 77, 0.1);
+        }
+
+        .filter_select__ {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            padding-right: 30px;
+        }
+
+        .search_wrapper__ {
+            position: relative;
+            grid-column: 1 / -1;
+            margin-top: 4px;
+        }
+
+        .search_input__ {
+            width: 100%;
+            height: 40px;
+            border: 1px solid var(--brhub-border);
+            border-radius: 8px;
+            padding: 0 40px 0 16px;
+            font-size: 13px;
+            color: var(--brhub-text);
+            background: #FFFFFF;
+            transition: all 0.2s ease;
+        }
+
+        .search_input__::placeholder {
+            color: var(--brhub-text-light);
+        }
+
+        .search_input__:focus {
+            outline: none;
+            border-color: var(--brhub-green);
+            box-shadow: 0 0 0 3px rgba(0, 155, 77, 0.08);
+        }
+
+        .search_icon__ {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--brhub-green);
+            font-size: 14px;
+            pointer-events: none;
+        }
+
+        /* ===========================
+           Active Filters
+           =========================== */
+
+        .active_filters__ {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--brhub-border);
+        }
+
+        .active_filters__.d-none {
+            display: none !important;
+        }
+
+        .filter_tag__ {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #E8F5EE 0%, #F0F9F4 100%);
+            border: 1px solid #C4E5D4;
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--brhub-green);
+        }
+
+        .filter_tag__ i {
+            cursor: pointer;
+            font-size: 9px;
+            transition: transform 0.2s ease;
+        }
+
+        .filter_tag__ i:hover {
+            transform: scale(1.2);
+        }
+
+        /* ===========================
+           Results Header - Compact
+           =========================== */
+
+        .results_header__ {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding: 10px 0;
+        }
+
+        .results_count__ {
+            font-size: 13px;
+            color: var(--brhub-text-light);
+        }
+
+        .results_count__ strong {
+            color: var(--brhub-green);
+            font-weight: 600;
+        }
+
+        .sort_wrapper__ {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sort_label__ {
+            font-size: 12px;
+            color: var(--brhub-text-light);
+            font-weight: 500;
+        }
+
+        .sort_select__ {
+            height: 32px;
+            border: 1px solid var(--brhub-border);
+            border-radius: 6px;
+            padding: 0 28px 0 10px;
+            font-size: 12px;
+            color: var(--brhub-text);
+            background: #FFFFFF;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+        }
+
+        .sort_select__:focus {
+            outline: none;
+            border-color: var(--brhub-green);
+        }
+
+        /* ===========================
+           Investment Cards - Ultra Compact Premium
+           =========================== */
+
+        .opportunities_grid__ {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .opportunity_card__ {
+            background: #FFFFFF;
+            border: 1px solid var(--brhub-border);
+            border-radius: 10px;
+            padding: 14px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opportunity_card__::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--brhub-green) 0%, var(--brhub-blue) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .opportunity_card__:hover {
+            box-shadow: 0 4px 16px rgba(0, 40, 85, 0.08);
+            transform: translateY(-2px);
+            border-color: var(--brhub-green);
+        }
+
+        .opportunity_card__:hover::before {
+            opacity: 1;
+        }
+
+        /* Card Header - Optimized Layout */
+        .card_header__ {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: flex-start;
+        }
+
+        .company_visual__ {
+            flex-shrink: 0;
+        }
+
+        .company_logo__ {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--brhub-border);
+            background: var(--brhub-light);
+        }
+
+        .company_logo__ img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .company_info__ {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .company_name__ {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--brhub-navy);
+            margin-bottom: 4px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .company_location__ {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            color: var(--brhub-text-light);
+            margin-bottom: 4px;
+        }
+
+        .location_flag__ {
+            width: 16px;
+            height: 12px;
+            border-radius: 2px;
+            object-fit: cover;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .card_badges__ {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .premium_badge__ {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFFBF0 100%);
+            border: 1px solid #FFE5A0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 600;
+            color: #EE8200;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            white-space: nowrap;
+        }
+
+        .premium_badge__ i {
+            font-size: 8px;
+        }
+
+        .risk_badge__ {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .risk_badge__.low {
+            background: #E8F5EE;
+            color: var(--brhub-green);
+            border: 1px solid #C4E5D4;
+        }
+
+        .risk_badge__.medium {
+            background: #FFF9E6;
+            color: #EE8200;
+            border: 1px solid #FFE5A0;
+        }
+
+        .risk_badge__.high {
+            background: #FEE2E2;
+            color: #DC2626;
+            border: 1px solid #FECACA;
+        }
+
+        .card_description__ {
+            font-size: 12px;
+            color: var(--brhub-text-light);
+            line-height: 1.5;
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Metrics Grid - Compact */
+        .card_metrics__ {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            padding: 10px 0;
+            border-top: 1px solid var(--brhub-border);
+            border-bottom: 1px solid var(--brhub-border);
+            margin-bottom: 10px;
+        }
+
+        .metric_item__ {
+            text-align: center;
+        }
+
+        .metric_label__ {
+            font-size: 9px;
+            color: var(--brhub-text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 2px;
+            font-weight: 500;
+        }
+
+        .metric_value__ {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--brhub-green);
+        }
+
+        /* Categories - Compact */
+        .card_tags__ {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 10px;
+            min-height: 22px;
+        }
+
+        .tag__ {
+            background: var(--brhub-light);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            color: var(--brhub-text);
+            font-weight: 500;
+            border: 1px solid var(--brhub-border);
+        }
+
+        /* Action Buttons - Compact */
+        .card_actions__ {
+            display: flex;
+            gap: 6px;
+        }
+
+        .card_btn__ {
+            flex: 1;
+            height: 34px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .card_btn__ i {
+            font-size: 11px;
+        }
+
+        .btn_details__ {
+            background: transparent;
+            border: 1.5px solid var(--brhub-green);
+            color: var(--brhub-green);
+        }
+
+        .btn_details__:hover {
+            background: rgba(0, 155, 77, 0.08);
+        }
+
+        .btn_invest__ {
+            background: linear-gradient(135deg, var(--brhub-green) 0%, #008A45 100%);
+            color: #FFFFFF;
+            box-shadow: 0 2px 6px rgba(0, 155, 77, 0.2);
+        }
+
+        .btn_invest__:hover {
+            box-shadow: 0 3px 10px rgba(0, 155, 77, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* ===========================
+           Pagination - Compact
+           =========================== */
+
+        .pagination_wrapper__ {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--brhub-border);
+        }
+
+        .pagination_info__ {
+            font-size: 12px;
+            color: var(--brhub-text-light);
+        }
+
+        .pagination_controls__ {
+            display: flex;
+            gap: 4px;
+        }
+
+        .page_btn__ {
+            min-width: 32px;
+            height: 32px;
+            border: 1px solid var(--brhub-border);
+            background: #FFFFFF;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--brhub-text);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 8px;
+        }
+
+        .page_btn__:hover:not(.active):not(:disabled) {
+            background: var(--brhub-light);
+            border-color: var(--brhub-green);
+            color: var(--brhub-green);
+        }
+
+        .page_btn__.active {
+            background: linear-gradient(135deg, var(--brhub-green) 0%, #008A45 100%);
+            border-color: var(--brhub-green);
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .page_btn__:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* ===========================
+           Empty State
+           =========================== */
+
+        .empty_state__ {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--brhub-light);
+            border-radius: 10px;
+            border: 2px dashed var(--brhub-border);
+        }
+
+        .empty_icon__ {
+            font-size: 48px;
+            color: var(--brhub-text-light);
+            margin-bottom: 16px;
+        }
+
+        .empty_title__ {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--brhub-text);
+            margin-bottom: 6px;
+        }
+
+        .empty_text__ {
+            font-size: 13px;
+            color: var(--brhub-text-light);
+        }
+
+        /* ===========================
+           Loading States
+           =========================== */
+
+        .opportunities_grid__.loading {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .loader_overlay__ {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader_overlay__.d-none {
+            display: none !important;
+        }
+
+        .loader_spinner__ {
+            width: 44px;
+            height: 44px;
+            border: 3px solid var(--brhub-light);
+            border-top-color: var(--brhub-green);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===========================
+           Responsive Design
+           =========================== */
+
+        @media (max-width: 1200px) {
+            .opportunities_grid__ {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 991px) {
+            .opportunities_banner__ {
+                height: 160px;
+                margin-bottom: 20px;
+                padding-top: 70px;
+            }
+
+            .banner_title__ {
+                font-size: 26px;
+            }
+
+            .banner_subtitle__ {
+                font-size: 12px;
+            }
+
+            .opportunities_filters__ {
+                padding: 14px;
+                margin-bottom: 16px;
+            }
+
+            .filters_grid__ {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .opportunities_grid__ {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .card_metrics__ {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .opportunities_banner__ {
+                height: 140px;
+                margin-bottom: 16px;
+            }
+
+            .banner_title__ {
+                font-size: 22px;
+                margin-bottom: 4px;
+            }
+
+            .banner_subtitle__ {
+                font-size: 11px;
+            }
+
+            .opportunities_filters__ {
+                padding: 12px;
+                margin-bottom: 14px;
+            }
+
+            .filter_header__ {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .results_header__ {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 8px 0;
+            }
+
+            .opportunity_card__ {
+                padding: 12px;
+            }
+
+            .card_actions__ {
+                flex-direction: column;
+            }
+
+            .pagination_wrapper__ {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        /* ===========================
+           Animations
+           =========================== */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .opportunity_card__ {
+            animation: fadeInUp 0.3s ease forwards;
+        }
+
+        .opportunity_card__:nth-child(1) { animation-delay: 0.03s; }
+        .opportunity_card__:nth-child(2) { animation-delay: 0.06s; }
+        .opportunity_card__:nth-child(3) { animation-delay: 0.09s; }
+        .opportunity_card__:nth-child(4) { animation-delay: 0.12s; }
+        .opportunity_card__:nth-child(5) { animation-delay: 0.15s; }
+        .opportunity_card__:nth-child(6) { animation-delay: 0.18s; }
+    </style>
+
+    
+    <style>
+        /* Investment Application Modal Styles */
+        #investmentApplicationModal .modal-dialog {
+            max-width: 850px;
+        }
+
+        #investmentApplicationModal .modal-content {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 40, 85, 0.15);
+        }
+
+        #investmentApplicationModal .modal-header {
+            background: linear-gradient(135deg, var(--brhub-navy) 0%, var(--brhub-blue) 100%);
+            color: white;
+            border-radius: 10px 10px 0 0;
+            padding: 16px 24px;
+        }
+
+        #investmentApplicationModal .modal-header .modal-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+            color: white;
+        }
+
+        #investmentApplicationModal .modal-header .close {
+            color: white;
+            opacity: 0.9;
+            text-shadow: none;
+            transition: opacity 0.3s ease;
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        #investmentApplicationModal .modal-header .close:hover {
+            opacity: 1;
+            color: white;
+        }
+
+        #investmentApplicationModal .modal-body {
+            padding: 20px 24px;
+        }
+
+        #investmentApplicationModal .modal-footer {
+            padding: 12px 24px;
+            background-color: var(--brhub-light);
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* Pre-loader & Error States */
+        #investmentApplicationModal #modalPreloader,
+        #investmentApplicationModal #modalError {
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Opportunity Summary Card */
+        .opportunity-summary-card .card {
+            border: 2px solid var(--brhub-green);
+            border-radius: 8px;
+            background: linear-gradient(135deg, #F0F9F4 0%, #E8F5EE 100%);
+        }
+
+        .opportunity-summary-card h6 {
+            color: var(--brhub-navy);
+            font-size: 16px;
+        }
+
+        .opportunity-summary-card .progress {
+            background-color: rgba(0, 155, 77, 0.1);
+            border-radius: 8px;
+        }
+
+        .opportunity-summary-card .progress-bar {
+            border-radius: 8px;
+            transition: width 0.6s ease;
+        }
+
+        /* Form Sections */
+        .form-section {
+            background: #ffffff;
+        }
+
+        .form-section .section-title {
+            color: var(--brhub-navy);
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+        }
+
+        /* Form Controls */
+        #investmentApplicationModal label {
+            font-weight: 500;
+            color: var(--brhub-text);
+            margin-bottom: 6px;
+            font-size: 13px;
+            display: flex;
+        }
+
+        #investmentApplicationModal .form-control {
+            border: 1px solid var(--brhub-border);
+            border-radius: 6px;
+            padding: 4px 12px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        #investmentApplicationModal .form-control:focus {
+            border-color: var(--brhub-green);
+            box-shadow: 0 0 0 0.2rem rgba(0, 155, 77, 0.15);
+        }
+
+        #investmentApplicationModal .form-control.is-invalid {
+            border-color: #dc3545;
+        }
+
+        #investmentApplicationModal .form-control.is-valid {
+            border-color: #28a745;
+        }
+
+        #investmentApplicationModal .invalid-feedback {
+            display: block;
+            color: #dc3545;
+            font-size: 11px;
+            margin-top: 4px;
+            display: flex;
+        }
+
+        #investmentApplicationModal .form-text {
+            font-size: 11px;
+            color: var(--brhub-text-light);
+            display: flex;
+        }
+
+        /* Input Groups */
+        #investmentApplicationModal .input-group-prepend .input-group-text {
+            background-color: var(--brhub-green);
+            color: white;
+            border: 1px solid var(--brhub-green);
+            font-weight: 600;
+        }
+
+        /* Checkboxes */
+        #investmentApplicationModal .custom-control-label {
+            font-size: 13px;
+            color: var(--brhub-text);
+        }
+
+        #investmentApplicationModal .custom-control-label a {
+            color: var(--brhub-green);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #investmentApplicationModal .custom-control-label a:hover {
+            text-decoration: underline;
+        }
+
+        #investmentApplicationModal .custom-control-input:checked ~ .custom-control-label::before {
+            background-color: var(--brhub-green);
+            border-color: var(--brhub-green);
+        }
+
+        #investmentApplicationModal .custom-control-input:focus ~ .custom-control-label::before {
+            box-shadow: 0 0 0 0.2rem rgba(0, 155, 77, 0.15);
+        }
+
+        /* Buttons */
+        #investmentApplicationModal .btn {
+            padding: 8px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        #investmentApplicationModal .btn-success {
+            background: linear-gradient(135deg, var(--brhub-green) 0%, #008A45 100%);
+            border: none;
+            box-shadow: 0 2px 6px rgba(0, 155, 77, 0.3);
+        }
+
+        #investmentApplicationModal .btn-success:hover {
+            background: linear-gradient(135deg, #008A45 0%, #007A3D 100%);
+            box-shadow: 0 3px 10px rgba(0, 155, 77, 0.4);
+            transform: translateY(-1px);
+        }
+
+        #investmentApplicationModal .btn-success:active {
+            transform: translateY(0);
+        }
+
+        #investmentApplicationModal .btn-success:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #investmentApplicationModal .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+
+        #investmentApplicationModal .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: translateY(-1px);
+        }
+
+        .btn-loader {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* Success Modal */
+        #applicationSuccessModal .modal-content {
+            border: none;
+            border-radius: 10px;
+        }
+
+        #applicationSuccessModal .success-icon {
+            animation: success-scale 0.6s ease;
+        }
+
+        @keyframes success-scale {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal .modal-content {
+            padding: 0px !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #investmentApplicationModal .modal-dialog {
+                margin: 10px;
+            }
+
+            #investmentApplicationModal .modal-body {
+                padding: 16px;
+            }
+
+            #investmentApplicationModal .modal-header,
+            #investmentApplicationModal .modal-footer {
+                padding: 12px 16px;
+            }
+
+            .opportunity-summary-card h6 {
+                font-size: 14px;
+            }
+
+            #investmentApplicationModal .btn {
+                width: 100%;
+                margin-bottom: 8px;
+            }
+
+            #investmentApplicationModal .modal-footer {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+
+
+
+    <style>
+        /**
+ * Premium Global Search Modal - Light Theme
+ * Compact, Professional, International Design
+ */
+
+        /* ===========================
+           Search Button in Header
+           =========================== */
+
+        .search_button__ {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(5, 140, 76, 0.08) 0%, rgba(5, 140, 76, 0.12) 100%);
+            border-radius: 10px;
+            border: none;
+            color: #058C4C;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-inline-start: 10px;
+            box-shadow: 0 2px 4px rgba(5, 140, 76, 0.08);
+        }
+
+        .search_button__:hover {
+            background: linear-gradient(135deg, #058C4C 0%, #066f3f 100%);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(5, 140, 76, 0.25);
+        }
+
+        .search_button__:active {
+            transform: translateY(0);
+        }
+
+        /* ===========================
+           Modal Base - Premium Container
+           =========================== */
+
+        .global-search-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .global-search-modal.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .search-modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .search-modal-container {
+            position: relative;
+            max-width: 1400px;
+            width: 94%;
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+            max-height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            animation: slideDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .search-modal-container {
+                max-width: 96%;
+                width: 96%;
+                margin: 30px auto;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-container {
+                width: 98%;
+                margin: 15px auto;
+                max-height: calc(100vh - 30px);
+                border-radius: 16px;
+            }
+        }
+
+        /* ===========================
+           Modal Header - Compact Premium
+           =========================== */
+
+        .search-modal-header {
+            padding: 20px 28px 18px;
+            border-bottom: 1px solid #E5E7EB;
+            background: linear-gradient(to bottom, #FAFBFC 0%, #FFFFFF 100%);
+            flex-shrink: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-header {
+                padding: 16px 16px 14px;
+            }
+        }
+
+        .search-modal-close {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(17, 24, 39, 0.05);
+            color: #6B7280;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        html[dir="rtl"] .search-modal-close {
+            right: auto;
+            left: 18px;
+        }
+
+        .search-modal-close:hover {
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+            transform: rotate(90deg);
+        }
+
+        /* ===========================
+           Search Input - Premium Compact
+           =========================== */
+
+        .search-input-wrapper {
+            position: relative;
+            margin-bottom: 14px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9CA3AF;
+            pointer-events: none;
+            width: 20px;
+            height: 20px;
+        }
+
+        html[dir="rtl"] .search-icon {
+            left: auto;
+            right: 16px;
+        }
+
+        .search-modal-input {
+            width: 100%;
+            height: 52px;
+            padding: 0 52px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            background: #F9FAFB;
+            font-weight: 400;
+            color: #111827;
+        }
+
+        .search-modal-input::placeholder {
+            color: #9CA3AF;
+        }
+
+        .search-modal-input:focus {
+            outline: none;
+            border-color: #058C4C;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(5, 140, 76, 0.08);
+        }
+
+        .search-clear-btn {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            color: #9CA3AF;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        html[dir="rtl"] .search-clear-btn {
+            right: auto;
+            left: 14px;
+        }
+
+        .search-clear-btn:hover {
+            color: #EF4444;
+            background: rgba(239, 68, 68, 0.08);
+        }
+
+        /* ===========================
+           Controls - Compact Layout
+           =========================== */
+
+        .search-controls-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-controls-wrapper {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .search-filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex: 1;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-filter-tabs {
+                width: 100%;
+            }
+        }
+
+        .search-tab {
+            padding: 8px 18px;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 10px;
+            background: #FFFFFF;
+            color: #6B7280;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex: 1;
+            text-align: center;
+        }
+
+        .search-tab:hover {
+            border-color: #058C4C;
+            color: #058C4C;
+            background: rgba(5, 140, 76, 0.04);
+        }
+
+        .search-tab.active {
+            background: linear-gradient(135deg, #058C4C 0%, #066f3f 100%);
+            color: #FFFFFF;
+            border-color: #058C4C;
+            box-shadow: 0 2px 8px rgba(5, 140, 76, 0.2);
+        }
+
+        .advanced-search-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 10px;
+            color: #6B7280;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .advanced-search-toggle {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .advanced-search-toggle:hover {
+            border-color: #058C4C;
+            color: #058C4C;
+            background: rgba(5, 140, 76, 0.04);
+        }
+
+        .advanced-search-toggle.active {
+            background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+            color: #FFFFFF;
+            border-color: #111827;
+        }
+
+        .advanced-search-toggle.active .toggle-arrow {
+            transform: rotate(180deg);
+        }
+
+        .toggle-arrow {
+            transition: transform 0.2s ease;
+        }
+
+        /* ===========================
+           Advanced Panel - Compact Premium
+           =========================== */
+
+        .advanced-search-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #F9FAFB;
+            border-bottom: 1px solid transparent;
+            flex-shrink: 0;
+        }
+
+        .advanced-search-panel.active {
+            max-height: 600px;
+            border-bottom-color: #E5E7EB;
+            overflow-y: auto;
+        }
+
+        /* Custom scrollbar for advanced panel */
+        .advanced-search-panel.active::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .advanced-search-panel.active::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .advanced-search-panel.active::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 3px;
+        }
+
+        .advanced-search-content {
+            padding: 18px 28px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .advanced-search-content {
+                padding: 14px 16px;
+            }
+        }
+
+        /* ===========================
+           Filter Sections - Compact
+           =========================== */
+
+        .filter-section {
+            margin-bottom: 16px;
+            padding: 16px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .filter-section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .filter-section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #F3F4F6;
+        }
+
+        .filter-section-title i {
+            color: #058C4C;
+            font-size: 16px;
+        }
+
+        .filter-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .filter-row:last-child {
+            margin-bottom: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .filter-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        /* ===========================
+           Filter Inputs - Premium Compact
+           =========================== */
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #6B7280;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .filter-select,
+        .filter-input {
+            height: 40px;
+            padding: 0 12px;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #FFFFFF;
+            transition: all 0.2s ease;
+            color: #111827;
+        }
+
+        .filter-select:focus,
+        .filter-input:focus {
+            outline: none;
+            border-color: #058C4C;
+            box-shadow: 0 0 0 3px rgba(5, 140, 76, 0.08);
+        }
+
+        .filter-select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 12px;
+            padding-right: 32px;
+            appearance: none;
+        }
+
+        html[dir="rtl"] .filter-select {
+            background-position: left 10px center;
+            padding-right: 12px;
+            padding-left: 32px;
+        }
+
+        .price-range-inputs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-range-inputs .filter-input {
+            flex: 1;
+        }
+
+        .range-separator {
+            color: #9CA3AF;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* Checkbox */
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        .filter-checkbox {
+            display: none;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #374151;
+            user-select: none;
+            font-weight: 500;
+        }
+
+        .checkbox-label svg {
+            width: 20px;
+            height: 20px;
+            padding: 2px;
+            border: 2px solid #D1D5DB;
+            border-radius: 6px;
+            background: #FFFFFF;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-label svg path {
+            stroke: transparent;
+            transition: stroke 0.2s ease;
+        }
+
+        .filter-checkbox:checked + .checkbox-label svg {
+            background: #058C4C;
+            border-color: #058C4C;
+        }
+
+        .filter-checkbox:checked + .checkbox-label svg path {
+            stroke: #FFFFFF;
+        }
+
+        .checkbox-label:hover svg {
+            border-color: #058C4C;
+        }
+
+        /* ===========================
+           Filter Actions - Compact
+           =========================== */
+
+        .filter-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .filter-actions {
+                flex-direction: column-reverse;
+            }
+        }
+
+        .filter-action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            white-space: nowrap;
+        }
+
+        .filter-action-btn.clear-filters {
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            color: #6B7280;
+        }
+
+        .filter-action-btn.clear-filters:hover {
+            background: #F9FAFB;
+            border-color: #9CA3AF;
+            color: #374151;
+        }
+
+        .filter-action-btn.apply-filters {
+            background: linear-gradient(135deg, #058C4C 0%, #066f3f 100%);
+            color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(5, 140, 76, 0.25);
+        }
+
+        .filter-action-btn.apply-filters:hover {
+            box-shadow: 0 4px 12px rgba(5, 140, 76, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .filter-count {
+            background: rgba(255, 255, 255, 0.25);
+            color: #FFFFFF;
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* ===========================
+           Active Filters Bar - Compact
+           =========================== */
+
+        .active-filters-bar {
+            padding: 12px 28px;
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            display: none;
+            flex-shrink: 0;
+        }
+
+        .active-filters-bar.active {
+            display: block;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .active-filters-bar {
+                padding: 10px 16px;
+            }
+        }
+
+        .active-filters-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .active-filters-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #6B7280;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .active-filters-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .active-filter-tag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            background: rgba(5, 140, 76, 0.08);
+            border: 1px solid rgba(5, 140, 76, 0.2);
+            border-radius: 8px;
+            font-size: 12px;
+            color: #058C4C;
+            font-weight: 500;
+        }
+
+        .active-filter-tag button {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #058C4C;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s ease;
+            line-height: 1;
+        }
+
+        .active-filter-tag button:hover {
+            color: #EF4444;
+        }
+
+        .clear-all-filters-btn {
+            padding: 5px 12px;
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #6B7280;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .clear-all-filters-btn:hover {
+            background: rgba(239, 68, 68, 0.08);
+            border-color: #EF4444;
+            color: #EF4444;
+        }
+
+        /* ===========================
+           Modal Body - Optimized Scroll
+           =========================== */
+
+        .search-modal-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 28px;
+            min-height: 300px;
+            background: #FAFBFC;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-body {
+                padding: 16px 16px;
+            }
+        }
+
+        /* Premium Scrollbar */
+        .search-modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .search-modal-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .search-modal-body::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 4px;
+        }
+
+        .search-modal-body::-webkit-scrollbar-thumb:hover {
+            background: #9CA3AF;
+        }
+
+        /* ===========================
+           Loading States
+           =========================== */
+
+        .search-preloader {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .search-preloader.active {
+            display: flex;
+        }
+
+        .search-loader {
+            text-align: center;
+        }
+
+        /*.loader-spinner {*/
+        /*    width: 48px;*/
+        /*    height: 48px;*/
+        /*    border: 4px solid #E5E7EB;*/
+        /*    border-top-color: #058C4C;*/
+        /*    border-radius: 50%;*/
+        /*    animation: spin 0.8s linear infinite;*/
+        /*    margin: 0 auto 16px;*/
+        /*}*/
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .search-loader p {
+            color: #6B7280;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* ===========================
+           Empty & No Results - Premium
+           =========================== */
+
+        .search-empty-state,
+        .search-no-results {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            min-height: 300px;
+        }
+
+        .search-empty-state.active,
+        .search-no-results.active {
+            display: flex;
+        }
+
+        .search-empty-state svg,
+        .search-no-results svg {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .search-empty-state h4,
+        .search-no-results h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .search-empty-state p,
+        .search-no-results p {
+            font-size: 14px;
+            color: #6B7280;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+
+        /* ===========================
+           Results Container
+           =========================== */
+
+        .search-results-container {
+            display: none;
+        }
+
+        .search-results-container.active {
+            display: block;
+        }
+
+        .results-header {
+            margin-bottom: 16px;
+            padding: 12px 16px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .results-info {
+            font-size: 13px;
+            color: #6B7280;
+            margin: 0;
+        }
+
+        .results-info span {
+            font-weight: 700;
+            color: #058C4C;
+        }
+
+        .search-section {
+            margin-bottom: 20px;
+        }
+
+        .search-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .search-section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 14px;
+            padding: 10px 16px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .search-section-title i {
+            color: #058C4C;
+            font-size: 18px;
+        }
+
+        .results-count {
+            margin-left: auto;
+            background: rgba(5, 140, 76, 0.1);
+            color: #058C4C;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ===========================
+           HORIZONTAL CARDS - Premium Compact
+           =========================== */
+
+        .search-items-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .search-result-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            padding: 12px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            animation: fadeInUp 0.3s ease forwards;
+            opacity: 0;
+            min-height: 88px;
+        }
+
+        .search-result-card:hover {
+            transform: translateX(4px);
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.06),
+                0 0 0 1px #058C4C;
+            border-color: #058C4C;
+            background: #FFFFFF;
+        }
+
+        .search-result-image {
+            width: 64px;
+            height: 64px;
+            min-width: 64px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #F3F4F6;
+            flex-shrink: 0;
+        }
+
+        .search-result-content {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .search-result-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .search-result-description {
+            font-size: 13px;
+            color: #6B7280;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .search-result-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            flex-shrink: 0;
+            min-width: 90px;
+        }
+
+        .search-result-badge {
+            background: linear-gradient(135deg, rgba(5, 140, 76, 0.1) 0%, rgba(5, 140, 76, 0.06) 100%);
+            color: #058C4C;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .search-result-info {
+            font-size: 12px;
+            color: #9CA3AF;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .search-result-card[href*="investment"] .search-result-badge {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.1) 0%, rgba(17, 24, 39, 0.06) 100%);
+            color: #111827;
+        }
+
+        .search-result-roi {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            color: #FFFFFF;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 11px;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Stagger animation */
+        .search-result-card:nth-child(1) { animation-delay: 0.03s; }
+        .search-result-card:nth-child(2) { animation-delay: 0.06s; }
+        .search-result-card:nth-child(3) { animation-delay: 0.09s; }
+        .search-result-card:nth-child(4) { animation-delay: 0.12s; }
+        .search-result-card:nth-child(5) { animation-delay: 0.15s; }
+        .search-result-card:nth-child(6) { animation-delay: 0.18s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===========================
+           Responsive - Mobile Optimized
+           =========================== */
+
+        @media only screen and (max-width: 768px) {
+            .search-result-card {
+                padding: 10px;
+                gap: 12px;
+                min-height: 76px;
+            }
+
+            .search-result-image {
+                width: 56px;
+                height: 56px;
+                min-width: 56px;
+            }
+
+            .search-result-title {
+                font-size: 14px;
+            }
+
+            .search-result-description {
+                font-size: 12px;
+                -webkit-line-clamp: 1;
+            }
+
+            .search-result-meta {
+                min-width: 75px;
+            }
+
+            .search-result-badge {
+                font-size: 9px;
+                padding: 3px 8px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .search-result-card {
+                flex-wrap: wrap;
+            }
+
+            .search-result-content {
+                order: 2;
+                width: calc(100% - 68px);
+            }
+
+            .search-result-meta {
+                order: 3;
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                min-width: 100%;
+            }
+        }
+
+        /* ===========================
+           Modal Footer - Compact
+           =========================== */
+
+        .search-modal-footer {
+            padding: 16px 28px;
+            border-top: 1px solid #E5E7EB;
+            background: #FAFBFC;
+            flex-shrink: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-modal-footer {
+                padding: 14px 16px;
+            }
+        }
+
+        .footer-label {
+            font-size: 12px;
+            color: #6B7280;
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .popular-searches {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .popular-tag {
+            padding: 6px 14px;
+            background: #FFFFFF;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #6B7280;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .popular-tag:hover {
+            background: rgba(5, 140, 76, 0.06);
+            border-color: #058C4C;
+            color: #058C4C;
+            transform: translateY(-1px);
+        }
+
+        /* ===========================
+           Animations
+           =========================== */
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ===========================
+           Accessibility
+           =========================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            .global-search-modal,
+            .search-modal-container,
+            .search-result-card,
+            .advanced-search-panel {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        .search-modal-input:focus,
+        .search-tab:focus,
+        .popular-tag:focus,
+        .search-result-card:focus,
+        .filter-select:focus,
+        .filter-input:focus {
+            outline: 2px solid #058C4C;
+            outline-offset: 2px;
+        }
+
+        /* ===========================
+           RTL Support
+           =========================== */
+
+        html[dir="rtl"] .search-result-card:hover {
+            transform: translateX(-4px);
+        }
+
+        html[dir="rtl"] .search-result-meta {
+            align-items: flex-start;
+        }
+
+        /* ===========================
+           Hide/Show Sections
+           =========================== */
+
+        .product-filters,
+        .investment-filters {
+            display: none;
+        }
+
+        .product-filters.active,
+        .investment-filters.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* ===========================
+           Print Styles
+           =========================== */
+
+        @media print {
+            .global-search-modal {
+                display: none !important;
+            }
+        }
+
+
+        .nav-om .nav-list-om{
+            align-items: center !important;
+        }
+
+        .company_card__ .title__ {
+            color: #111;
+            font-size: 16px !important;
+            font-weight: 600;
+        }
+
+
+    </style>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="preloader">
+    <img src="../assets/front/images/logo.jpg" alt="">
+    <div class="loader"></div>
+</div>
+
+<!-- Start Header Section -->
+
+<header class="main_header__">
+    <div class="fixed_header__ active_menu__">
+        <div class="container">
+            <div class="header_content__">
+                <a class="header_logo__" href="../home.html">
+                    <figure class="figure__">
+                        <img src="../assets/front/images/logo.jpg" alt="BrHub"/>
+                    </figure>
+                </a>
+
+                <nav class="nav-om" id="navbar-menu-om">
+                    <button class="close-button__"></button>
+
+                    <figure class="figure__ nav_logo__">
+                        <img src="../assets/front/images/logo.jpg" alt="BrHub"/>
+                    </figure>
+
+                    <ul class="nav-list-om list-unstyled">
+                        <li class="header_list_item__ ">
+                            <a href="../home.html">Home</a>
+                        </li>
+                        <li class="header_list_item__ ">
+                            <a href="about-us.html">About Us</a>
+                        </li>
+
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        <li class="header_list_item__ ">
+                            <a href="../home.html#plans-section">Plans &amp; Services</a>
+                        </li>
+                        
+
+                        
+                        
+                        
+                        
+
+
+
+
+                        <button class="search_button__" id="searchTrigger">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"/>
+                                <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+
+                        <li class="header_list_item__ " style="font-style: italic; font-weight: 400;">
+                            <a href="auth/login.html" class="link__ hero_link__"
+                               style="display: flex !important; color: white; width: 110px !important;">
+
+                                                                    JOIN NOW
+                                
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+
+                    <ul class="toolbar_options__ list-unstyled mb-0">
+                        <li class="block__ header_links_block__">
+                            <div class="header_links__">
+                                <a href="how-to-export.html" class="">
+                                    Exporters
+                                    <img class="icon__" src="../assets/front/images/shapes/header_arrow.svg"
+                                         alt="">
+                                </a>
+                                <a href="how-to-import.html" class="">
+                                    Importers
+                                    <img class="icon__" src="../assets/front/images/shapes/header_arrow.svg"
+                                         alt="">
+                                </a>
+                                
+                                
+                                
+                                
+                                <a href="how-to-invest.html" class="">
+                                    Investment
+                                    <img class="icon__" src="../assets/front/images/shapes/header_arrow.svg"
+                                         alt="">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <li class="header_list_item__ me-3" style="margin: 0px 0.5em;">
+
+
+                    <div class="custom_dropdown__" data-dir="bottom">
+                        <button class="button__ dropdown_button__ lang_link__">
+                                                            English
+                            
+                            <img src="../assets/front/images/shapes/arrow_down.svg" alt="">
+                        </button>
+
+                        <div class="dropdown_menu__">
+                            <ul>
+                                                                    <li>
+                                        <a class="link__ modify__">
+                                            <div class="lang d-flex" data-value="en"
+                                                 onclick="window.location.href='https://beta.thebrazilianhub.com/en/investment-opportunities'">
+
+                                                <i class="flag-icon flag-icon-us"></i>
+
+                                                <span class="lang-txt">
+                                                English
+                                            </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a class="link__ modify__">
+                                            <div class="lang d-flex" data-value="pt"
+                                                 onclick="window.location.href='https://beta.thebrazilianhub.com/pt/investment-opportunities'">
+
+                                                <i class="flag-icon flag-icon-pt"></i>
+
+                                                <span class="lang-txt">
+                                                português
+                                            </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a class="link__ modify__">
+                                            <div class="lang d-flex" data-value="ar"
+                                                 onclick="window.location.href='https://beta.thebrazilianhub.com/ar/investment-opportunities'">
+
+                                                <i class="flag-icon flag-icon-sa"></i>
+
+                                                <span class="lang-txt">
+                                                العربية
+                                            </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+
+
+                
+                <button class="menu_button__ button__" id="menu-butt-activ-om">
+                    <svg aria-hidden="true"
+                         focusable="false"
+                         data-prefix="fas"
+                         data-icon="bars"
+                         class="svg-inline--fa fa-bars fa-w-14"
+                         role="img"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
+</header>
+
+
+    <!-- Categories cached at: 2026-01-01 12:37:24 -->
+
+<!-- End Header Section -->
+
+<main class="home_page__">
+
+    
+    
+    <section class="opportunities_banner__">
+        <div class="container">
+            <div class="banner_content__">
+                <h1 class="banner_title__">Investment Opportunities</h1>
+                <p class="banner_subtitle__">Discover vetted investment opportunities with high ROI potential across multiple industries and markets worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="default_section__">
+        <div class="container">
+            <div class="opportunities_filters__">
+                <div class="filter_header__">
+                    <h3 class="filter_title__">
+                        <i class="fas fa-filter"></i>
+                        Filter Opportunities
+                    </h3>
+                    <button class="filter_reset__" id="resetFiltersBtn">
+                        <i class="fas fa-redo-alt"></i>
+                        Reset Filters
+                    </button>
+                </div>
+
+                <div class="filters_grid__">
+                    
+                    <div class="filter_group__">
+                        <label class="filter_label__">Category</label>
+                        <select class="filter_input__ filter_select__" id="categoryFilter">
+                            <option value="">All Categories</option>
+                                                            <option value="16">Watersports Equipment &amp; Accessories</option>
+                                                            <option value="9">Outdoor Games (Tampolene, Horseshoes,etc.)</option>
+                                                            <option value="17">Agricultural Machinery</option>
+                                                            <option value="20">Forestry Machinery and Equipment</option>
+                                                            <option value="24">Other Agricultural Machines</option>
+                                                            <option value="33">Beauty &amp; Personal Care</option>
+                                                            <option value="37">Beauty &amp; Personal Care</option>
+                                                            <option value="25">Parts and Accessories for Agricultural Machines</option>
+                                                            <option value="3">Amusement Park Rides</option>
+                                                            <option value="14">Tents</option>
+                                                            <option value="5">Fitness &amp; Gym Equipment</option>
+                                                            <option value="32">COFFEE</option>
+                                                            <option value="13">Tarpaulins &amp; Pool Covers</option>
+                                                            <option value="15">Toys</option>
+                                                            <option value="21">Agriculture Tools &amp; Supplies</option>
+                                                            <option value="23">Non-Motorized Agricultural Equipment</option>
+                                                            <option value="18">Agricultural Tractors</option>
+                                                            <option value="22">Motorized Agricultural Machinery</option>
+                                                            <option value="12">Swimming Pools &amp; Accessories</option>
+                                                            <option value="19">Agriculture Equipment &amp; Parts (Non-Motorized)</option>
+                                                            <option value="29">Machine Tools</option>
+                                                            <option value="36">Medical &amp; Health</option>
+                                                            <option value="8">Music &amp; Musical Instruments</option>
+                                                            <option value="35">bulding</option>
+                                                            <option value="28">Construction &amp; Engineering Machinery</option>
+                                                            <option value="1">Activities, Sports &amp; Entertainment</option>
+                                                            <option value="4">Camping Equipment</option>
+                                                            <option value="7">Indoor Games (Billiards, Table Tennis, etc.)</option>
+                                                            <option value="26">Real Estate</option>
+                                                            <option value="6">Hobbies &amp; Entertainment</option>
+                                                            <option value="10">Sporting Goods</option>
+                                                            <option value="11">Sports Safety Equipment</option>
+                                                            <option value="31">FOOD &amp; BEVERAGE</option>
+                                                            <option value="34">Medical &amp; Health</option>
+                                                    </select>
+                    </div>
+
+                    
+                    <div class="filter_group__">
+                        <label class="filter_label__">Risk Level</label>
+                        <select class="filter_input__ filter_select__" id="riskFilter">
+                            <option value="">All Risk Levels</option>
+                            <option value="low">Low Risk</option>
+                            <option value="medium">Medium Risk</option>
+                            <option value="high">High Risk</option>
+                        </select>
+                    </div>
+
+                    
+                    <div class="filter_group__">
+                        <label class="filter_label__">Minimum Investment</label>
+                        <input type="number" class="filter_input__" id="minInvestmentFilter"
+                               placeholder="$0" min="0" step="1000">
+                    </div>
+
+                    
+                    <div class="filter_group__">
+                        <label class="filter_label__">Maximum Investment</label>
+                        <input type="number" class="filter_input__" id="maxInvestmentFilter"
+                               placeholder="No limit" min="0" step="1000">
+                    </div>
+
+                    
+                    <div class="filter_group__">
+                        <label class="filter_label__">Minimum ROI (%)</label>
+                        <input type="number" class="filter_input__" id="roiFilter"
+                               placeholder="0%" min="0" max="100" step="1">
+                    </div>
+
+                    
+                    <div class="search_wrapper__">
+                        <input type="text" class="search_input__" id="searchInput"
+                               placeholder="Search by name, description, or sector...">
+                        <i class="fas fa-search search_icon__"></i>
+                    </div>
+                </div>
+
+                
+                <div class="active_filters__ d-none" id="activeFilters"></div>
+            </div>
+
+            
+            <div class="results_header__">
+                <div class="results_count__">
+                    Showing
+                    <strong><span id="resultsCount">0</span></strong>
+                    opportunities
+                </div>
+
+                <div class="sort_wrapper__">
+                    <label class="sort_label__">Sort by:</label>
+                    <select class="sort_select__" id="sortSelect">
+                        <option value="newest">Newest First</option>
+                        <option value="roi_high">Highest ROI</option>
+                        <option value="roi_low">Lowest ROI</option>
+                        <option value="investment_low">Lowest Investment</option>
+                        <option value="investment_high">Highest Investment</option>
+                        <option value="deadline">Ending Soon</option>
+                    </select>
+                </div>
+            </div>
+
+            
+            <div class="opportunities_grid__" id="opportunitiesGrid">
+                
+            </div>
+
+            
+            <div class="pagination_wrapper__" id="paginationWrapper">
+                <div class="pagination_info__">
+                    <span id="paginationText">Page 1 of 1</span>
+                </div>
+                <div class="pagination_controls__" id="paginationControls">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <div class="loader_overlay__ d-none" id="loadingOverlay">
+        <div class="loader_spinner__"></div>
+    </div>
+
+    
+    <div class="modal fade" id="investmentApplicationModal" style="top: 0" tabindex="-1" role="dialog"
+         aria-labelledby="investmentApplicationModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="investmentApplicationModalLabel">
+                        <i class="fas fa-handshake mr-2"></i>
+                        Investment Application
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                
+                <div class="modal-body" id="modalPreloader">
+                    <div class="text-center py-5">
+                        <div class="spinner-border text-success" role="status" style="width: 2.5rem; height: 2.5rem;">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <p class="mt-3 mb-0 text-muted">Loading opportunity details...</p>
+                    </div>
+                </div>
+
+                
+                <div class="modal-body d-none" id="modalError">
+                    <div class="text-center py-5">
+                        <i class="fas fa-exclamation-circle text-danger mb-3" style="font-size: 42px;"></i>
+                        <h5 class="text-danger mb-3">Error Occurred</h5>
+                        <p class="error-message text-muted mb-4"></p>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+
+                
+                <div id="modalMainContent" class="d-none">
+                    
+                    <div class="modal-body" style="max-height: 65vh; overflow-y: auto;">
+                        
+                        <div class="opportunity-summary-card mb-3">
+                            <div class="card border-success">
+                                <div class="card-body p-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <h6 class="font-weight-bold mb-2 d-flex" id="opportunityName"></h6>
+                                            <div class="mb-2 d-flex">
+                                                <span class="badge badge-info mr-2" id="opportunityType"></span>
+                                                <span class="badge badge-warning" id="opportunityRisk"></span>
+                                            </div>
+                                            <div>
+                                                <div class="d-flex justify-content-between mb-2">
+                                                    <small class="text-muted">Funding Progress</small>
+                                                    <small class="font-weight-bold">
+                                                        <span id="fundingPercentage">0</span>%
+                                                    </small>
+                                                </div>
+                                                <div class="progress" style="height: 6px;">
+                                                    <div class="progress-bar bg-success" role="progressbar"
+                                                         id="fundingProgressBar" style="width: 0%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 text-right">
+                                            <div class="mb-2">
+                                                <small class="text-muted d-block">Expected ROI</small>
+                                                <h5 class="text-success mb-0">
+                                                    <span id="expectedROI">0</span>%
+                                                </h5>
+                                            </div>
+                                            <div>
+                                                <small class="text-muted d-block">Timeline</small>
+                                                <strong id="investmentTimeline">0 months</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <form id="investmentApplicationForm" novalidate>
+                            <input type="hidden" name="_token" value="4RgEdTXwu01Ce760bkk3665TKyYwL3m19IrXxGB0" autocomplete="off">                            <input type="hidden" id="opportunityId" name="opportunity_id">
+
+                            
+                            <div class="form-section mb-3">
+                                <h6 class="section-title mb-3 pb-2 border-bottom">
+                                    <i class="fas fa-user mr-2"></i>
+                                    Personal Information
+                                </h6>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="investorName">
+                                            Full Name <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="investorName"
+                                               name="investor_name" required
+                                               placeholder="Enter your full name">
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="investorEmail">
+                                            Email Address <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="email" class="form-control" id="investorEmail"
+                                               name="investor_email" required
+                                               placeholder="your.email@example.com">
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="investorPhone">
+                                            Phone Number <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="tel" class="form-control" id="investorPhone"
+                                               name="investor_phone" required
+                                               placeholder="+1234567890">
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="investorCountry">
+                                            Country <span class="text-danger">*</span>
+                                        </label>
+                                        <select class="form-control" id="investorCountry"
+                                                name="investor_country" required>
+                                            <option value="">Select Country</option>
+                                        </select>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-section mb-3">
+                                <h6 class="section-title mb-3 pb-2 border-bottom">
+                                    <i class="fas fa-dollar-sign mr-2"></i>
+                                    Investment Details
+                                </h6>
+
+                                <div class="alert alert-info py-2 mb-3 d-flex">
+                                    <i class="fas fa-info-circle mr-2"></i>
+                                    <small>
+                                        Investment Range:
+                                        <strong>
+                                            <span id="minInvestment">$0</span> - <span id="maxInvestment">$0</span>
+                                        </strong>
+                                    </small>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="investmentAmount">
+                                            Investment Amount <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="currencySymbol">$</span>
+                                            </div>
+                                            <input type="number" class="form-control" id="investmentAmount"
+                                                   name="investment_amount" required step="0.01" min="0"
+                                                   placeholder="0.00">
+                                        </div>
+                                        <div class="invalid-feedback"></div>
+                                        <small class="form-text text-muted">
+                                            Enter the amount you wish to invest
+                                        </small>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="investmentType">
+                                            Investment Type
+                                        </label>
+                                        <select class="form-control" id="investmentType" name="investment_type">
+                                            <option value="equity">Equity Investment</option>
+                                            <option value="debt">Debt Financing</option>
+                                            <option value="convertible">Convertible Note</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 mb-3">
+                                        <label for="investmentPurpose">
+                                            Investment Purpose <span class="text-danger">*</span>
+                                        </label>
+                                        <textarea class="form-control" id="investmentPurpose"
+                                                  name="investment_purpose" rows="3" required
+                                                  placeholder="Describe your investment goals and what you hope to achieve..."></textarea>
+                                        <div class="invalid-feedback"></div>
+                                        <small class="form-text text-muted">
+                                            Minimum 50 characters
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-section mb-3">
+                                <h6 class="section-title mb-3 pb-2 border-bottom">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    Additional Information
+                                </h6>
+
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <label for="additionalNotes">
+                                            Notes / Questions
+                                        </label>
+                                        <textarea class="form-control" id="additionalNotes"
+                                                  name="additional_notes" rows="3"
+                                                  placeholder="Any questions or additional comments..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-section mb-3">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input"
+                                           id="agreeTerms" name="agree_terms" required>
+                                    <label class="custom-control-label" for="agreeTerms">
+                                        I agree to the <a href="investment-opportunities.html#" target="_blank">Terms and Conditions</a> and
+                                        <a href="investment-opportunities.html#" target="_blank">Privacy Policy</a>
+                                    </label>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input"
+                                           id="riskAcknowledgement" name="risk_acknowledgement" required>
+                                    <label class="custom-control-label" for="riskAcknowledgement">
+                                        I acknowledge the investment risks and understand that investments may result in loss
+                                    </label>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    
+                    <div class="modal-footer border-top">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            <i class="fas fa-times mr-2"></i>
+                            Cancel
+                        </button>
+                        <button type="button" class="btn btn-success" id="submitApplicationBtn">
+                            <span class="btn-text">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Submit Application
+                            </span>
+                            <span class="btn-loader d-none">
+                                <span class="spinner-border spinner-border-sm mr-2"></span>
+                                Submitting...
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" id="applicationSuccessModal" tabindex="-1" role="dialog"
+         aria-labelledby="applicationSuccessModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center py-5">
+                    <div class="success-icon mb-4">
+                        <i class="fas fa-check-circle text-success" style="font-size: 56px;"></i>
+                    </div>
+                    <h5 class="mb-3">Application Submitted!</h5>
+                    <p class="text-muted mb-2">
+                        Your investment application has been submitted successfully.
+                    </p>
+                    <p class="text-muted mb-4">
+                        We will review your application and contact you soon.
+                    </p>
+                    <button type="button" class="btn btn-success px-4" data-dismiss="modal">
+                        Got It
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+
+
+<!-- Start Footer Section -->
+
+<footer class="footer_sec__">
+    <div class="container">
+        <div class="footer_content__">
+            <div class="footer_logo_wrapper__">
+                <a href="../home.html" class="footer_logo__">
+                    <img src="../assets/front/images/footer_logo.png" alt="BrHub"/>
+                </a>
+
+                <p class="footer_text__">Stay informed with product updates and expert insights.</p>
+            </div>
+
+            <div class="footer_links_sec__">
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">About Us</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="investment-opportunities.html#">Company overview</a></li>
+                        <li><a href="investment-opportunities.html#">How it works</a></li>
+                        <li><a href="investment-opportunities.html#">Press</a></li>
+                        <li><a href="investment-opportunities.html#">Partners</a></li>
+                        <li><a href="investment-opportunities.html#">Advertise with us</a></li>
+                        <li><a href="investment-opportunities.html#">Site map</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Services &amp; Tools</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="investment-opportunities.html#">Become Premium Member</a></li>
+                        <li><a href="investment-opportunities.html#">Become Premium Plus Member</a></li>
+                        <li><a href="investment-opportunities.html#">All our plans</a></li>
+                        <li><a href="investment-opportunities.html#">Premium PLUS + Google Ads</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Safety and Support</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="investment-opportunities.html#">Privacy policy</a></li>
+                        <li><a href="investment-opportunities.html#">Terms of use</a></li>
+                        <li><a href="investment-opportunities.html#">Help / FAQs</a></li>
+                        <li><a href="investment-opportunities.html#">Safe practices</a></li>
+                        <li><a href="investment-opportunities.html#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Importers</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="investment-opportunities.html#">How to Import on BRHub</a></li>
+                        <li><a href="investment-opportunities.html#">Create your buyer profile</a></li>
+                        <li><a href="investment-opportunities.html#">Post your buying request</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Leads Central</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="investment-opportunities.html#">Sales offers</a></li>
+                        <li><a href="investment-opportunities.html#">Requests for quotation</a></li>
+                        <li><a href="investment-opportunities.html#">Post your sales offer</a></li>
+                        <li><a href="investment-opportunities.html#">Post your request for quotation</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer_links_wrapper__">
+                    <h4 class="footer_head__">Exporters</h4>
+                    <ul class="footer_list__ list-unstyled">
+                        <li><a href="investment-opportunities.html#">How to Export on BRHub</a></li>
+                        <li><a href="investment-opportunities.html#">Create your seller profile</a></li>
+                        <li><a href="investment-opportunities.html#">Post your buying request</a></li>
+                        <li><a href="investment-opportunities.html#">B2B verified seller</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="copyrights_sec__">
+        <div class="container">
+            <div class="copyrights_content___">
+                
+                <ul class="footer_socials__ list-unstyled">
+                    <li class="li__">
+                        <a href="investment-opportunities.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/telegram.svg"
+                                 alt="Telegram" width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="investment-opportunities.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/new-twitter.svg"
+                                 alt="Twitter"
+                                 width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="investment-opportunities.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/linkedin-02.svg"
+                                 alt="LinkedIn"
+                                 width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="investment-opportunities.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/dribbble.svg"
+                                 alt="Dribbble" width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="investment-opportunities.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/whatsapp.svg"
+                                 alt="WhatsApp" width="19" height="19"/>
+                        </a>
+                    </li>
+                    <li class="li__">
+                        <a href="investment-opportunities.html#!" class="link__">
+                            <img class="img-om"
+                                 src="../assets/front/images/socials/youtube.svg"
+                                 alt="YouTube" width="19" height="19"/>
+                        </a>
+                    </li>
+                </ul>
+
+                
+                <p class="copyright_text__">BRHUB © 2025</p>
+
+                
+                <div class="custom_dropdown__" data-dir="top">
+                    <button class="button__ dropdown_button__ lang_link__">
+                                                    English
+                        
+                        <img src="../assets/front/images/shapes/arrow_down.svg" alt="">
+                    </button>
+
+                    <div class="dropdown_menu__">
+                        <ul>
+                                                            <li>
+                                    <a class="link__ modify__">
+                                        <div class="lang d-flex" data-value="en"
+                                             onclick="window.location.href='https://beta.thebrazilianhub.com/en/investment-opportunities'">
+
+                                            <i class="flag-icon flag-icon-us"></i>
+
+                                            <span class="lang-txt">
+                                                English
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a class="link__ modify__">
+                                        <div class="lang d-flex" data-value="pt"
+                                             onclick="window.location.href='https://beta.thebrazilianhub.com/pt/investment-opportunities'">
+
+                                            <i class="flag-icon flag-icon-pt"></i>
+
+                                            <span class="lang-txt">
+                                                português
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a class="link__ modify__">
+                                        <div class="lang d-flex" data-value="ar"
+                                             onclick="window.location.href='https://beta.thebrazilianhub.com/ar/investment-opportunities'">
+
+                                            <i class="flag-icon flag-icon-sa"></i>
+
+                                            <span class="lang-txt">
+                                                العربية
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- End Footer Section -->
+
+
+<!-- Global Search Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.tidio.co/ljw94hnyauat9xphyrymd9bklspxpn5k.js" async></script>
+
+<!-- Global Search Modal with Advanced Search -->
+<div class="global-search-modal" id="globalSearchModal">
+    <div class="search-modal-overlay" id="searchModalOverlay"></div>
+
+    <div class="search-modal-container">
+        <!-- Close Button -->
+        <button class="search-modal-close" id="searchModalClose" aria-label="front_home.clear_search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <!-- Search Header -->
+        <div class="search-modal-header">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input
+                    type="text"
+                    class="search-modal-input"
+                    id="globalSearchInput"
+                    placeholder="Search Products &amp; Investments"
+                    autocomplete="off"
+                    aria-label="front_home.search_placeholder"
+                />
+                <button class="search-clear-btn d-none" id="searchClearBtn" aria-label="front_home.clear_search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.2"/>
+                        <path d="M13 7L7 13M7 7L13 13" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Filter Tabs & Advanced Search Toggle -->
+            <div class="search-controls-wrapper">
+                <div class="search-filter-tabs">
+                    <button class="search-tab active" data-type="all">
+                        All
+                    </button>
+                    <button class="search-tab" data-type="products">
+                        Products
+                    </button>
+                    <button class="search-tab" data-type="investments">
+                        Investments
+                    </button>
+                </div>
+
+                <button class="advanced-search-toggle" id="advancedSearchToggle">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M2 4H16M5 9H13M8 14H10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Advanced Filters
+                    <svg class="toggle-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Advanced Search Filters Panel -->
+        <div class="advanced-search-panel" id="advancedSearchPanel">
+            <div class="advanced-search-content">
+                <!-- Common Filters -->
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label class="filter-label">Category</label>
+                        <select class="filter-select" id="filterCategory">
+                            <option value="">All Categories</option>
+                                                            <option value="16">Watersports Equipment &amp; Accessories</option>
+                                                            <option value="9">Outdoor Games (Tampolene, Horseshoes,etc.)</option>
+                                                            <option value="17">Agricultural Machinery</option>
+                                                            <option value="20">Forestry Machinery and Equipment</option>
+                                                            <option value="24">Other Agricultural Machines</option>
+                                                            <option value="33">Beauty &amp; Personal Care</option>
+                                                            <option value="37">Beauty &amp; Personal Care</option>
+                                                            <option value="25">Parts and Accessories for Agricultural Machines</option>
+                                                            <option value="3">Amusement Park Rides</option>
+                                                            <option value="14">Tents</option>
+                                                            <option value="5">Fitness &amp; Gym Equipment</option>
+                                                            <option value="32">COFFEE</option>
+                                                            <option value="13">Tarpaulins &amp; Pool Covers</option>
+                                                            <option value="15">Toys</option>
+                                                            <option value="21">Agriculture Tools &amp; Supplies</option>
+                                                            <option value="23">Non-Motorized Agricultural Equipment</option>
+                                                            <option value="18">Agricultural Tractors</option>
+                                                            <option value="22">Motorized Agricultural Machinery</option>
+                                                            <option value="12">Swimming Pools &amp; Accessories</option>
+                                                            <option value="19">Agriculture Equipment &amp; Parts (Non-Motorized)</option>
+                                                            <option value="29">Machine Tools</option>
+                                                            <option value="36">Medical &amp; Health</option>
+                                                            <option value="8">Music &amp; Musical Instruments</option>
+                                                            <option value="35">bulding</option>
+                                                            <option value="28">Construction &amp; Engineering Machinery</option>
+                                                            <option value="1">Activities, Sports &amp; Entertainment</option>
+                                                            <option value="4">Camping Equipment</option>
+                                                            <option value="7">Indoor Games (Billiards, Table Tennis, etc.)</option>
+                                                            <option value="26">Real Estate</option>
+                                                            <option value="6">Hobbies &amp; Entertainment</option>
+                                                            <option value="10">Sporting Goods</option>
+                                                            <option value="11">Sports Safety Equipment</option>
+                                                            <option value="31">FOOD &amp; BEVERAGE</option>
+                                                            <option value="34">Medical &amp; Health</option>
+                                                    </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">Country</label>
+                        <select class="filter-select" id="filterCountry">
+                            <option value="">All Countries</option>
+                            <option value="SA">Saudi Arabia</option>
+                            <option value="AE">United Arab Emirates</option>
+                            <option value="EG">Egypt</option>
+                            <option value="US">United States</option>
+                            <option value="GB">United Kingdom</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">Sort By</label>
+                        <select class="filter-select" id="filterSort">
+                            <option value="relevance">Relevance</option>
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="name_asc">Name (A-Z)</option>
+                            <option value="name_desc">Name (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Product-Specific Filters -->
+                <div class="product-filters filter-section" id="productFilters">
+                    <h4 class="filter-section-title">
+                        <i class="fas fa-box"></i>
+                        Product Filters
+                    </h4>
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label class="filter-label">Price Range</label>
+                            <div class="price-range-inputs">
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterPriceMin"
+                                    placeholder="Min Price"
+                                    min="0"
+                                />
+                                <span class="range-separator">-</span>
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterPriceMax"
+                                    placeholder="Max Price"
+                                    min="0"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Availability</label>
+                            <select class="filter-select" id="filterAvailability">
+                                <option value="">All</option>
+                                <option value="in_stock">In Stock</option>
+                                <option value="out_of_stock">Out of Stock</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Verified Only</label>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="filterVerified" class="filter-checkbox">
+                                <label for="filterVerified" class="checkbox-label">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M13.3333 4L6 11.3333L2.66666 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                    Verified Products Only
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment-Specific Filters -->
+                <div class="investment-filters filter-section" id="investmentFilters">
+                    <h4 class="filter-section-title">
+                        <i class="fas fa-chart-line"></i>
+                        Investment Filters
+                    </h4>
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label class="filter-label">Investment Range</label>
+                            <div class="price-range-inputs">
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterInvestmentMin"
+                                    placeholder="Min Investment"
+                                    min="0"
+                                />
+                                <span class="range-separator">-</span>
+                                <input
+                                    type="number"
+                                    class="filter-input"
+                                    id="filterInvestmentMax"
+                                    placeholder="Max Investment"
+                                    min="0"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">ROI</label>
+                            <select class="filter-select" id="filterROI">
+                                <option value="">Any ROI</option>
+                                <option value="0-10">0% - 10%</option>
+                                <option value="10-20">10% - 20%</option>
+                                <option value="20-30">20% - 30%</option>
+                                <option value="30+">30%+</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Risk Level</label>
+                            <select class="filter-select" id="filterRisk">
+                                <option value="">All Levels</option>
+                                <option value="low">Low Risk</option>
+                                <option value="medium">Medium Risk</option>
+                                <option value="high">High Risk</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label class="filter-label">Timeline</label>
+                            <select class="filter-select" id="filterTimeline">
+                                <option value="">Any Timeline</option>
+                                <option value="0-12">Short Term (0-12 Mo.)</option>
+                                <option value="12-36">Medium Term (1-3 Years)</option>
+                                <option value="36+">Long Term (3+ Years)</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Opportunity Type</label>
+                            <select class="filter-select" id="filterOpportunityType">
+                                <option value="">All Types</option>
+                                <option value="equity">Equity</option>
+                                <option value="debt">Debt</option>
+                                <option value="hybrid">Hybrid</option>
+                                <option value="crowdfunding">Crowdfunding</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label">Status</label>
+                            <select class="filter-select" id="filterStatus">
+                                <option value="">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="fully_funded">Fully Funded</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Actions -->
+                <div class="filter-actions">
+                    <button class="filter-action-btn clear-filters" id="clearFiltersBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Clear Filters
+                    </button>
+                    <button class="filter-action-btn apply-filters" id="applyFiltersBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.3333 4L6 11.3333L2.66666 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Apply Filters
+                        <span class="filter-count d-none" id="filterCount"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Filters Display -->
+        <div class="active-filters-bar d-none" id="activeFiltersBar">
+            <div class="active-filters-wrapper">
+                <span class="active-filters-label">Active Filters:</span>
+                <div class="active-filters-list" id="activeFiltersList"></div>
+                <button class="clear-all-filters-btn" id="clearAllFiltersBtn">
+                    Clear All
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Results -->
+        <div class="search-modal-body" id="searchResults">
+            <!-- Pre-loader -->
+            <div class="search-preloader" id="searchPreloader">
+                <div class="search-loader">
+                    <div class="loader-spinner"></div>
+                    <p>front_home.searching...</p>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="search-empty-state active" id="searchEmptyState">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <circle cx="40" cy="40" r="40" fill="#F5F5F5"/>
+                    <path d="M35 50C42.1797 50 48 44.1797 48 37C48 29.8203 42.1797 24 35 24C27.8203 24 22 29.8203 22 37C22 44.1797 27.8203 50 35 50Z" stroke="#058C4C" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M58 58L45.65 45.65" stroke="#058C4C" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <h4>Start Searching</h4>
+                <p>Search for products and investment opportunities</p>
+            </div>
+
+            <!-- No Results -->
+            <div class="search-no-results d-none" id="searchNoResults">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <circle cx="40" cy="40" r="40" fill="#FFF3CD"/>
+                    <path d="M40 25V45M40 55H40.02" stroke="#F39C12" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <h4>front_home.no_results_found</h4>
+                <p>front_home.try_different_keywords</p>
+                <small class="text-muted mt-2">front_home.search_tips</small>
+            </div>
+
+            <!-- Results Container -->
+            <div class="search-results-container d-none" id="searchResultsContainer">
+                <!-- Results Header -->
+                <div class="results-header" id="resultsHeader">
+                    <p class="results-info">
+                        <span id="resultsCount">0</span> results found
+                    </p>
+                </div>
+
+                <!-- Products Section -->
+                <div class="search-section" id="productsSection">
+                    <h3 class="search-section-title">
+                        <i class="fas fa-box"></i>
+                        Products
+                        <span class="results-count" id="productsCount"></span>
+                    </h3>
+                    <div class="search-items-grid" id="productsResults"></div>
+                </div>
+
+                <!-- Investments Section -->
+                <div class="search-section" id="investmentsSection">
+                    <h3 class="search-section-title">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        Investments
+                        <span class="results-count" id="investmentsCount"></span>
+                    </h3>
+                    <div class="search-items-grid" id="investmentsResults"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Searches -->
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+<!-- start js include  -->
+<script src="../assets/front/js/jquery-3.3.1.min.js"></script>
+<script src="../assets/front/js/popper.min.js"></script>
+<script src="https://beta.thebrazilianhub.com/https:/cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="../assets/front/js/bootstrap.min.js"></script>
+<script src="../assets/front/js/bootstrap-select.min.js"></script>
+<script src="../assets/front/js/jquery.fancybox.min.js"></script>
+<script src="../assets/front/js/mixitup.min.js"></script>
+<script src="../assets/front/js/swiper.min.js"></script>
+<script src="../assets/front/js/v1/plugin.js"></script>
+
+<script src="../assets/front/js/global-search.js"></script>
+
+
+    <script>
+        /**
+         * Investment Opportunities Page Manager
+         * Handles filtering, searching, sorting, and pagination
+         */
+
+        class InvestmentOpportunitiesManager {
+            constructor() {
+                this.currentPage = 1;
+                this.perPage = 12;
+                this.totalPages = 1;
+                this.totalResults = 0;
+                this.filters = {
+                    category: '',
+                    risk: '',
+                    minInvestment: '',
+                    maxInvestment: '',
+                    roi: '',
+                    country: '',
+                    search: '',
+                    sort: 'newest'
+                };
+                this.debounceTimer = null;
+
+                this.init();
+            }
+
+            /**
+             * Initialize the manager
+             */
+            init() {
+                this.attachEventListeners();
+                this.loadOpportunities();
+            }
+
+            /**
+             * Attach all event listeners
+             */
+            attachEventListeners() {
+                // Filter changes
+                $('#categoryFilter').on('change', () => this.handleFilterChange('category'));
+                $('#riskFilter').on('change', () => this.handleFilterChange('risk'));
+                $('#minInvestmentFilter').on('input', () => this.handleFilterChange('minInvestment'));
+                $('#maxInvestmentFilter').on('input', () => this.handleFilterChange('maxInvestment'));
+                $('#roiFilter').on('input', () => this.handleFilterChange('roi'));
+                $('#countryFilter').on('change', () => this.handleFilterChange('country'));
+
+                // Search input with debounce
+                $('#searchInput').on('input', () => this.handleSearchChange());
+
+                // Sort change
+                $('#sortSelect').on('change', () => this.handleSortChange());
+
+                // Reset filters
+                $('#resetFiltersBtn').on('click', () => this.resetFilters());
+
+                // Invest button click delegation
+                $(document).on('click', '.btn_invest__', (e) => {
+                    const opportunityId = $(e.currentTarget).data('opportunity-id');
+                    this.openInvestmentModal(opportunityId);
+                });
+            }
+
+            /**
+             * Handle filter changes
+             */
+            handleFilterChange(filterName) {
+                const inputId = filterName === 'category' ? '#categoryFilter' :
+                    filterName === 'risk' ? '#riskFilter' :
+                        filterName === 'minInvestment' ? '#minInvestmentFilter' :
+                            filterName === 'maxInvestment' ? '#maxInvestmentFilter' :
+                                filterName === 'roi' ? '#roiFilter' :
+                                    '#countryFilter';
+
+                this.filters[filterName] = $(inputId).val();
+                this.currentPage = 1;
+                this.updateActiveFilters();
+                this.loadOpportunities();
+            }
+
+            /**
+             * Handle search changes with debounce
+             */
+            handleSearchChange() {
+                clearTimeout(this.debounceTimer);
+                this.debounceTimer = setTimeout(() => {
+                    this.filters.search = $('#searchInput').val();
+                    this.currentPage = 1;
+                    this.updateActiveFilters();
+                    this.loadOpportunities();
+                }, 500);
+            }
+
+            /**
+             * Handle sort changes
+             */
+            handleSortChange() {
+                this.filters.sort = $('#sortSelect').val();
+                this.currentPage = 1;
+                this.loadOpportunities();
+            }
+
+            /**
+             * Reset all filters
+             */
+            resetFilters() {
+                this.filters = {
+                    category: '',
+                    risk: '',
+                    minInvestment: '',
+                    maxInvestment: '',
+                    roi: '',
+                    country: '',
+                    search: '',
+                    sort: 'newest'
+                };
+
+                $('#categoryFilter').val('');
+                $('#riskFilter').val('');
+                $('#minInvestmentFilter').val('');
+                $('#maxInvestmentFilter').val('');
+                $('#roiFilter').val('');
+                $('#countryFilter').val('');
+                $('#searchInput').val('');
+                $('#sortSelect').val('newest');
+
+                this.currentPage = 1;
+                this.updateActiveFilters();
+                this.loadOpportunities();
+            }
+
+            /**
+             * Update active filters display
+             */
+            updateActiveFilters() {
+                const $container = $('#activeFilters');
+                $container.empty();
+
+                const filterLabels = {
+                    category: 'Category',
+                    risk: 'Risk Level',
+                    minInvestment: 'Min Investment',
+                    maxInvestment: 'Max Investment',
+                    roi: 'Min ROI',
+                    country: 'Country',
+                    search: 'Search'
+                };
+
+                let hasActiveFilters = false;
+
+                Object.keys(this.filters).forEach(key => {
+                    if (this.filters[key] && key !== 'sort') {
+                        hasActiveFilters = true;
+                        const value = key === 'minInvestment' || key === 'maxInvestment'
+                            ? '$' + this.filters[key]
+                            : key === 'roi'
+                                ? this.filters[key] + '%'
+                                : this.filters[key];
+
+                        const $tag = $(`
+                            <div class="filter_tag__" data-filter="${key}">
+                                <span>${filterLabels[key]}: ${value}</span>
+                                <i class="fas fa-times"></i>
+                            </div>
+                        `);
+
+                        $tag.find('i').on('click', () => this.removeFilter(key));
+                        $container.append($tag);
+                    }
+                });
+
+                $container.toggleClass('d-none', !hasActiveFilters);
+            }
+
+            /**
+             * Remove specific filter
+             */
+            removeFilter(filterName) {
+                this.filters[filterName] = '';
+
+                const inputId = filterName === 'category' ? '#categoryFilter' :
+                    filterName === 'risk' ? '#riskFilter' :
+                        filterName === 'minInvestment' ? '#minInvestmentFilter' :
+                            filterName === 'maxInvestment' ? '#maxInvestmentFilter' :
+                                filterName === 'roi' ? '#roiFilter' :
+                                    filterName === 'country' ? '#countryFilter' :
+                                        '#searchInput';
+
+                $(inputId).val('');
+                this.currentPage = 1;
+                this.updateActiveFilters();
+                this.loadOpportunities();
+            }
+
+            /**
+             * Load opportunities from server
+             */
+            async loadOpportunities() {
+                this.showLoading();
+
+                try {
+                    const params = new URLSearchParams({
+                        page: this.currentPage,
+                        per_page: this.perPage,
+                        ...this.filters
+                    });
+
+                    const response = await fetch(`https://beta.thebrazilianhub.com/en/filtered-investment-opportunities?${params}`, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to load opportunities');
+                    }
+
+                    const data = await response.json();
+
+                    this.totalResults = data.total;
+                    this.totalPages = data.last_page;
+
+                    this.renderOpportunities(data.data);
+                    this.updateResultsCount();
+                    this.updatePagination();
+
+                } catch (error) {
+                    console.error('Error loading opportunities:', error);
+                    this.showError();
+                } finally {
+                    this.hideLoading();
+                }
+            }
+
+            /**
+             * Render opportunities cards
+             */
+            renderOpportunities(opportunities) {
+                const $grid = $('#opportunitiesGrid');
+                $grid.empty();
+
+                if (opportunities.length === 0) {
+                    this.showEmptyState();
+                    return;
+                }
+
+                opportunities.forEach((opp, index) => {
+                    const card = this.createOpportunityCard(opp, index);
+                    $grid.append(card);
+                });
+            }
+
+            /**
+             * Create opportunity card HTML
+             */
+            createOpportunityCard(opp, index) {
+                const country = this.getCountryName(opp.country);
+                const riskClass = opp.risk_level.toLowerCase();
+
+                return $(`
+                    <div class="opportunity_card__" data-opportunity-id="${opp.id}">
+                        <div class="card_header__">
+                            <div class="company_visual__">
+                                <div class="company_logo__">
+                                    <img src="${opp.image}" alt="${opp.name}">
+                                </div>
+                            </div>
+                            <div class="company_info__">
+                                <h3 class="company_name__">${opp.name}</h3>
+                                <div class="company_location__">
+                                    <img src="https://flagcdn.com/${opp.country.toLowerCase()}.svg"
+                                         alt="${country}" class="location_flag__">
+                                    <span>${country}</span>
+                                </div>
+                                <div class="card_badges__">
+                                    ${opp.is_premium ? `
+                                        <span class="premium_badge__">
+                                            <i class="fas fa-crown"></i>
+                                            Premium
+                                        </span>
+                                    ` : ''}
+                                    <span class="risk_badge__ ${riskClass}">
+                                        ${this.formatRiskLevel(opp.risk_level)}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="card_description__">${opp.description}</p>
+
+                        <div class="card_metrics__">
+                            <div class="metric_item__">
+                                <div class="metric_label__">ROI</div>
+                                <div class="metric_value__">${opp.expected_roi}%</div>
+                            </div>
+                            <div class="metric_item__">
+                                <div class="metric_label__">Min</div>
+                                <div class="metric_value__">${this.formatCurrency(opp.minimum_investment)}</div>
+                            </div>
+                            <div class="metric_item__">
+                                <div class="metric_label__">Max</div>
+                                <div class="metric_value__">${this.formatCurrency(opp.maximum_investment)}</div>
+                            </div>
+                            <div class="metric_item__">
+                                <div class="metric_label__">Term</div>
+                                <div class="metric_value__">${opp.investment_timeline}m</div>
+                            </div>
+                        </div>
+
+                        <div class="card_tags__">
+                            ${opp.business_sector ? `<span class="tag__">${opp.business_sector}</span>` : ''}
+                        </div>
+
+                        <div class="card_actions__">
+                            <button class="card_btn__ btn_details__" onclick="window.location.href = '/investments/${opp.id}/show'">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                            <button class="card_btn__ btn_invest__" data-opportunity-id="${opp.id}">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                Invest Now
+                            </button>
+                        </div>
+                    </div>
+                `);
+            }
+
+            /**
+             * Update results count
+             */
+            updateResultsCount() {
+                $('#resultsCount').text(this.totalResults);
+            }
+
+            /**
+             * Update pagination
+             */
+            updatePagination() {
+                const $controls = $('#paginationControls');
+                $controls.empty();
+
+                if (this.totalPages <= 1) {
+                    $('#paginationWrapper').hide();
+                    return;
+                }
+
+                $('#paginationWrapper').show();
+                $('#paginationText').text(`Page ${this.currentPage} of ${this.totalPages}`);
+
+                // Previous button
+                const $prev = $(`
+                    <button class="page_btn__" ${this.currentPage === 1 ? 'disabled' : ''}>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                `);
+                $prev.on('click', () => this.goToPage(this.currentPage - 1));
+                $controls.append($prev);
+
+                // Page numbers
+                const pages = this.getPageNumbers();
+                pages.forEach(page => {
+                    if (page === '...') {
+                        $controls.append('<span class="page_btn__" disabled>...</span>');
+                    } else {
+                        const $page = $(`
+                            <button class="page_btn__ ${page === this.currentPage ? 'active' : ''}">
+                                ${page}
+                            </button>
+                        `);
+                        $page.on('click', () => this.goToPage(page));
+                        $controls.append($page);
+                    }
+                });
+
+                // Next button
+                const $next = $(`
+                    <button class="page_btn__" ${this.currentPage === this.totalPages ? 'disabled' : ''}>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                `);
+                $next.on('click', () => this.goToPage(this.currentPage + 1));
+                $controls.append($next);
+            }
+
+            /**
+             * Get page numbers for pagination
+             */
+            getPageNumbers() {
+                const pages = [];
+                const maxPages = 7;
+
+                if (this.totalPages <= maxPages) {
+                    for (let i = 1; i <= this.totalPages; i++) {
+                        pages.push(i);
+                    }
+                } else {
+                    if (this.currentPage <= 4) {
+                        for (let i = 1; i <= 5; i++) {
+                            pages.push(i);
+                        }
+                        pages.push('...');
+                        pages.push(this.totalPages);
+                    } else if (this.currentPage >= this.totalPages - 3) {
+                        pages.push(1);
+                        pages.push('...');
+                        for (let i = this.totalPages - 4; i <= this.totalPages; i++) {
+                            pages.push(i);
+                        }
+                    } else {
+                        pages.push(1);
+                        pages.push('...');
+                        for (let i = this.currentPage - 1; i <= this.currentPage + 1; i++) {
+                            pages.push(i);
+                        }
+                        pages.push('...');
+                        pages.push(this.totalPages);
+                    }
+                }
+
+                return pages;
+            }
+
+            /**
+             * Go to specific page
+             */
+            goToPage(page) {
+                if (page < 1 || page > this.totalPages || page === this.currentPage) {
+                    return;
+                }
+
+                this.currentPage = page;
+                this.loadOpportunities();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            /**
+             * Show loading state
+             */
+            showLoading() {
+                $('#loadingOverlay').removeClass('d-none');
+                $('#opportunitiesGrid').addClass('loading');
+            }
+
+            /**
+             * Hide loading state
+             */
+            hideLoading() {
+                $('#loadingOverlay').addClass('d-none');
+                $('#opportunitiesGrid').removeClass('loading');
+            }
+
+            /**
+             * Show empty state
+             */
+            showEmptyState() {
+                $('#opportunitiesGrid').html(`
+                    <div class="empty_state__" style="grid-column: 1 / -1;">
+                        <div class="empty_icon__">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="empty_title__">No Opportunities Found</h3>
+                        <p class="empty_text__">
+                            Try adjusting your filters or search terms to find what you're looking for.
+                        </p>
+                    </div>
+                `);
+            }
+
+            /**
+             * Show error state
+             */
+            showError() {
+                $('#opportunitiesGrid').html(`
+                    <div class="empty_state__" style="grid-column: 1 / -1;">
+                        <div class="empty_icon__">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="empty_title__">Error Loading Opportunities</h3>
+                        <p class="empty_text__">
+                            Something went wrong. Please try again later.
+                        </p>
+                    </div>
+                `);
+            }
+
+            /**
+             * Open investment modal
+             */
+            openInvestmentModal(opportunityId) {
+                if (window.investmentAppManager) {
+                    window.investmentAppManager.openModal(opportunityId);
+                }
+            }
+
+            /**
+             * Helper: Format currency
+             */
+            formatCurrency(amount) {
+                if (amount >= 1000000) {
+                    return '$' + (amount / 1000000).toFixed(1) + 'M';
+                } else if (amount >= 1000) {
+                    return '$' + (amount / 1000).toFixed(0) + 'K';
+                }
+                return '$' + amount?.toLocaleString();
+            }
+
+            /**
+             * Helper: Format risk level
+             */
+            formatRiskLevel(level) {
+                const levels = {
+                    'low': 'Low Risk',
+                    'medium': 'Medium Risk',
+                    'high': 'High Risk'
+                };
+                return levels[level] || level;
+            }
+
+            /**
+             * Helper: Get country name
+             */
+            getCountryName(code) {
+                // This should be populated from your countries data
+                // For now, returning the code
+                return code;
+            }
+        }
+
+        // Initialize when document is ready
+        $(document).ready(function() {
+            window.opportunitiesManager = new InvestmentOpportunitiesManager();
+
+            // Initialize investment application modal manager
+            window.investmentAppManager = new InvestmentApplicationManager();
+        });
+    </script>
+
+    
+    <script src="https://beta.thebrazilianhub.com/assets/front/js/investment-application.js"></script>
+    <script>
+        /**
+         * Investment Application Modal Manager
+         * Handles modal lifecycle, data fetching, validation, and submission
+         */
+
+        class InvestmentApplicationManager {
+            constructor() {
+                this.modal = $('#investmentApplicationModal');
+                this.form = $('#investmentApplicationForm');
+                this.opportunityId = null;
+                this.opportunityData = null;
+                this.countries = [];
+
+                this.init();
+            }
+
+            /**
+             * Initialize the modal manager
+             */
+            init() {
+                this.attachEventListeners();
+                this.loadCountries();
+                this.initializeFormValidation();
+            }
+
+            /**
+             * Attach all event listeners
+             */
+            attachEventListeners() {
+                // Submit button click
+                $('#submitApplicationBtn').on('click', () => {
+                    this.submitApplication();
+                });
+
+                // Investment amount validation
+                $('#investmentAmount').on('input', () => {
+                    this.validateInvestmentAmount();
+                });
+
+                // Modal close event
+                this.modal.on('hidden.bs.modal', () => {
+                    this.resetModal();
+                });
+
+                // Form input changes for real-time validation
+                this.form.find('input, select, textarea').on('blur', (e) => {
+                    this.validateField($(e.target));
+                });
+            }
+
+            /**
+             * Load countries list
+             */
+            async loadCountries() {
+                try {
+                    const response = await fetch('/api/countries');
+                    if (response.ok) {
+                        this.countries = await response.json();
+                        this.populateCountries();
+                    } else {
+                        this.loadFallbackCountries();
+                    }
+                } catch (error) {
+                    console.error('Error loading countries:', error);
+                    this.loadFallbackCountries();
+                }
+            }
+
+            /**
+             * Populate countries dropdown
+             */
+            populateCountries() {
+                const select = $('#investorCountry');
+                select.empty().append('<option value="">Select Country</option>');
+
+                this.countries.forEach(country => {
+                    select.append(`<option value="${country.code}">${country.name}</option>`);
+                });
+            }
+
+            /**
+             * Load fallback countries
+             */
+            loadFallbackCountries() {
+                const fallbackCountries = [
+                    { code: 'US', name: 'United States' },
+                    { code: 'GB', name: 'United Kingdom' },
+                    { code: 'SA', name: 'Saudi Arabia' },
+                    { code: 'AE', name: 'United Arab Emirates' },
+                    { code: 'BR', name: 'Brazil' },
+                    { code: 'DE', name: 'Germany' },
+                    { code: 'FR', name: 'France' },
+                    { code: 'CN', name: 'China' },
+                    { code: 'JP', name: 'Japan' },
+                    { code: 'IN', name: 'India' }
+                ];
+
+                this.countries = fallbackCountries;
+                this.populateCountries();
+            }
+
+            /**
+             * Open modal and fetch opportunity details
+             */
+            async openModal(opportunityId) {
+                this.opportunityId = opportunityId;
+
+                // Show modal
+                this.modal.modal('show');
+
+                // Show preloader
+                this.showPreloader();
+
+                try {
+                    // Fetch opportunity details
+                    await this.fetchOpportunityDetails(opportunityId);
+
+                    // Populate opportunity data
+                    this.populateOpportunityData();
+
+                    // Hide preloader and show main content
+                    this.hidePreloader();
+                    this.showMainContent();
+
+                } catch (error) {
+                    console.error('Error loading opportunity:', error);
+                    this.showError(error.message || 'Failed to load opportunity details. Please try again.');
+                }
+            }
+
+            /**
+             * Fetch opportunity details from server
+             */
+            async fetchOpportunityDetails(opportunityId) {
+                const response = await fetch(`/api/investment-opportunities/${opportunityId}`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        throw new Error('Investment opportunity not found.');
+                    } else if (response.status === 403) {
+                        throw new Error('This investment opportunity is not available.');
+                    } else if (response.status === 401) {
+                        throw new Error('Only investors seekers can apply for investment opportunities');
+                    } else {
+                        throw new Error('Failed to load opportunity details.');
+                    }
+                }
+
+                const data = await response.json();
+                this.opportunityData = data['data'];
+                return data;
+            }
+
+            /**
+             * Populate opportunity data in the modal
+             */
+            populateOpportunityData() {
+                const data = this.opportunityData;
+
+                // Set opportunity ID in hidden field
+                $('#opportunityId').val(data.id);
+
+                // Populate summary card
+                $('#opportunityName').text(data.name);
+                $('#opportunityType').text(this.formatOpportunityType(data.opportunity_type));
+                $('#opportunityRisk').text(this.formatRiskLevel(data.risk_level));
+
+                // Funding progress
+                const fundingPercentage = Math.min(100, data.funding_goal_percentage || 0);
+                $('#fundingPercentage').text(fundingPercentage.toFixed(1));
+                $('#fundingProgressBar').css('width', `${fundingPercentage}%`);
+
+                // ROI and Timeline
+                $('#expectedROI').text(data.expected_roi);
+                $('#investmentTimeline').text(`${data.investment_timeline} months`);
+
+                // Investment range
+                const currency = data.currency || 'USD';
+                const minFormatted = this.formatCurrency(data.minimum_investment, currency);
+                const maxFormatted = this.formatCurrency(data.maximum_investment, currency);
+
+                $('#minInvestment').text(minFormatted);
+                $('#maxInvestment').text(maxFormatted);
+                $('#currencySymbol').text(this.getCurrencySymbol(currency));
+
+                // Set min/max attributes for investment amount input
+                $('#investmentAmount')
+                    .attr('min', data.minimum_investment)
+                    .attr('max', data.maximum_investment)
+                    .attr('data-currency', currency);
+            }
+
+            /**
+             * Show preloader
+             */
+            showPreloader() {
+                $('#modalPreloader').removeClass('d-none');
+                $('#modalError').addClass('d-none');
+                $('#modalMainContent').addClass('d-none');
+            }
+
+            /**
+             * Hide preloader
+             */
+            hidePreloader() {
+                $('#modalPreloader').addClass('d-none');
+            }
+
+            /**
+             * Show main content
+             */
+            showMainContent() {
+                $('#modalMainContent').removeClass('d-none');
+            }
+
+            /**
+             * Show error state
+             */
+            showError(message) {
+                $('#modalPreloader').addClass('d-none');
+                $('#modalMainContent').addClass('d-none');
+                $('#modalError').removeClass('d-none');
+                $('#modalError .error-message').text(message);
+            }
+
+            /**
+             * Initialize form validation
+             */
+            initializeFormValidation() {
+                this.form.on('submit', (e) => {
+                    e.preventDefault();
+                });
+            }
+
+            /**
+             * Validate individual field
+             */
+            validateField($field) {
+                const field = $field[0];
+                let isValid = true;
+                let errorMessage = '';
+
+                // Clear previous validation
+                $field.removeClass('is-invalid is-valid');
+                $field.siblings('.invalid-feedback').text('');
+
+                // Required validation
+                if (field.hasAttribute('required') && !field.value.trim()) {
+                    isValid = false;
+                    errorMessage = 'This field is required';
+                }
+
+                // Email validation
+                else if (field.type === 'email' && field.value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(field.value)) {
+                        isValid = false;
+                        errorMessage = 'Please enter a valid email address';
+                    }
+                }
+
+                // Phone validation
+                else if (field.type === 'tel' && field.value) {
+                    const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+                    if (!phoneRegex.test(field.value) || field.value.length < 10) {
+                        isValid = false;
+                        errorMessage = 'Please enter a valid phone number';
+                    }
+                }
+
+                // Number validation
+                else if (field.type === 'number' && field.value) {
+                    const value = parseFloat(field.value);
+                    const min = parseFloat(field.getAttribute('min'));
+                    const max = parseFloat(field.getAttribute('max'));
+
+                    if (isNaN(value)) {
+                        isValid = false;
+                        errorMessage = 'Please enter a valid number';
+                    } else if (!isNaN(min) && value < min) {
+                        isValid = false;
+                        errorMessage = `Minimum value is ${min}`;
+                    } else if (!isNaN(max) && value > max) {
+                        isValid = false;
+                        errorMessage = `Maximum value is ${max}`;
+                    }
+                }
+
+                // Textarea min length (for investment purpose)
+                else if ($field.attr('id') === 'investmentPurpose' && field.value) {
+                    if (field.value.length < 50) {
+                        isValid = false;
+                        errorMessage = 'Please provide at least 50 characters';
+                    }
+                }
+
+                // Checkbox validation
+                else if (field.type === 'checkbox' && field.hasAttribute('required')) {
+                    if (!field.checked) {
+                        isValid = false;
+                        errorMessage = 'You must agree to continue';
+                    }
+                }
+
+                // Apply validation state
+                if (!isValid) {
+                    $field.addClass('is-invalid');
+                    $field.siblings('.invalid-feedback').text(errorMessage);
+                } else if (field.value) {
+                    $field.addClass('is-valid');
+                }
+
+                return isValid;
+            }
+
+            /**
+             * Validate investment amount
+             */
+            validateInvestmentAmount() {
+                const $field = $('#investmentAmount');
+                const value = parseFloat($field.val());
+                const min = parseFloat($field.attr('min'));
+                const max = parseFloat($field.attr('max'));
+
+                let errorMessage = '';
+
+                if (isNaN(value)) {
+                    errorMessage = 'Please enter a valid amount';
+                } else if (value < min) {
+                    const currency = $field.attr('data-currency') || 'USD';
+                    errorMessage = `Minimum investment is ${this.formatCurrency(min, currency)}`;
+                } else if (value > max) {
+                    const currency = $field.attr('data-currency') || 'USD';
+                    errorMessage = `Maximum investment is ${this.formatCurrency(max, currency)}`;
+                }
+
+                if (errorMessage) {
+                    $field.addClass('is-invalid').removeClass('is-valid');
+                    $field.siblings('.invalid-feedback').text(errorMessage);
+                    return false;
+                } else if (value) {
+                    $field.addClass('is-valid').removeClass('is-invalid');
+                    $field.siblings('.invalid-feedback').text('');
+                    return true;
+                }
+
+                return true;
+            }
+
+            /**
+             * Validate entire form
+             */
+            validateForm() {
+                let isValid = true;
+
+                // Validate all required fields
+                this.form.find('[required]').each((index, field) => {
+                    const $field = $(field);
+                    if (!this.validateField($field)) {
+                        isValid = false;
+                    }
+                });
+
+                // Validate investment amount
+                if (!this.validateInvestmentAmount()) {
+                    isValid = false;
+                }
+
+                // Scroll to first error
+                if (!isValid) {
+                    const $firstError = this.form.find('.is-invalid').first();
+                    if ($firstError.length) {
+                        $firstError[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        $firstError.focus();
+                    }
+                }
+
+                return isValid;
+            }
+
+            /**
+             * Submit application
+             */
+            async submitApplication() {
+                // Validate form
+                if (!this.validateForm()) {
+                    this.showToast('Please fill all required fields correctly', 'error');
+                    return;
+                }
+
+                // Show loading state
+                this.setSubmitButtonLoading(true);
+
+                try {
+                    // Prepare form data
+                    const formData = new FormData(this.form[0]);
+
+                    // Submit application
+                    const response = await fetch('/api/investment-applications', {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                            'Accept': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        body: formData
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        // Success
+                        this.handleSubmissionSuccess(result);
+                    } else {
+                        // Error
+                        this.handleSubmissionError(result);
+                    }
+
+                } catch (error) {
+                    console.error('Submission error:', error);
+                    this.showToast('An error occurred. Please try again.', 'error');
+                } finally {
+                    this.setSubmitButtonLoading(false);
+                }
+            }
+
+            /**
+             * Handle successful submission
+             */
+            handleSubmissionSuccess(result) {
+                // Close main modal
+                this.modal.modal('hide');
+
+                // Show success modal
+                $('#applicationSuccessModal').modal('show');
+
+                // Track event (if analytics is set up)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'investment_application', {
+                        'opportunity_id': this.opportunityId,
+                        'amount': $('#investmentAmount').val()
+                    });
+                }
+
+                this.showToast('Application submitted successfully!', 'success');
+            }
+
+            /**
+             * Handle submission error
+             */
+            handleSubmissionError(result) {
+                if (result.errors) {
+                    // Show validation errors
+                    Object.keys(result.errors).forEach(fieldName => {
+                        const $field = $(`[name="${fieldName}"]`);
+                        const errorMessage = result.errors[fieldName][0];
+
+                        $field.addClass('is-invalid');
+                        $field.siblings('.invalid-feedback').text(errorMessage);
+                    });
+
+                    // Scroll to first error
+                    const $firstError = this.form.find('.is-invalid').first();
+                    if ($firstError.length) {
+                        $firstError[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+
+                this.showToast(result.message || 'Failed to submit application', 'error');
+            }
+
+            /**
+             * Set submit button loading state
+             */
+            setSubmitButtonLoading(isLoading) {
+                const $btn = $('#submitApplicationBtn');
+
+                if (isLoading) {
+                    $btn.prop('disabled', true);
+                    $btn.find('.btn-text').addClass('d-none');
+                    $btn.find('.btn-loader').removeClass('d-none');
+                } else {
+                    $btn.prop('disabled', false);
+                    $btn.find('.btn-text').removeClass('d-none');
+                    $btn.find('.btn-loader').addClass('d-none');
+                }
+            }
+
+            /**
+             * Reset modal
+             */
+            resetModal() {
+                // Reset form
+                this.form[0].reset();
+
+                // Clear validation states
+                this.form.find('.is-invalid, .is-valid').removeClass('is-invalid is-valid');
+                this.form.find('.invalid-feedback').text('');
+
+                // Reset data
+                this.opportunityId = null;
+                this.opportunityData = null;
+
+                // Reset visibility
+                $('#modalPreloader').addClass('d-none');
+                $('#modalError').addClass('d-none');
+                $('#modalMainContent').addClass('d-none');
+            }
+
+            /**
+             * Format currency
+             */
+            formatCurrency(amount, currency = 'USD') {
+                return new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: currency,
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                }).format(amount);
+            }
+
+            /**
+             * Get currency symbol
+             */
+            getCurrencySymbol(currency) {
+                const symbols = {
+                    'USD': '$',
+                    'EUR': '€',
+                    'GBP': '£',
+                    'SAR': 'SR',
+                    'AED': 'AED',
+                    'BRL': 'R$'
+                };
+                return symbols[currency] || currency;
+            }
+
+            /**
+             * Format opportunity type
+             */
+            formatOpportunityType(type) {
+                const types = {
+                    'equity': 'Equity',
+                    'debt': 'Debt',
+                    'hybrid': 'Hybrid',
+                    'crowdfunding': 'Crowdfunding'
+                };
+                return types[type] || type;
+            }
+
+            /**
+             * Format risk level
+             */
+            formatRiskLevel(level) {
+                const levels = {
+                    'low': 'Low Risk',
+                    'medium': 'Medium Risk',
+                    'high': 'High Risk'
+                };
+                return levels[level] || level;
+            }
+
+            /**
+             * Show toast notification
+             */
+            showToast(message, type = 'info') {
+                console.log(`${type.toUpperCase()}: ${message}`);
+
+                if (type === 'error') {
+                    alert(message);
+                }
+            }
+        }
+
+        // Initialize when document is ready
+        $(document).ready(function() {
+            window.investmentAppManager = new InvestmentApplicationManager();
+        });
+    </script>
+</body>
+
+</html>
