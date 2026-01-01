@@ -1259,7 +1259,7 @@ html[dir="rtl"] .close-button__ {
   }
 }
 .section_head_wrapper {
-  margin-bottom: 6.5rem;
+  margin-bottom: 10rem;
 }
 @media only screen and (max-width: 991px) {
   .section_head_wrapper {
@@ -2686,12 +2686,12 @@ html[dir="rtl"] .product_card__ .product_button_wrapper__ {
 .plans_cards_wrapper__ {
   display: -ms-grid;
   display: grid;
-  
+  /* align-items: stretch; */
   -ms-grid-columns: 1fr 25px 1fr 25px 1fr;
   grid-template-columns: repeat(3, 1fr);
   -webkit-box-align: end;
   -ms-flex-align: end;
-  align-items: end;
+  /* align-items: end; */
   gap: 25px;
 }
 @media only screen and (max-width: 991px) {
@@ -2821,6 +2821,7 @@ html[dir="rtl"] .product_card__ .product_button_wrapper__ {
 .plan_card__.popular__ {
   background-color: #058c4c;
   border: 1px solid #058c4c;
+    transform: translateY(-50px);
 }
 .plan_card__.popular__ .price__ {
   color: #058c4c;
