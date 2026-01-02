@@ -2821,7 +2821,13 @@ html[dir="rtl"] .product_card__ .product_button_wrapper__ {
 .plan_card__.popular__ {
   background-color: #058c4c;
   border: 1px solid #058c4c;
+}
+
+@media only screen and (min-width: 769px) {
+  .plan_card__.popular__ {
     transform: translateY(-50px);
+  }
+  }
 }
 .plan_card__.popular__ .price__ {
   color: #058c4c;
