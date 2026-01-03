@@ -2621,15 +2621,28 @@
         transform: translateY(-2px);
         box-shadow: 0 4px 12px #068c4b;
       }
+      .testimonials_section__ .fixed_all_products_btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px #f4d03f;
+      }
 
       .fixed_all_products_btn:focus {
         outline: none;
         border-color: #fff;
         box-shadow: 0 0 0 3px #068c4b;
       }
+      .testimonials_section__ .fixed_all_products_btn:focus {
+        outline: none;
+        border-color: #fff;
+        box-shadow: 0 0 0 3px #f4d03f;
+      }
 
       .fixed_all_products_btn.active_category_btn {
         background: linear-gradient(135deg, #068c4b 0%, #068c4b 100%);
+      }
+
+      .testimonials_section__ .fixed_all_products_btn.active_category_btn {
+        background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
       }
 
       /* Scrollable Categories Wrapper */
@@ -2665,6 +2678,12 @@
         transform: scale(1.1);
         box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
       }
+      .testimonials_section__ .category_scroll_arrow:hover {
+        background: #e1b12c;
+        border-color: #e1b12c;
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(225, 177, 44, 0.3);
+      }
 
       .category_scroll_arrow:hover svg {
         stroke: white;
@@ -2674,6 +2693,11 @@
         outline: none;
         border-color: #10b981;
         box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+      }
+      .testimonials_section__ .category_scroll_arrow:focus {
+        outline: none;
+        border-color: #e1b12c;
+        box-shadow: 0 0 0 3px rgba(225, 177, 44, 0.2);
       }
 
       .category_scroll_arrow.arrow_disabled {
@@ -2747,6 +2771,17 @@
         background: #10b981;
         transition: transform 0.3s ease;
       }
+      .testimonials_section__ .category_filter_btn::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 80%;
+        height: 2px;
+        background: #e1b12c;
+        transition: transform 0.3s ease;
+      }
 
       .category_filter_btn:hover {
         background: #ecfdf5;
@@ -2754,6 +2789,13 @@
         color: #064e3b;
         transform: translateY(0.5px);
         box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+      }
+      .testimonials_section__ .category_filter_btn:hover {
+        background: #fff9e3;
+        border-color: #e1b12c;
+        color: #7a5c00;
+        transform: translateY(0.5px);
+        box-shadow: 0 4px 12px rgba(225, 177, 44, 0.18);
       }
 
       .category_filter_btn:hover::after {
@@ -2766,11 +2808,24 @@
         box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
       }
 
+      .testimonials_section__ .category_filter_btn:focus {
+        outline: none;
+        border-color: #e1b12c;
+        box-shadow: 0 0 0 3px rgba(225, 177, 44, 0.2);
+      }
+
       .category_filter_btn.active_category_btn {
         background: linear-gradient(135deg, #10b981 0%, #064e3b 100%);
         color: white;
         /*border-color: transparent;*/
         box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      }
+
+      .testimonials_section__ .category_filter_btn.active_category_btn {
+        background: linear-gradient(135deg, #e1b12c 0%, #7a5c00 100%);
+        color: white;
+        /*border-color: transparent;*/
+        box-shadow: 0 4px 12px rgba(225, 177, 44, 0.3);
       }
 
       .category_filter_btn.active_category_btn::after {

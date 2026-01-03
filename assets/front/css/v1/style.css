@@ -310,10 +310,46 @@ h6 {
   width: fit-content;
   height: 72px;
 }
+
+.testimonials_section__ .link__.main_link__ {
+  border-radius: 8px;
+  background: radial-gradient(
+      27.92% 100% at 50% 0%,
+      rgba(255, 255, 255, 0.24) 0%,
+      rgba(225, 177, 44, 0.24) 100%
+    ),
+    #e1b12c;
+  -webkit-box-shadow: 0 1px 2px -1px rgba(63, 54, 9, 0.4),
+    0 1px 0 0 rgba(255, 255, 255, 0.16) inset;
+  box-shadow: 0 1px 2px -1px rgba(63, 54, 9, 0.4),
+    0 1px 0 0 rgba(255, 255, 255, 0.16) inset;
+  color: #fff;
+  text-shadow: 0 0.4px 0.2px rgba(0, 0, 0, 0.12);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 100%;
+  height: 54px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  min-width: 250px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 72px;
+}
+
 .link__.main_link__:hover {
   background-color: rgba(5, 140, 76, 0.9);
   opacity: 0.85;
 }
+.testimonials_section__ .link__.main_link__:hover {
+  background-color: rgba(225, 177, 44, 0.9);
+  opacity: 0.85;
+}
+
 .link__.header_join_link__ {
   border-radius: 8px;
   background: radial-gradient(
@@ -656,13 +692,10 @@ html[dir="rtl"] .button__.product_button__:hover .icon__ {
   width: 100%;
   height: 54px;
 }
-#plans-section2 .button__.primary_button__ {
-  background: radial-gradient(
-      27.92% 100% at 50% 0%,
-      rgba(255, 255, 255, 0.35) 0%,
-      rgba(158, 124, 25, 0.25) 100%
-    ),
-    #c9a227; /* Gold main */
+
+#plans-section2 .button__.primary_button__,
+.testimonials_section__ .button__.primary_button__ {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
 
   box-shadow: 0 4px 12px -4px rgba(158, 124, 25, 0.6),
     0 1px 0 0 rgba(255, 255, 255, 0.3) inset;
@@ -670,11 +703,12 @@ html[dir="rtl"] .button__.product_button__:hover .icon__ {
   color: #ffffff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
+
 .button__.primary_button__:hover {
   background-color: rgba(5, 140, 76, 0.9);
 }
 #plans-section2 .button__.primary_button__:hover {
-  background: #9e7c19; /* Gold dark */
+  background: rgba(225, 177, 44, 0.9);
 }
 .button__.testimonial_invest_button__ {
   height: 47px;
@@ -690,8 +724,25 @@ html[dir="rtl"] .button__.product_button__:hover .icon__ {
   padding: 16px 22px;
   border-radius: 8px;
 }
+
+.testimonials_section__ .button__.testimonial_details_button__ {
+  height: 52px;
+  border: 1px solid #7c5b00;
+  color: #9a6e00;
+  text-shadow: 0 0.4px 0.3px rgba(0, 0, 0, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 16px 22px;
+  border-radius: 8px;
+}
+
 .button__.testimonial_details_button__:hover {
   background-color: rgba(5, 140, 76, 0.1);
+}
+
+.testimonials_section__ .button__.testimonial_details_button__:hover {
+  background-color: rgba(154, 110, 0, 0.1);
 }
 .button__.contact_us_button__ {
   max-width: 312px !important;
@@ -3078,7 +3129,7 @@ html[dir="rtl"] .product_card__ .product_button_wrapper__ {
   }
 }
 .testimonial_card__ .info__ .value__ {
-  color: #058c4c;
+  color: rgb(154, 110, 0);
   font-size: 18px;
   font-weight: 600;
   line-height: 24px;
