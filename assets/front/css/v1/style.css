@@ -5291,6 +5291,7 @@ html[dir="rtl"] .select__ .dropdown-toggle .filter-option {
   color: #fff;
   font-size: 16px;
   font-weight: 400;
+  width: 18rem;
 }
 .label__.required__:after {
   content: "*";
