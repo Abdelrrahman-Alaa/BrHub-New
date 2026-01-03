@@ -651,18 +651,15 @@ html[dir="rtl"] .button__.product_button__:hover .icon__ {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.button__.second_button__ {
+#plans-section2 .button__.second_button__ {
   border-radius: 8px;
-  background: radial-gradient(
-      27.92% 100% at 50% 0%,
-      rgba(255, 255, 255, 0.24) 0%,
-      rgba(255, 255, 255, 0) 100%
-    ),
-    #00235c;
-  -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.16) inset;
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.16) inset;
-  color: var(--color-text-on-white, #fff);
-  text-shadow: 0 0.4px 0.2px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+
+  box-shadow: 0 4px 12px -4px rgba(158, 124, 25, 0.6),
+    0 1px 0 0 rgba(255, 255, 255, 0.3) inset;
+
+  color: #ffffff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -671,6 +668,9 @@ html[dir="rtl"] .button__.product_button__:hover .icon__ {
 }
 .button__.second_button__:hover {
   background-color: rgba(0, 35, 92, 0.9);
+}
+#plans-section2 .button__.second_button__:hover {
+  background: rgba(225, 177, 44, 0.9);
 }
 .button__.primary_button__ {
   border-radius: 8px;
@@ -2863,6 +2863,11 @@ html[dir="rtl"] .product_card__ .product_button_wrapper__ {
   font-size: 32px;
   font-weight: 600;
 }
+#plans-section2 .plan_card__ .plan_price__ .price__ {
+  color: #e1b12c;
+  font-size: 32px;
+  font-weight: 600;
+}
 .plan_card__ .plan_price__ .month__ {
   color: #555;
   font-size: 18px;
@@ -2891,8 +2896,8 @@ html[dir="rtl"] .product_card__ .product_button_wrapper__ {
   border: 1px solid #058c4c;
 }
 #plans-section2 .plan_card__.popular__ {
-  background-color: #9e7c19;
-  border: 1px solid #9e7c19;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  border: 1px solid #e1b12c;
 }
 
 /* @media only screen and (min-width: 769px) {
@@ -2906,7 +2911,7 @@ html[dir="rtl"] .product_card__ .product_button_wrapper__ {
 }
 
 #plans-section2 .plan_card__.popular__ .price__ {
-  color: #9e7c19;
+  color: #e1b12c;
 }
 .plan_info_list__ {
   margin-top: 32px;
